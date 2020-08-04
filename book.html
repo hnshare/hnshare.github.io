@@ -65,8 +65,12 @@ div.Z iframe {
 				</div>
 			</article>
 			<article v-if="booktype === 'classic'">
-				<IMG src="https://raw.githubusercontent.com/hnshare/hn-data-classic/master/035.PNG">
+				<input type=button value="<" @click="bookChangePage(booktype, -1)">
+				<input type=button value=">" @click="bookChangePage(booktype, +1)">
+				<IMG :src="bookclassicurl" alt="Loading book page...">
 				<!-- <IMG SRC="../HN-data-classic/035.PNG"> -->
+				<input type=button value="<" @click="bookChangePage(booktype, -1)">
+				<input type=button value=">" @click="bookChangePage(booktype, +1)">
 			</article>
 		</div>
 		<div style="--c:2">
@@ -96,10 +100,16 @@ new Vue({
     keys: keys, //Object.keys( this.data ),
 	index: index,
 	booktype: "classic",
+	bookclassicurl_prefix: "https://raw.githubusercontent.com/hnshare/hn-data-classic/master/0",
+	bookclassicurl_suffix: ".PNG",
+	bookclassicurl_pageno: 35,
   	// arXLines: arB.split('\n'),
 		// arYLines: ar.split('\n'), 
   },
   computed: {
+	bookclassicurl: function(){
+		return this.bookclassicurl_prefix + this.bookclassicurl_pageno + this.bookclassicurl_suffix;
+	},
   	arXLines: function( x ){
     	return this.data['hnText'][this.index].split('\n');
     },
@@ -109,6 +119,9 @@ new Vue({
 
   },
   methods: {
+	bookChangePage: function(booktype, offset){
+		this.bookclassicurl_pageno += offset;
+	},
   	get: function(ii, i){
     	return this.arYLines[ii].split(' ')[i];
     }
