@@ -77,13 +77,13 @@
         },
 
         64: {
-            title: 'Hidayatun Nahw Lesson 64 جوازم المضارع            ',
+            title: '64. Hidayatun Nahw Lesson 64 جوازم المضارع            ',
             yt: ['https://www.youtube.com/watch?v=65AXHO-iZOQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=125',
                 'https://www.youtube.com/watch?v=KLAwirXCwww&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=126',
                 'https://www.youtube.com/watch?v=4HgrlRRHSus&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=127'],
         },
         65: {
-            title: 'Hidayatun Nahw Lesson 65 الأمر            ',
+            title: '65. Hidayatun Nahw Lesson 65 الأمر            ',
             yt: 'https://www.youtube.com/watch?v=kDaQ9OX9PSM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=128',
         },
         66: {
@@ -127,6 +127,49 @@
             'https://www.youtube.com/watch?v=v8Sf-6UJM9Y&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=141',
             ]
         },
+
+
+
+
+
+        41: {
+            title: 'asmaaul mabniyy - Baab II - 8 sections. Hidayatun Nahw Lesson 41 الاسم المبني',
+            yt: 'https://www.youtube.com/watch?v=8zslzVDUt2M&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=102',
+        },
+        42: {
+            title: 'asmaaul mudmaraat. Hidayatun Nahw Lesson 42 المضمرات',
+            yt: 'https://www.youtube.com/watch?v=0f0dXtdrTpI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=103',
+        },
+        43: {
+            title: ' asmaaul isharah. Hidayatun Nahw Lesson 43 أسماء الإشارة',
+            yt: 'https://www.youtube.com/watch?v=GfwMV32gqZE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=104',
+        },
+        44: {
+            title: 'asmaaul mawsool. Hidayatun Nahw Lesson 44 الاسم الموصول',
+            yt: 'https://www.youtube.com/watch?v=Ycr_TH63tlM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=105',
+        },
+        45: {
+            title: 'asmaaul af3aal Lesson 45',
+            yt: 'https://www.youtube.com/watch?v=H8Ai-Radars&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107&t=0s',
+        },
+        46: {
+            title: 'asmaaul aSwaat Lesson 46',
+            yt: 'https://www.youtube.com/watch?v=px_mmxVx2W0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107',
+        },
+        47: {
+            title: 'asmaaul Murakkabaat - 6 sub-sections',
+            yt: 'https://www.youtube.com/watch?v=yJ0SJvlJhJk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=108',
+        },
+        48: {
+            title: 'asmaaul Kinaayaat. Hidayatun Nahw Lesson 48 الكنايات',
+            yt: 'https://www.youtube.com/watch?v=afsVoci-Ej8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=109',
+        },
+        49: {
+            title: 'Zuruwf mabniyyah - Hidayatun Nahw Lesson 49 الظروف المبنية',
+            yt: 'https://www.youtube.com/watch?v=khaID8-1iPQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=110',
+        },
+
+
 
     },
  };
