@@ -3,6 +3,48 @@
 
 
 
+        34: {
+            title: '34. Majroor - Hidayatun Nahw Lesson 34 المجرور',
+            slides: 'Hidayatun Nahw 34 القسم الأول، الباب الأول، المقصد الثالث',
+            yt: ['https://www.youtube.com/watch?v=lHUKw718K7A&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=92',
+                'https://www.youtube.com/watch?v=ZYa8NB2pv_Y&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=93',
+                'https://www.youtube.com/watch?v=_94BF4isDQc&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=94'
+            ],
+        },	
+
+        35: {
+            title: 'Tawabi3. Hidayatun Nahw Lesson 35 التوابع',
+            slides: 'Hidayatun Nahw 35 القسم الأول، الباب الأول، الخاتمة في التوابع',
+            yt: 'https://www.youtube.com/watch?v=221S7RbaiVM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=95',
+        },
+        36: {
+            title: '36. na3t. Hidayatun Nahw Lesson 36 النعت',
+            slides: 'Hidayatun Nahw 36 القسم الأول، الباب الأول، الخاتمة في التوابع، النعت',
+            yt: [ 'https://www.youtube.com/watch?v=pzNIRr4COIU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=96',
+                  'https://www.youtube.com/watch?v=Ko9KIjgl-94&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=97',
+            ],
+        },
+        37: {
+            title: '37. 3aTf. Hidayatun Nahw Lesson 37 العطف بالحرف، عطف النسق',
+            slides: 'Hidayatun Nahw 37 القسم الأول، الباب الأول، الخاتمة في التوابع، العطف بالنسق',
+            yt: 'https://www.youtube.com/watch?v=N3jrg7tlr4Q&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=98',
+        },
+        38: {
+            title: '38. ta\'keed. Hidayatun Nahw Lesson 38 التأكيد',
+            slides: 'Hidayatun Nahw 38 القسم الأول، الباب الأول، الخاتمة في التوابع، التأكيد',
+            yt: 'https://www.youtube.com/watch?v=X0TC5Xnrwqk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=99',
+        },
+        39: {
+            title: '39. Badl. Hidayatun Nahw Lesson 39 البدل',
+            slides: 'Hidayatun Nahw 39 القسم الأول، الباب الأول، الخاتمة في التوابع، البدل',
+            yt: 'https://www.youtube.com/watch?v=JEhRe9dMBso&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=100',
+        },
+        40: {
+            title: '40. 3aTf bayaan; Hidayatun Nahw Lesson 40 عطف البيان',
+            slides: 'Hidayatun Nahw 40 القسم الأول، الباب الأول، الخاتمة في التوابع، عطف البيان',
+            yt: 'https://www.youtube.com/watch?v=xmX76BUoE7c&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=101',
+        },
+    
         
 
         41: {
@@ -116,69 +158,85 @@
 
         61: {
             title: '61. Hidayatun Nahw Lesson 61 الفصل الأول، أصناف إعراب الفعل',
+            slides: 'Hidayatun Nahw 61 القسم الثاني، الفصل الأول، أصناف إعراب الفعل',
             yt: 'https://www.youtube.com/watch?v=UKqU4IIgxTA&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=122',
         },
 
         62: {
             title: '62. Hidayatun Nahw Lesson 62 عامل المرفوع',
+            slides: 'Hidayatun Nahw 62 القسم الثاني، الفصل الثاني، عامل المرفوع',
             yt: 'https://www.youtube.com/watch?v=LkPDfKULCgU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=123',
         },
 
         63: {
             title: '63. Hidayatun Nahw Lesson 63 نواصب المضارع',
+            slides: 'Hidayatun Nahw 63 القسم الثاني، الفصل الثالث، نواصب المضارع',
             yt: 'https://www.youtube.com/watch?v=vRkrvRlUu-E&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=124',
         },
 
         64: {
             title: '64. Hidayatun Nahw Lesson 64 جوازم المضارع            ',
+            slides: 'Hidayatun Nahw 64 القسم الثاني، الفصل الرابع، جوازم المضارع',
             yt: ['https://www.youtube.com/watch?v=65AXHO-iZOQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=125',
                 'https://www.youtube.com/watch?v=KLAwirXCwww&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=126',
                 'https://www.youtube.com/watch?v=4HgrlRRHSus&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=127'],
         },
         65: {
             title: '65. Hidayatun Nahw Lesson 65 الأمر            ',
+            slides: 'Hidayatun Nahw 65 القسم الثاني، الأمر',
             yt: 'https://www.youtube.com/watch?v=kDaQ9OX9PSM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=128',
         },
         66: {
             title: 'Hidayatun Nahw Lesson 66 الفعل المجهول            ',
+            slides: 'Hidayatun Nahw 66 القسم الثاني، الفصل الخامس، الفعل المجهول',
             yt: 'https://www.youtube.com/watch?v=Hu0Uv0a1vbw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=129',
         },
         67: {
             title: 'Hidayatun Nahw Lesson 67 الفعل المتعدي واللازم            ',
+            slides: 'Hidayatun Nahw 67 القسم الثاني، الفصل السادس، المتعدي واللازم',
             yt: 'https://www.youtube.com/watch?v=A5Lbg9VFxHY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=130',
         },
         68: {
             title: 'Hidayatun Nahw Lesson 68 أفعال القلوب             ',
+            slides: 'Hidayatun Nahw 68 القسم الثاني، الفصل السابع، أفعال القلوب',
             yt: ['https://www.youtube.com/watch?v=YjrSaSYOt0Y&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=131',
                 'https://www.youtube.com/watch?v=JF9e-k2Etr4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=132',
             ],
         },
         69: {
             title: 'Hidayatun Nahw Lesson 69 الأفعال الناقصة            ',
+            slides: 'Hidayatun Nahw 69 القسم الثاني، الفصل الثامن، الأفعال الناقصة',
             yt: 'https://www.youtube.com/watch?v=bVNSrOfJ-5o&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=133',
         },
         70: {
             title: 'Hidayatun Nahw Lesson 70 أفعال المقاربة            ',
+            slides: 'Hidayatun Nahw 70 القسم الثاني، الفصل التاسع، أفعال المقاربة',
             yt: 'https://www.youtube.com/watch?v=Q539OmZhV80&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=134',
         },
 
 
         71: {
             title: 'Hidayatun Nahw Lesson 71 فعلا التعجب            ',
+            slides: 'Hidayatun Nahw 71 القسم الثاني، الفصل العاشر، أفعال التعجب',
             yt: 'https://www.youtube.com/watch?v=ojHKS5SkAAo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=135',
         },
         72: {
             title: 'Hidayatun Nahw Lesson 72 أفعال المدح والذم            ',
+            slides: 'Hidayatun Nahw 72 القسم الثاني، الفصل الحادي عشر، أفعال المدح والذم',
             yt: 'https://www.youtube.com/watch?v=7ESB8RaFjPo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=136',
         },
         73: {
             title: 'Hidayatun Nahw Lesson 73 حرف الجر            ',
+            slides: 'Hidayatun Nahw 73 القسم الثالث، الفصل الأول، حرف الجر',
             yt: ['https://www.youtube.com/watch?v=Bf1JkDzqyA4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=137',
             'https://www.youtube.com/watch?v=_kPAF5HTh6E&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=138',
             'https://www.youtube.com/watch?v=4v8ZxgAVrLY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=139',
             'https://www.youtube.com/watch?v=X8jf9AcbnX0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=140',
             'https://www.youtube.com/watch?v=v8Sf-6UJM9Y&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=141',
             ]
+        },
+        74: {
+            slides: 'Hidayatun Nahw 74 القسم الثالث، الفصل الأول، الحروف الشبهة بالفعل',
         },
 
 
