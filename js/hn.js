@@ -1,6 +1,59 @@
  var hnmeta = {
     lessons: {
 
+
+
+        
+
+        41: {
+            title: 'asmaaul mabniyy - Baab II - 8 sections. Hidayatun Nahw Lesson 41 الاسم المبني',
+            yt: 'https://www.youtube.com/watch?v=8zslzVDUt2M&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=102',
+            slides: 'Hidayatun Nahw 41 القسم الأول، الباب الثاني، الاسم المبني',
+        },
+        42: {
+            title: 'asmaaul mudmaraat. Hidayatun Nahw Lesson 42 المضمرات',
+            yt: 'https://www.youtube.com/watch?v=0f0dXtdrTpI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=103',
+            slides: 'Hidayatun Nahw 42 القسم الأول، الباب الثاني، الاسم المبني، الفصل الأول، المضمرات',
+        },
+        43: {
+            title: ' asmaaul isharah. Hidayatun Nahw Lesson 43 أسماء الإشارة',
+            yt: 'https://www.youtube.com/watch?v=GfwMV32gqZE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=104',
+            slides: 'Hidayatun Nahw 43 القسم الأول، الباب الثاني، الاسم المبني، الفصل الثاني، أسماء الإشارة',
+        },
+        44: {
+            title: 'asmaaul mawsool. Hidayatun Nahw Lesson 44 الاسم الموصول',
+            yt: 'https://www.youtube.com/watch?v=Ycr_TH63tlM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=105',
+            slides: 'Hidayatun Nahw 44 القسم الأول، الباب الثاني، الاسم المبني، الفصل الثالث، الأسماء الموصولة',
+        },
+        45: {
+            title: 'asmaaul af3aal Lesson 45',
+            yt: 'https://www.youtube.com/watch?v=H8Ai-Radars&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107&t=0s',
+            slides: 'Hidayatun Nahw 45 القسم الأول، الباب الثاني، الاسم المبني، الفصل الرابع، أسماء الأفعال',
+        },
+        46: {
+            title: 'asmaaul aSwaat Lesson 46',
+            yt: 'https://www.youtube.com/watch?v=px_mmxVx2W0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107',
+            slides: 'Hidayatun Nahw 46 القسم الأول، الباب الثاني، الاسم المبني، الفصل الخامس، الأصوات',
+        },
+        47: {
+            title: 'asmaaul Murakkabaat - 6 sub-sections',
+            yt: 'https://www.youtube.com/watch?v=yJ0SJvlJhJk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=108',
+            slides: 'Hidayatun Nahw 47 القسم الأول، الباب الثاني، الاسم المبني، الفصل السادس المركبات',
+        },
+        48: {
+            title: 'asmaaul Kinaayaat. Hidayatun Nahw Lesson 48 الكنايات',
+            yt: 'https://www.youtube.com/watch?v=afsVoci-Ej8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=109',
+            slides: 'Hidayatun Nahw 48 القسم الأول، الباب الثاني، الاسم المبني، الفصل السابع، الكنايات.pdf',
+        },
+        49: {
+            title: 'Zuruwf mabniyyah - Hidayatun Nahw Lesson 49 الظروف المبنية',
+            yt: 'https://www.youtube.com/watch?v=khaID8-1iPQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=110',
+            slides: 'Hidayatun Nahw 49 القسم الأول، الباب الثاني، الاسم المبني، الفصل السابع، الظروف المبنية',
+        },
+
+
+
+
         50: {
             title: '50. Khatima - 10 sections',
             slides: 'Hidayatun Nahw 50 القسم الأول، الخاتمة، الفصل الأول التعريف والتنكير.pdf',
@@ -129,45 +182,6 @@
         },
 
 
-
-
-
-        41: {
-            title: 'asmaaul mabniyy - Baab II - 8 sections. Hidayatun Nahw Lesson 41 الاسم المبني',
-            yt: 'https://www.youtube.com/watch?v=8zslzVDUt2M&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=102',
-        },
-        42: {
-            title: 'asmaaul mudmaraat. Hidayatun Nahw Lesson 42 المضمرات',
-            yt: 'https://www.youtube.com/watch?v=0f0dXtdrTpI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=103',
-        },
-        43: {
-            title: ' asmaaul isharah. Hidayatun Nahw Lesson 43 أسماء الإشارة',
-            yt: 'https://www.youtube.com/watch?v=GfwMV32gqZE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=104',
-        },
-        44: {
-            title: 'asmaaul mawsool. Hidayatun Nahw Lesson 44 الاسم الموصول',
-            yt: 'https://www.youtube.com/watch?v=Ycr_TH63tlM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=105',
-        },
-        45: {
-            title: 'asmaaul af3aal Lesson 45',
-            yt: 'https://www.youtube.com/watch?v=H8Ai-Radars&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107&t=0s',
-        },
-        46: {
-            title: 'asmaaul aSwaat Lesson 46',
-            yt: 'https://www.youtube.com/watch?v=px_mmxVx2W0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=107',
-        },
-        47: {
-            title: 'asmaaul Murakkabaat - 6 sub-sections',
-            yt: 'https://www.youtube.com/watch?v=yJ0SJvlJhJk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=108',
-        },
-        48: {
-            title: 'asmaaul Kinaayaat. Hidayatun Nahw Lesson 48 الكنايات',
-            yt: 'https://www.youtube.com/watch?v=afsVoci-Ej8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=109',
-        },
-        49: {
-            title: 'Zuruwf mabniyyah - Hidayatun Nahw Lesson 49 الظروف المبنية',
-            yt: 'https://www.youtube.com/watch?v=khaID8-1iPQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=110',
-        },
 
 
 
