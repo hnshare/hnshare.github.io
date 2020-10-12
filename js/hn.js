@@ -77,39 +77,49 @@
         },
 
         64: {
+            title: 'Hidayatun Nahw Lesson 64 جوازم المضارع            ',
             yt: ['https://www.youtube.com/watch?v=65AXHO-iZOQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=125',
                 'https://www.youtube.com/watch?v=KLAwirXCwww&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=126',
                 'https://www.youtube.com/watch?v=4HgrlRRHSus&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=127'],
         },
         65: {
+            title: 'Hidayatun Nahw Lesson 65 الأمر            ',
             yt: 'https://www.youtube.com/watch?v=kDaQ9OX9PSM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=128',
         },
         66: {
+            title: 'Hidayatun Nahw Lesson 66 الفعل المجهول            ',
             yt: 'https://www.youtube.com/watch?v=Hu0Uv0a1vbw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=129',
         },
         67: {
+            title: 'Hidayatun Nahw Lesson 67 الفعل المتعدي واللازم            ',
             yt: 'https://www.youtube.com/watch?v=A5Lbg9VFxHY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=130',
         },
         68: {
+            title: 'Hidayatun Nahw Lesson 68 أفعال القلوب             ',
             yt: ['https://www.youtube.com/watch?v=YjrSaSYOt0Y&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=131',
                 'https://www.youtube.com/watch?v=JF9e-k2Etr4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=132',
             ],
         },
         69: {
+            title: 'Hidayatun Nahw Lesson 69 الأفعال الناقصة            ',
             yt: 'https://www.youtube.com/watch?v=bVNSrOfJ-5o&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=133',
         },
         70: {
+            title: 'Hidayatun Nahw Lesson 70 أفعال المقاربة            ',
             yt: 'https://www.youtube.com/watch?v=Q539OmZhV80&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=134',
         },
 
 
         71: {
+            title: 'Hidayatun Nahw Lesson 71 فعلا التعجب            ',
             yt: 'https://www.youtube.com/watch?v=ojHKS5SkAAo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=135',
         },
         72: {
+            title: 'Hidayatun Nahw Lesson 72 أفعال المدح والذم            ',
             yt: 'https://www.youtube.com/watch?v=7ESB8RaFjPo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=136',
         },
         73: {
+            title: 'Hidayatun Nahw Lesson 73 حرف الجر            ',
             yt: ['https://www.youtube.com/watch?v=Bf1JkDzqyA4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=137',
             'https://www.youtube.com/watch?v=_kPAF5HTh6E&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=138',
             'https://www.youtube.com/watch?v=4v8ZxgAVrLY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=139',
