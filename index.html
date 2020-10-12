@@ -1,36 +1,85 @@
-<H1>Hidayatun Nahw notes</H1>
+<!doctype html>
+<html>
+  <head>
+    <script src="js/lib/vue.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+  </head>
+  <body>
+    <H1>Hidayatun Nahw notes</H1>
 
-<style>
-    .nodecontent{
-        font-size: x-large
-    }
-</style>
-
-<div>
-  What is this? It's a mashup of various online resources related to Hidayatun Nahw textbook to help in learning Arabic grammar. Credit goes to resources listed at end.<BR/><BR/>
-</div><HR>
-    <A HREF=01_about_nahw.html>01. about Nahw</A><BR>
-    <A HREF=02_mu3rab_1.html>02. mu3rab - 9 categories of Ism i3raab</A><BR>
-    <A HREF=03_mu3rab_2.html>03. mu3rab - ghair munsarif causes</A><BR>
-    <A HREF=04_marfoo3aat.html>04. marfoo3aat</A><BR>
-    <A HREF=05_mansoobaat.html>05. mansoobaat</A><BR>
-    <A HREF=06_majrooraat.html>06. majrooraat</A><BR>
-    <A HREF=07_tawabi3.html>07. tawabi3</A><BR>
-    <A HREF=08_asmaaul_mabniyy.html>08. asmaaul mabniyy</A><BR>
-
-    <BR><BR>Miscellaneous:<BR>
-    <A HREF=Quran_adad.html>3adad (Numbers): in Qur'aan</A><BR>
+    <style>
+        .nodecontent{
+            font-size: x-large
+        }
+    </style>
+    
+    <div>
+      What is this? It's a mashup of various online resources related to Hidayatun Nahw textbook to help in learning Arabic grammar. Credit goes to resources listed at end.<BR/><BR/>
+    </div><HR>
         
-    <BR><BR>
-    <A HREF="book.html">Book</A>  (Tutorial: see how it <A href="tutorial_HN_notes.gif" target=_>works</A>)
-    <BR><BR>
+        <H4>Grouped Lessons:</H4>
+        <A HREF=01_about_nahw.html>01. about Nahw</A><BR>
+        <A HREF=02_mu3rab_1.html>02. mu3rab - 9 categories of Ism i3raab</A><BR>
+        <A HREF=03_mu3rab_2.html>03. mu3rab - ghair munsarif causes</A><BR>
+        <A HREF=04_marfoo3aat.html>04. marfoo3aat</A><BR>
+        <A HREF=05_mansoobaat.html>05. mansoobaat</A><BR>
+        <A HREF=06_majrooraat.html>06. majrooraat</A><BR>
+        <A HREF=07_tawabi3.html>07. tawabi3</A><BR>
+        <A HREF=08_asmaaul_mabniyy.html>08. asmaaul mabniyy</A><BR>
+    
+    
+        <BR><HR>
+        <H4>Individual Lessons:</H4>
+        <div id="app" Xclass=container>
 
-    <HR>
+            <div v-for='(lesson, name, index) in hnmeta.lessons'>
+                <div>{{ lesson.title || (name + '. Hidayatun Nahwn Lesson ' + name) }}</div>
+                <span v-if="lesson.slides">
+                    <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pdf':'') " target=_>Slides</A>
+                    &nbsp;&nbsp;
+                </span>
+                <span v-if="lesson.yt">
+                    <span v-if="!Array.isArray(lesson.yt)">
+                        <A :href="lesson.yt" target=_>Video</A>
+                    </span>
+                    <span v-if="Array.isArray(lesson.yt)">
+                        Videos:
+                        <span v-for="(part, index) in lesson.yt">
+                            <A :href="part" target=_>Part {{ index+1 }}</A>
+                            &nbsp;
+                        </span>
+                    </span>
+                    &nbsp;&nbsp;
+                </span>
+                <HR>
+            </div>
+        <BR>
+        </div>
+
+        
+        <BR><BR>Miscellaneous:<BR>
+            <A HREF=Quran_adad.html>3adad (Numbers): in Qur'aan</A><BR>
+                
+            <BR><BR>
+            <A HREF="book.html">Book</A>  (Tutorial: see how it <A href="tutorial_HN_notes.gif" target=_>works</A>)
+            <BR><BR>
+        <HR>
         <div>
-           Credits:<BR/>
-          <ul>
+            Credits:<BR/>
+            <ul>
             <li><a href=https://ejtaal.net/hidayatun-nahw/hidayatun-nahw.html# target=_>ejtaal.net</A> HN notes</li>
             <li><a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD" target=_>Al-Qalam institute</A> youtube channel</li>
             <li><a href="https://www.alqalaminstitute.org/resources" target=_>https://www.alqalaminstitute.org/resources</a></li>
-          </ul>
+            </ul>
         </div>
+        <script src="js/hn.js"   charset="utf-8"      ></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    hnmeta: hnmeta,
+                },
+            });
+        </script>
+  </body>
+</html>
