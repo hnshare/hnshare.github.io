@@ -33,7 +33,7 @@
         <div id="app" Xclass=container>
 
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
-                <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? (name+'. ') :'') + lesson.title) : (name + '. Hidayatun Nahwn Lesson ' + name) }}</div>
+                <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? (name+'. ') :'') + lesson.title) : (name + '. Hidayatun Nahw Lesson ' + name) }}</div>
                 <span v-if="lesson.slides">
                     <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pdf':'') " target=_>Slides</A>
                     &nbsp;&nbsp;
