@@ -1,8 +1,47 @@
  var hnmeta = {
     lessons: {
 
+        
+        1: {yt: ['https://www.youtube.com/watch?v=FfhrWYOnlJ8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=1', 'https://www.youtube.com/watch?v=1kHPmlw0umY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=2', 'https://www.youtube.com/watch?v=nq0RsUi8k_0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=3'],},
+        2: {yt: 'https://www.youtube.com/watch?v=TiRCbMsLVZI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=4',},
+        3: {yt: 'https://www.youtube.com/watch?v=Wt61BfYHj20&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=5',},
+        4: {yt: ['https://www.youtube.com/watch?v=L_4UW5kJpD8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=6', 'https://www.youtube.com/watch?v=4PStsBsO6II&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=7',],},
+        5: {yt: ['https://www.youtube.com/watch?v=ZtTBJRL0Whw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=8', 'https://www.youtube.com/watch?v=x1Tz5k-8vF0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=9', 'https://www.youtube.com/watch?v=kHCas-zyvmQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=10',],},
+        6: {yt: ['https://www.youtube.com/watch?v=_KpYXXnLhMk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=11', 'https://www.youtube.com/watch?v=rg3l9pv7Kk8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=12',],},
+        7: {yt: ['https://www.youtube.com/watch?v=_WF_H5aUdnU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=13', 'https://www.youtube.com/watch?v=ffxyEs6V8_8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=14',],},
+        8: {yt: ['https://www.youtube.com/watch?v=QGFOVdtUFE8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=15', 'https://www.youtube.com/watch?v=HvWuLohYpSE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=16',],},
+        9: {yt: 'https://www.youtube.com/watch?v=odHlNoFNklk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=17',},
+        
+        10: {yt: ['https://www.youtube.com/watch?v=9QlwG7f8bZ8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=18', 'https://www.youtube.com/watch?v=5-H7LEYvwF4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=19'], },
+        11: {yt: 'https://www.youtube.com/watch?v=0hZbf0oOZpA&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=20',},
+        12: {yt: ['https://www.youtube.com/watch?v=eG04Qp5_sDQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=21', 'https://www.youtube.com/watch?v=kmwmsoMhAPU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=22', 'https://www.youtube.com/watch?v=j92nKcpUCJY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=23', 'https://www.youtube.com/watch?v=H1JiqBGXV2o&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=24', 'https://www.youtube.com/watch?v=6AYjiZEPhgk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=25', 'https://www.youtube.com/watch?v=SpAvgHtgb_M&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=26', 'https://www.youtube.com/watch?v=NHNY82z9GYs&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=27', 'https://www.youtube.com/watch?v=MEK5XIlMJKE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=28', 'https://www.youtube.com/watch?v=z_JTmp1hOPo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=29', ],},
+        13: {yt: ['https://www.youtube.com/watch?v=5QJwveQ18lw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=30', 'https://www.youtube.com/watch?v=cNLgpqhsRrE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=31', 'https://www.youtube.com/watch?v=EUiGPJ3MDL4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=32', 'https://www.youtube.com/watch?v=IN3lWUmxe-0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=33', 'https://www.youtube.com/watch?v=hP6z7hRCXbU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=34', 'https://www.youtube.com/watch?v=qHZuW5RyytI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=35', 'https://www.youtube.com/watch?v=3PqryQ-m-hk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=36', 'https://www.youtube.com/watch?v=2Sx7Lk6jqnU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=37', 'https://www.youtube.com/watch?v=VO_6nQgZ0U4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=38', 'https://www.youtube.com/watch?v=catrHU-oHMc&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=39', 'https://www.youtube.com/watch?v=UvvV1SvPHeo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=40', 'https://www.youtube.com/watch?v=cEeYPXNs96I&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=41', 'https://www.youtube.com/watch?v=PQXhWDg0e50&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=42', 'https://www.youtube.com/watch?v=NWyuMx2yNgo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=43',  ],},
+        14: {yt: ['https://www.youtube.com/watch?v=xXJfOKtrtxk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=44', 'https://www.youtube.com/watch?v=nj-nYXvI4cg&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=45', 'https://www.youtube.com/watch?v=rx4M-mD_I_o&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=46', 'https://www.youtube.com/watch?v=2ZA2GjiiIlg&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=47', 'https://www.youtube.com/watch?v=iTzMkiCFLQk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=48', 'https://www.youtube.com/watch?v=cRx4SjcYXvw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=49', ]},
+        15: {yt: [ 'https://www.youtube.com/watch?v=IIa6gH72_YU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=50', 'https://www.youtube.com/watch?v=_cnGFDzkNBI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=51', 'https://www.youtube.com/watch?v=7RK9zlVhOIQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=52', 'https://www.youtube.com/watch?v=M2OkpxJGeIw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=53', 'https://www.youtube.com/watch?v=NL7UiQWt6kE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=54', ],},
+        16: {yt: ['https://www.youtube.com/watch?v=19nvnyk4WV0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=55', 'https://www.youtube.com/watch?v=TPBbzwu7JPI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=56',],},
+        17: {yt: ['https://www.youtube.com/watch?v=o6cMWhSkDag&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=57', 'https://www.youtube.com/watch?v=IuSYlqdGDsc&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=58', 'https://www.youtube.com/watch?v=oInXWANsWLg&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=59', 'https://www.youtube.com/watch?v=oWZWXV8qfUE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=60',],},
+        18: {yt: 'https://www.youtube.com/watch?v=4BT4o7N3H-Q&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=61',},
+        19: {yt: 'https://www.youtube.com/watch?v=O0f9rYE4WOA&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=62',},
+        
+        20: {yt: 'https://www.youtube.com/watch?v=UD1QcXDMhpM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=63',},
+        21: {yt: 'https://www.youtube.com/watch?v=IHj8N16G-1E&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=64',},
+        22: {yt: 'https://www.youtube.com/watch?v=guUhCGthAtY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=65',},
+        23: {yt: ['https://www.youtube.com/watch?v=Eo0649-FXeQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=66', 'https://www.youtube.com/watch?v=5daiBY2UQv4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=67', 'https://www.youtube.com/watch?v=Th4zj4PNflo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=68', 'https://www.youtube.com/watch?v=hPjsVhYwFro&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=69', 'https://www.youtube.com/watch?v=FXwJgBhSVWc&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=70', 'https://www.youtube.com/watch?v=uG6HwMRSsxQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=71'],},
+        24: {yt: 'https://www.youtube.com/watch?v=Z5Z9yAAd1uQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=72',},
+        25: {yt: 'https://www.youtube.com/watch?v=xb00g1qbV3Q&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=73',},
+        26: {yt: ['https://www.youtube.com/watch?v=4LS30x-3oAQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=74', 'https://www.youtube.com/watch?v=7FFr_MH7Y3U&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=75', 'https://www.youtube.com/watch?v=SW2N5x24Rdw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=76'],},
+        27: {yt: ['https://www.youtube.com/watch?v=1NWnCnlphHI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=77', 'https://www.youtube.com/watch?v=WyaGNsos5PQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=78', 'https://www.youtube.com/watch?v=X8FZ14Za33Q&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=79', ],},
+        28: {yt: ['https://www.youtube.com/watch?v=-y22SSeiuFM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=80', 'https://www.youtube.com/watch?v=fs0LaXkpcTY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=81',],},
+        29: {yt: ['https://www.youtube.com/watch?v=yN9XEPlpxFs&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=82', 'https://www.youtube.com/watch?v=FSv_FiqirBM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=83', 'https://www.youtube.com/watch?v=MUBfDX49FxQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=84', 'https://www.youtube.com/watch?v=vtIjPPAsI7k&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=85', 'https://www.youtube.com/watch?v=a2HQYmQ2_os&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=86', 'https://www.youtube.com/watch?v=tV6ZUat9KQM&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=87', ],},
 
-
+        30: {
+            yt: 'https://www.youtube.com/watch?v=Vhl4n7gut94&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=88',
+        },
+        31: {
+            yt: 'https://www.youtube.com/watch?v=gmOn5D2-Ko4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=89',
+        },
+        32: {yt: 'https://www.youtube.com/watch?v=vb8VJFSojrE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=90',},
+        33: {yt: 'https://www.youtube.com/watch?v=AxbvJEmrYAY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=91',},
         34: {
             title: '34. Majroor - Hidayatun Nahw Lesson 34 المجرور',
             slides: 'Hidayatun Nahw 34 القسم الأول، الباب الأول، المقصد الثالث',
