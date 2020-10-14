@@ -159,7 +159,7 @@ var hnmeta = {
         48: {
             title: 'asmaaul Kinaayaat. Hidayatun Nahw Lesson 48 الكنايات',
             yt: 'https://www.youtube.com/watch?v=afsVoci-Ej8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=109',
-            slides: 'Hidayatun Nahw 48 القسم الأول، الباب الثاني، الاسم المبني، الفصل السابع، الكنايات.pdf',
+            slides: 'Hidayatun Nahw 48 القسم الأول، الباب الثاني، الاسم المبني، الفصل السابع، الكنايات',
         },
         49: {
             title: 'Zuruwf mabniyyah - Hidayatun Nahw Lesson 49 الظروف المبنية',
@@ -172,12 +172,12 @@ var hnmeta = {
 
         50: {
             title: '50. Khatima - 10 sections',
-            slides: 'Hidayatun Nahw 50 القسم الأول، الخاتمة، الفصل الأول التعريف والتنكير.pdf',
+            slides: 'Hidayatun Nahw 50 القسم الأول، الخاتمة، الفصل الأول التعريف والتنكير',
             yt: 'https://www.youtube.com/watch?v=eA2vO2_NNDo&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=111'
         },
         51: {
             title: '51. Hidayatun Nahw Lesson 51 أسماء العدد (Numbers)            ',
-            slides: 'Hidayatun Nahw 51 القسم الأول، الخاتمة، الفصل الثاني أسماء العدد.pdf',
+            slides: 'Hidayatun Nahw 51 القسم الأول، الخاتمة، الفصل الثاني أسماء العدد',
             yt: 'https://www.youtube.com/watch?v=_RD2Hs_KXsU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=112',
         },
         52: {
@@ -225,7 +225,7 @@ var hnmeta = {
 
         60: {
             title: '60. Hidayatun Nahw Lesson 60 الفعل',
-            slides: 'Hidayatun Nahw 60 القسم الثاني،.pdf',
+            slides: 'Hidayatun Nahw 60 القسم الثاني،',
             yt: 'https://www.youtube.com/watch?v=CRRi2_mNk0M&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=121',
 
         },
