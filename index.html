@@ -34,8 +34,9 @@
 
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? (name+'. ') :'') + lesson.title) : (name + '. Hidayatun Nahw Lesson ' + name) }}</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span v-if="lesson.slides">
-                    <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pdf':'') " target=_>Slides</A>
+                    <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pdf':'') " target=_slide>Slides</A>
                     &nbsp;&nbsp;
                 </span>
                 <span v-if="lesson.yt">
