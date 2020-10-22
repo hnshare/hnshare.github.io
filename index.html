@@ -11,40 +11,35 @@
         .nodecontent{
             font-size: x-large
         }
+		.bookpage{
+			max-width: 33%;
+		}
     </style>
     
     <div>
       What is this? It's a mashup of various online resources related to Hidayatun Nahw textbook to help in learning Arabic grammar. Credit goes to resources listed at end.<BR/><BR/>
     </div><HR>
         
-        <H4>Grouped Lessons:</H4>
-        <A HREF=01_about_nahw.html>01. about Nahw</A><BR>
-        <A HREF=02_mu3rab_1.html>02. mu3rab - 9 categories of Ism i3raab</A><BR>
-        <A HREF=03_mu3rab_2.html>03. mu3rab - ghair munsarif causes</A><BR>
-        <A HREF=04_marfoo3aat.html>04. marfoo3aat</A><BR>
-        <A HREF=05_mansoobaat.html>05. mansoobaat</A><BR>
-        <A HREF=06_majrooraat.html>06. majrooraat</A><BR>
-        <A HREF=07_tawabi3.html>07. tawabi3</A><BR>
-        <A HREF=08_asmaaul_mabniyy.html>08. asmaaul mabniyy</A><BR>
-    
-    
-        <BR><HR>
         <H4>Individual Lessons:</H4>
         <div id="app" Xclass=container>
 
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? (name+'. ') :'') + lesson.title) : (name + '. Hidayatun Nahw Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span v-if="lesson.slides">
+                <span>
+                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Study Notes</A>
+                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
+                    &nbsp;&nbsp;
+				</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Ext links: 
+                <span v-if="lesson.slides"> <!-- Slides -->
                     <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pptx.pdf':'') " target=_slide>Slides</A>
                     &nbsp;&nbsp;
                 </span>
-                <span>
-                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Notes</A>
-                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
-                    &nbsp;&nbsp;
-                </span>
-                <span v-if="lesson.yt">
+                <span v-if="lesson.yt"> <!-- Videos -->
                     <span v-if="!Array.isArray(lesson.yt)">
                         <A :href="lesson.yt" target=_>Video</A>
                     </span>
@@ -57,7 +52,29 @@
                     </span>
                     &nbsp;&nbsp;
                 </span>
-                <div v-if="notesName == name">
+                <!-- <div v-if="notesName == name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span v-html="notes"></span>
+                </div> -->
+                
+                <div v-if="notesName == name"> <!-- Book pages images -->
+					<span v-for="image in url_embed_page_images">
+						<IMG class=bookpage :src="image" />
+					</span>
+					<div class="speakerdeck-embed-wrapper">
+						<iframe width="560" height="315" class="speakerdeck-iframe" frameborder="0" 
+							:src="url_embed_speakerdeck" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+							style="border: 0px; background: padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; Xwidth: 660px; Xheight: 495px;">
+						</iframe>
+						<span v-for="video in url_embed_youtube">
+							<iframe width="560" height="315" 
+								:src="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+							</iframe>
+						</span>
+					</div>		
+				</div>
+
+				<div v-if="notesName == name"> <!-- Notes from Ejtaal -->
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span v-html="notes"></span>
                 </div>
@@ -66,23 +83,49 @@
         <BR>
         </div>
 
-        <BR><BR>Vocabulary:<BR>
-            <A HREF="https://docs.google.com/spreadsheets/d/1w6MhfKtD_BB_Dytg7-W7lv3nBeDSHSsojKT6RG8HOOE/edit#gid=0" target=_>Hidayatun Nahw vocabulary</A> (Work in progress)
+		<BR>
+
+		<H4>Grouped Lessons:</H4>
+		<ol>
+        	<li><A HREF=htmls/01_about_nahw.html>About Nahw</A><BR></li>
+        	<li><A HREF=htmls/02_mu3rab_1.html>Mu3rab - 9 categories of Ism i3raab</A><BR></li>
+			<li><A HREF=htmls/03_mu3rab_2.html>Mu3rab - ghair munsarif causes</A><BR></li>
+			<li><A HREF=htmls/04_marfoo3aat.html>Marfoo3aat</A><BR></li>
+			<li><A HREF=htmls/05_mansoobaat.html>Mansoobaat</A><BR></li>
+			<li><A HREF=htmls/06_majrooraat.html>Majrooraat</A><BR></li>
+			<li><A HREF=htmls/07_tawabi3.html>Tawabi3</A><BR></li>
+			<li><A HREF=htmls/08_asmaaul_mabniyy.html>Asmaaul mabniyy</A><BR></li>
+			<li>Remaining: TBD<BR></li>
+		</ol>
+    
+           
         
-        <BR><BR>Miscellaneous:<BR>
-            <A HREF=Quran_adad.html>3adad (Numbers): in Qur'aan</A><BR>
-                
-            <BR><BR>
-            <A HREF="book.html">Book</A>  (Tutorial: see how it <A href="tutorial_HN_notes.gif" target=_>works</A>)
-            <BR>Bushra book online: <A HREF="https://archive.org/stream/DarsENizamiDarjaSaniah2ndYear1/HidayaTunNahwAlBushra#mm-6">on archive.org</A>
-            <BR><BR>
+		<BR><BR><H4>Miscellaneous:</H4>
+			<ul>
+				<li>Vocabulary: <A HREF="https://docs.google.com/spreadsheets/d/1w6MhfKtD_BB_Dytg7-W7lv3nBeDSHSsojKT6RG8HOOE/edit#gid=0" target=_>Hidayatun Nahw vocabulary</A> (Work in progress)
+				</li>
+				<li>Bushra online book: <A HREF="https://archive.org/stream/DarsENizamiDarjaSaniah2ndYear1/HidayaTunNahwAlBushra#mm-6">on archive.org</A>
+				</li>
+				<li><A HREF=htmls/Quran_adad.html>3adad (Numbers): in Qur'aan</A>&nbsp;&nbsp;(taken from Mutaraadifaatil Qur'aan book)<BR>
+				</li>
+				<li>
+					Beta/concept page to selftest your HN reading: <A HREF="htmls/book.html">Book</A> (tashkil hidden and revealed on mouseover)  (Tutorial: see how it <A href="imgs/tutorial_HN_notes.gif" target=_>works</A>)
+				</li>
+			</ul>
+            
         <HR>
         <div>
-            Credits:<BR/>
+            <H3>Credits:</H3>
             <ul>
-            <li><a href=https://ejtaal.net/hidayatun-nahw/hidayatun-nahw.html# target=_>ejtaal.net</A> HN notes</li>
-            <li><a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD" target=_>Al-Qalam institute</A> youtube channel</li>
-            <li><a href="https://www.alqalaminstitute.org/resources" target=_>https://www.alqalaminstitute.org/resources</a></li>
+			<li>Videos & Slides: <a href="https://www.alqalaminstitute.org" target=_>Al-Qalam institute</A> Teachers. 
+				<ul>
+					<li>Videos: <a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD" target=_>youtube playlist</a></li>
+					<li>Slides etc: <a href="https://www.alqalaminstitute.org/resources" target=_>https://www.alqalaminstitute.org/resources</a></li>
+				  </ul>
+			</li>
+			<li>No-Tashkil HN book: <a href="https://www.shariahprogram.ca/" target=_>https://www.shariahprogram.ca/</a> and <a href="https://www.learnarabiconline.com/" target=_>https://www.learnarabiconline.com/</a> Teachers</li>
+			<li>Notes: <a href=https://ejtaal.net/hidayatun-nahw/hidayatun-nahw.html# target=_>ejtaal.net</A> HN notes</li>
+			<li>All mistakes are mine. Contact at: hnshare AT gmx .com (remove spaces)</li>
             </ul>
         </div>
 
@@ -1317,7 +1360,7 @@
                     hnmeta: hnmeta,
                     notesNode: null,
                     notes: null,
-                    notesName: null,
+					notesName: null,
                 },
                 methods: {
                     showNotes: function(name, e, lesson, index){ // console.log(arguments);
@@ -1332,12 +1375,68 @@
                             this.notesNode = notesNode;
                         }
                         var result = this.notesNode && this.notesNode.getElementsByClassName(name ) && this.notesNode.getElementsByClassName(name )[0] && this.notesNode.getElementsByClassName(name )[0].outerHTML;
-                        this.notes = result || '- not found; check back later -';
+                        this.notes = result || '- Summary notes not found; check back later -';
                         this.notesName = name;
                         console.log( name + ' notes found of length: ' + (result?result.length:result) );
                         return result;
-                    }
-                }
+					},
+					
+					padPage: function(page){
+						page = page && (page+'');
+						var paddedPage = !page ? null : page.length==3 ? page : page.length==2? ('0'+page) : page.length==1? ('00'+page) : null;
+						return paddedPage;
+					}
+				},
+				computed: {
+					lesson_meta: function(){
+						return !this.notesName ? null : this.hnmeta.lessons[ this.notesName ];
+					},
+					lessons_count: function(){
+						return Object.keys( this.hnmeta.lessons ).length;
+					},
+					lesson_next: function(){
+						return !this.notesName ? null : (1 + parseInt(this.notesName));
+					},
+					lesson_next_meta: function(){
+						var lesson_next = this.lesson_next,
+							lessons_count = this.lessons_count;
+						return !lesson_next ? null : ( (lesson_next <= lessons_count) ? this.hnmeta.lessons[ lesson_next ] : null );
+					},
+					url_embed_speakerdeck: function(){
+						var meta = this.lesson_meta;
+						var deck = meta && meta.deck;
+						return !deck ? '': ('https://speakerdeck.com/player/' + deck +'?');
+					},
+					url_embed_youtube: function(){
+						var meta = this.lesson_meta;
+						var yt = meta && meta.yt;
+						var videos = [];
+						yt = Array.isArray(yt) ? yt : [yt];
+						for(var i=0; i <= yt.length; ++i){
+							var embedCode = yt[i] && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD') && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD').length && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD')[0];
+							embedCode = embedCode && embedCode.replace('https://www.youtube.com/watch?v=', '');
+							// ex: https://www.youtube.com/watch?v=_RD2Hs_KXsU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=112"
+							var url = !embedCode ? null : ('https://www.youtube-nocookie.com/embed/' + embedCode + '?start=0');
+							if(url) videos.push(url); console.log(url);
+						}
+						return videos;
+					},
+					url_embed_page_images: function(){
+						var template = 'https://raw.githubusercontent.com/hnshare/hn-data-classic-annotated-more/main/$1.png';
+						var meta = this.lesson_meta,
+							meta_next_lesson = this.lesson_next_meta;
+						var page = meta && meta.page && parseInt(meta.page);
+						var pageEnd = meta_next_lesson && meta_next_lesson.page && parseInt(meta_next_lesson.page);
+						var pages = [];
+						// console.log([page, pageEnd, meta, meta_next_lesson]);
+						for(var i=page; i <= (pageEnd || page); ++i){
+							var paddedPage = this.padPage( i );
+							var url = !paddedPage ? null : template.replace(/\$1/g, paddedPage); 
+							pages.push(url); console.log(url);
+						}
+						return pages;
+					},
+				}
             });
         </script>
   </body>
