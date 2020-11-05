@@ -62,7 +62,7 @@
 						<IMG class=bookpage :src="image" />
 					</span>
 					<div class="speakerdeck-embed-wrapper">
-						<iframe width="560" height="315" class="speakerdeck-iframe" frameborder="0" 
+						<iframe v-if="url_embed_speakerdeck" width="560" height="315" class="speakerdeck-iframe" frameborder="0" 
 							:src="url_embed_speakerdeck" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 							style="border: 0px; background: padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; Xwidth: 660px; Xheight: 495px;">
 						</iframe>
