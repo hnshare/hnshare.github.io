@@ -34,12 +34,14 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				Ext links: 
-                <span v-if="lesson.slides"> <!-- Slides -->
+				<span v-if="lesson.slides || lesson.yt">Ext links: </span>
+				<span v-if="lesson.slides"> <!-- Slides -->
+					<img src="imgs/icon.pdf.svg" alt="notes pdf" width=18>
                     <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pptx.pdf':'') " target=_slide>Slides</A>
                     &nbsp;&nbsp;
                 </span>
-                <span v-if="lesson.yt"> <!-- Videos -->
+				<span v-if="lesson.yt"> <!-- Videos -->
+					<img src="imgs/icon.yt.svg" alt="notes pdf" width=18>
                     <span v-if="!Array.isArray(lesson.yt)">
                         <A :href="lesson.yt" target=_>Video</A>
                     </span>
