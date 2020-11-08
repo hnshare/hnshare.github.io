@@ -14,7 +14,6 @@ Section 1/1.11 النهي.mp3
 Section 1/1.12 اسم الفاعل والمفعول.mp3
 Section 1/1.13 التصريف الصغير.mp3
 Section 1/1.14 فتح يفتح (Complete).mp3
-Section 1/DELME
 Section 2/2.1 تفعيل.mp3
 Section 2/2.2 باب مفاعلة.mp3
 Section 2/2.3 باب إفعال.mp3
@@ -25,7 +24,6 @@ Section 2/2.7 باب افتعال.mp3
 Section 2/2.8 باب استفعال.mp3
 Section 2/2.9 باب افعيعال.mp3
 Section 2/2.10 باب فعللة.mp3
-Section 2/DELME
 Section 3/3.1 مهموز، فتح يفتح.mp3
 Section 3/3.2 مهموز، سمع يسمع.mp3
 Section 3/3.3 مهموز ضرب يضرب.mp3
@@ -37,7 +35,6 @@ Section 3/3.8 مهموز، تفعل.mp3
 Section 3/3.9 مهموز، تفاعل.mp3
 Section 3/3.10 مهموز، افتعال.mp3
 Section 3/3.11 مهموز، استفعال.mp3
-Section 3/DELME
 Section 4/4.1.1 وضع يضع.mp3
 Section 4/4.1.2 وجل يوجل.mp3
 Section 4/4.1.3 وعد يعد.mp3
@@ -58,7 +55,6 @@ Section 4/4.2.6 أيقن يوقن.mp3
 Section 4/4.2.7 تيسّر يتيسّر.mp3
 Section 4/4.2.8 تيامن يتيامن.mp3
 Section 4/4.2.9 استيقن يستيقن.mp3
-Section 4/DELME
 Section 5/5.1 خاف يخاف.mp3
 Section 5/5.2 باع يبيع.mp3
 Section 5/5.3 قال يقول.mp3
@@ -70,7 +66,6 @@ Section 5/5.8 تحاور يتحاور.mp3
 Section 5/5.9 انقاد ينقاد.mp3
 Section 5/5.10 احتاج يحتاج.mp3
 Section 5/5.11 استقام يستقيم.mp3
-Section 5/DELME
 Section 6/6.1 سعى يسعى.mp3
 Section 6/6.2 رضي يرضى.mp3
 Section 6/6.3 رمى يرمي.mp3
@@ -83,7 +78,6 @@ Section 6/6.9 تداعى يتداعى.mp3
 Section 6/6.10 انقضى ينقضي.mp3
 Section 6/6.11 ابتلى يبتلي.mp3
 Section 6/6.12 استعلى يستعلي.mp3
-Section 6/DELME
 Section 7/7a.1 وفى يفي.mp3
 Section 7/7a.2 ولي يلي.mp3
 Section 7/7a.3 توفّى يتوفّى.mp3
@@ -97,7 +91,6 @@ Section 7/7b.7 تداوى يتداوى.mp3
 Section 7/7b.8 انزوى ينزوي.mp3
 Section 7/7b.9 استوى يستوي.mp3
 Section 7/7b.10 استولى يستولي.mp3
-Section 7/DELME
 Section 8/8.1 وأد يئد.mp3
 Section 8/8.2 شاء يشاء.mp3
 Section 8/8.3 آد يئيد.mp3
@@ -106,7 +99,6 @@ Section 8/8.5 رأى يرى.mp3
 Section 8/8.6 أتى ياتي.mp3
 Section 8/8.7 الا يالو.mp3
 Section 8/8.8 أوى ياوي.mp3
-Section 8/DELME
 Section 9/9.1 برّ يبرّ.mp3
 Section 9/9.2 فرّ يفرّ.mp3
 Section 9/9.3 مدّ يمدّ.mp3
@@ -118,8 +110,8 @@ Section 9/9.8 تحاجّ يتحاجّ.mp3
 Section 9/9.9 انشقّ ينشقّ.mp3
 Section 9/9.10 اشتدّ يشتدّ.mp3
 Section 9/9.11 احمرّ يحمرّ.mp3
-Section 9/9.12 استحبّ يستحبّ.mp3
-Section 9/DELME`,
+Section 9/9.12 استحبّ يستحبّ.mp3\
+`,
 
     lessons: [
         {
