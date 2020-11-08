@@ -27,7 +27,7 @@
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
-                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Study & Practice</A>
+                    <A href=#0 @click="showNotes(name, $event, lesson, index)">See video</A>
                     <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
                     &nbsp;&nbsp;
 				</span>
@@ -128,7 +128,7 @@
                             this.notesNode = notesNode;
                         }
                         var result = this.notesNode && this.notesNode.getElementsByClassName(name ) && this.notesNode.getElementsByClassName(name )[0] && this.notesNode.getElementsByClassName(name )[0].outerHTML;
-                        this.notes = result || '- Summary notes not found; check back later -';
+                        this.notes = result || ''; // '- Summary notes not found; check back later -';
                         this.notesName = name;
                         console.log( name + ' notes found of length: ' + (result?result.length:result) );
                         return result;
@@ -142,7 +142,7 @@
 				},
 				computed: {
 					lesson_meta: function(){
-						return !this.notesName ? null : this.hnmeta.lessons[ this.notesName ];
+						return !this.notesName && this.notesName != 0 ? null : this.hnmeta.lessons[ this.notesName ];
 					},
 					lessons_count: function(){
 						return Object.keys( this.hnmeta.lessons ).length;
