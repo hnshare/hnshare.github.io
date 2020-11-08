@@ -71,8 +71,24 @@
 			</div>
 
 
-        <H4>Lessons:</H4>
-            <div v-for='(lesson, name, index) in hnmeta.lessons'>
+		<H4>Lessons:</H4>
+			Select Section: 
+			<input type="radio" id="1" value="1" v-model="recSection"><label for="1">1</label>
+			<input type="radio" id="2" value="2" v-model="recSection"><label for="2">2</label>
+			<input type="radio" id="3" value="3" v-model="recSection"><label for="3">3</label>
+			<input type="radio" id="4" value="4" v-model="recSection"><label for="4">4</label>
+			<input type="radio" id="5" value="5" v-model="recSection"><label for="5">5</label>
+			<input type="radio" id="6" value="6" v-model="recSection"><label for="6">6</label>
+			<input type="radio" id="7" value="7" v-model="recSection"><label for="7">7</label>
+			<input type="radio" id="8" value="8" v-model="recSection"><label for="8">8</label>
+			<input type="radio" id="9" value="9" v-model="recSection"><label for="9">9</label>
+			<input type="radio" id="10" value="10" v-model="recSection"><label for="10">10</label>
+			<!-- <span>Picked: {{ recSection }}</span> -->
+			<BR>
+				<div v-for='(lesson, name, index) in hnmeta.sectionLessons'>
+					{{lesson }} {{ name }} {{ index }}
+				</div>
+            <div v-for='(lesson, name, index) in hnmeta.sectionLessons'>
                 <div class=nodecontent>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Duruwsul Balagha Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
@@ -230,6 +246,13 @@
 					},
 					sectionRecordings: function(){
 						return _.filter(this.recordings, x => x.indexOf('Section ' + this.recSection +'/') != -1);
+					},
+					sectionLessons: function(){
+						var section = this.recSection;
+						var lessonsCount = !this.hnmeta.lessons ? 0 : this.hnmeta.lessons.length;
+						var start = (section - 1)*25;
+						var end = (section)*25;
+						return this.hnmeta.lessons && this.hnmeta.lessons.slice(start, end);
 					},
 					lesson_meta: function(){
 						return !this.notesName && this.notesName != 0 ? null : this.hnmeta.lessons[ this.notesName ];
