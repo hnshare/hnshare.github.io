@@ -18,11 +18,29 @@
     
     <div>
       What is this? It's a mashup of various online resources related to Sarf to help in learning Arabic Morphology. Credit goes to resources listed at end.<BR/><BR/>
-    </div><HR>
-        
-        <H4>Lessons:</H4>
-        <div id="app" Xclass=container>
+	</div><HR>
+		
+		<div id="app" Xclass=container>
 
+		<H4>Recordings (for practice):</H4>
+		<div>
+			<span v-for="audio in recordings">
+				<H4>{{ audio }}</H4>
+				<span>
+                    <A href=#0 @click="showRecording(audio, $event)">Play audio</A>
+                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
+                    &nbsp;&nbsp;
+				</span>
+				<div v-if="recordingsName == audio"> <!-- Book pages images -->
+					<audio controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
+						Your browser does not support the <code>audio</code> element.
+					   </audio>	
+				</div>
+			</span>
+		</div>
+
+
+        <H4>Lessons:</H4>
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -114,8 +132,13 @@
                     notesNode: null,
                     notes: null,
 					notesName: null,
+					recordingsName: null,
                 },
                 methods: {
+					showRecording: function(audio, e){
+						e.stopPropagation();
+						this.recordingsName = audio;
+					},
                     showNotes: function(name, e, lesson, index){ // console.log(arguments);
                         e.stopPropagation();
                         var ditto = name == this.notesName;
@@ -141,6 +164,9 @@
 					}
 				},
 				computed: {
+					recordings: function(){
+						return this.hnmeta.recordings.split('\n');					
+					},
 					lesson_meta: function(){
 						return !this.notesName && this.notesName != 0 ? null : this.hnmeta.lessons[ this.notesName ];
 					},
@@ -159,6 +185,12 @@
 						var meta = this.lesson_meta;
 						var deck = meta && meta.deck;
 						return !deck ? '': ('https://speakerdeck.com/player/' + deck +'?slide=3');
+					},
+					url_embed_audio: function(){
+						var meta = this.recordings;
+						var audio = this.recordingsName;
+						var urlPrefix = 'https://github.com/hnshare/sarf-audio/blob/main/';
+						return urlPrefix + audio;
 					},
 					url_embed_youtube: function(){
 						var meta = this.lesson_meta;
