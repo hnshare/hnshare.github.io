@@ -72,7 +72,7 @@
 
 
 		<H4>Lessons:</H4>
-			Select Section: 
+			<!-- Select Section: 
 			<input type="radio" id="1" value="1" v-model="recSection"><label for="1">1</label>
 			<input type="radio" id="2" value="2" v-model="recSection"><label for="2">2</label>
 			<input type="radio" id="3" value="3" v-model="recSection"><label for="3">3</label>
@@ -83,12 +83,14 @@
 			<input type="radio" id="8" value="8" v-model="recSection"><label for="8">8</label>
 			<input type="radio" id="9" value="9" v-model="recSection"><label for="9">9</label>
 			<input type="radio" id="10" value="10" v-model="recSection"><label for="10">10</label>
+			-->
 			<!-- <span>Picked: {{ recSection }}</span> -->
+			<!--
 			<BR>
 				<div v-for='(lesson, name, index) in hnmeta.sectionLessons'>
 					{{lesson }} {{ name }} {{ index }}
-				</div>
-            <div v-for='(lesson, name, index) in hnmeta.sectionLessons'>
+				</div> -->
+            <div v-for='(lesson, name, index) in hnmeta.lessons'>
                 <div class=nodecontent>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Duruwsul Balagha Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
