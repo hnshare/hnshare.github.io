@@ -1,4 +1,126 @@
 var hnmeta = {
+    recordings: `\
+Section 1/1.1.mp3
+Section 1/1.2 المضارع.mp3
+Section 1/1.3 سمع يسمع.mp3
+Section 1/1.4 ضرب يضرب.mp3
+Section 1/1.5 كرم.mp3
+Section 1/1.5 نصر.mp3
+Section 1/1.6  حسب.mp3
+Section 1/1.8 الماضي المجهول.mp3
+Section 1/1.9 المضارع المجهول.mp3
+Section 1/1.10 الأمر.mp3
+Section 1/1.11 النهي.mp3
+Section 1/1.12 اسم الفاعل والمفعول.mp3
+Section 1/1.13 التصريف الصغير.mp3
+Section 1/1.14 فتح يفتح (Complete).mp3
+Section 1/DELME
+Section 2/2.1 تفعيل.mp3
+Section 2/2.2 باب مفاعلة.mp3
+Section 2/2.3 باب إفعال.mp3
+Section 2/2.4 باب تفعل.mp3
+Section 2/2.5 باب تفاعل.mp3
+Section 2/2.6 باب انفعال.mp3
+Section 2/2.7 باب افتعال.mp3
+Section 2/2.8 باب استفعال.mp3
+Section 2/2.9 باب افعيعال.mp3
+Section 2/2.10 باب فعللة.mp3
+Section 2/DELME
+Section 3/3.1 مهموز، فتح يفتح.mp3
+Section 3/3.2 مهموز، سمع يسمع.mp3
+Section 3/3.3 مهموز ضرب يضرب.mp3
+Section 3/3.4 مهموز، نصر ينصر.mp3
+Section 3/3.5 مهموز، تفعيل.mp3
+Section 3/3.6  مهموز، مفاعلة.mp3
+Section 3/3.7 مهموز، إفعال.mp3
+Section 3/3.8 مهموز، تفعل.mp3
+Section 3/3.9 مهموز، تفاعل.mp3
+Section 3/3.10 مهموز، افتعال.mp3
+Section 3/3.11 مهموز، استفعال.mp3
+Section 3/DELME
+Section 4/4.1.1 وضع يضع.mp3
+Section 4/4.1.2 وجل يوجل.mp3
+Section 4/4.1.3 وعد يعد.mp3
+Section 4/4.1.4 ورث يرث.mp3
+Section 4/4.1.5 وحّد يوحّد.mp3
+Section 4/4.1.6 واصل يواصل.mp3
+Section 4/4.1.7 أوصل يوصل.mp3
+Section 4/4.1.8 توكّل يتوكّل.mp3
+Section 4/4.1.9 تواتر يتواتر.mp3
+Section 4/4.1.10 اتّسع يتّسع.mp3
+Section 4/4.1.11 استوقد يستوقد.mp3
+Section 4/4.2.1 ينع يينع.mp3
+Section 4/4.2.2 يبس ييبس.mp3
+Section 4/4.2.3 يتم ييتم.mp3
+Section 4/4.2.4 يسّر ييسّر.mp3
+Section 4/4.2.5 ياسر يياسر.mp3
+Section 4/4.2.6 أيقن يوقن.mp3
+Section 4/4.2.7 تيسّر يتيسّر.mp3
+Section 4/4.2.8 تيامن يتيامن.mp3
+Section 4/4.2.9 استيقن يستيقن.mp3
+Section 4/DELME
+Section 5/5.1 خاف يخاف.mp3
+Section 5/5.2 باع يبيع.mp3
+Section 5/5.3 قال يقول.mp3
+Section 5/5.4 صوّر يصوّر.mp3
+Section 5/5.5 ناول يناول.mp3
+Section 5/5.6 أراد يريد.mp3
+Section 5/5.7 تبيّن يتبيّن.mp3
+Section 5/5.8 تحاور يتحاور.mp3
+Section 5/5.9 انقاد ينقاد.mp3
+Section 5/5.10 احتاج يحتاج.mp3
+Section 5/5.11 استقام يستقيم.mp3
+Section 5/DELME
+Section 6/6.1 سعى يسعى.mp3
+Section 6/6.2 رضي يرضى.mp3
+Section 6/6.3 رمى يرمي.mp3
+Section 6/6.4 دعا يدعو.mp3
+Section 6/6.5 صلّى يصلّي.mp3
+Section 6/6.6 نادى ينادي.mp3
+Section 6/6.7 أبقى يبقي.mp3
+Section 6/6.8 تلقّى يتلقّى.mp3
+Section 6/6.9 تداعى يتداعى.mp3
+Section 6/6.10 انقضى ينقضي.mp3
+Section 6/6.11 ابتلى يبتلي.mp3
+Section 6/6.12 استعلى يستعلي.mp3
+Section 6/DELME
+Section 7/7a.1 وفى يفي.mp3
+Section 7/7a.2 ولي يلي.mp3
+Section 7/7a.3 توفّى يتوفّى.mp3
+Section 7/7b.1 قوي يقوى.mp3
+Section 7/7b.2 روى يروي.mp3
+Section 7/7b.3 سوّى يسوّي.mp3
+Section 7/7b.4 ساوى يساوي.mp3
+Section 7/7b.5 أغوى يغوي.mp3
+Section 7/7b.6 تقوّى يتقوّى.mp3
+Section 7/7b.7 تداوى يتداوى.mp3
+Section 7/7b.8 انزوى ينزوي.mp3
+Section 7/7b.9 استوى يستوي.mp3
+Section 7/7b.10 استولى يستولي.mp3
+Section 7/DELME
+Section 8/8.1 وأد يئد.mp3
+Section 8/8.2 شاء يشاء.mp3
+Section 8/8.3 آد يئيد.mp3
+Section 8/8.4 آل يئول.mp3
+Section 8/8.5 رأى يرى.mp3
+Section 8/8.6 أتى ياتي.mp3
+Section 8/8.7 الا يالو.mp3
+Section 8/8.8 أوى ياوي.mp3
+Section 8/DELME
+Section 9/9.1 برّ يبرّ.mp3
+Section 9/9.2 فرّ يفرّ.mp3
+Section 9/9.3 مدّ يمدّ.mp3
+Section 9/9.4 حبّب يحبّب.mp3
+Section 9/9.5 شاقّ يشاقّ.mp3
+Section 9/9.6 أحبّ يحبّ.mp3
+Section 9/9.7 تحقّق يتحقّق.mp3
+Section 9/9.8 تحاجّ يتحاجّ.mp3
+Section 9/9.9 انشقّ ينشقّ.mp3
+Section 9/9.10 اشتدّ يشتدّ.mp3
+Section 9/9.11 احمرّ يحمرّ.mp3
+Section 9/9.12 استحبّ يستحبّ.mp3
+Section 9/DELME`,
+
     lessons: [
         {
           "title": "First Steps To Understanding Sarf 1",
