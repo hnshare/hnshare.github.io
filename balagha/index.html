@@ -70,10 +70,10 @@
 	<BR><BR><HR>
 			</div>
 
-			
+
         <H4>Lessons:</H4>
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
-                <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
+                <div class=nodecontent>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Duruwsul Balagha Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
                     <A href=#0 @click="showNotes(name, $event, lesson, index)">See video</A>
