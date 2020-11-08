@@ -5,7 +5,7 @@
     <script src="js/lib/lodash.js"></script>
   </head>
   <body>
-    <H1>Sarf lessons, practice resources</H1>
+    <H1>Sarf practice recordings, Lessons</H1>
 
     <style>
         .nodecontent{
@@ -24,7 +24,20 @@
 
 		<H4>Recordings (for practice):</H4>
 		<div>
-			<span v-for="audio in recordings">
+			Select Section: 
+			<input type="radio" id="1" value="1" v-model="recSection"><label for="1">1</label>
+			<input type="radio" id="2" value="2" v-model="recSection"><label for="2">2</label>
+			<input type="radio" id="3" value="3" v-model="recSection"><label for="3">3</label>
+			<input type="radio" id="4" value="4" v-model="recSection"><label for="4">4</label>
+			<input type="radio" id="5" value="5" v-model="recSection"><label for="5">5</label>
+			<input type="radio" id="6" value="6" v-model="recSection"><label for="6">6</label>
+			<input type="radio" id="7" value="7" v-model="recSection"><label for="7">7</label>
+			<input type="radio" id="8" value="8" v-model="recSection"><label for="8">8</label>
+			<input type="radio" id="9" value="9" v-model="recSection"><label for="9">9</label>
+			<!-- <span>Picked: {{ recSection }}</span> -->
+
+
+			<span v-for="audio in sectionRecordings">
 				<H4>{{ audio }}</H4>
 				<span>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -142,6 +155,7 @@
                     notes: null,
 					notesName: null,
 					recordingsName: null,
+					recSection: 1,
                 },
                 methods: {
 					showRecording: function(audio, e){
@@ -180,6 +194,9 @@
 				computed: {
 					recordings: function(){
 						return this.hnmeta.recordings.split('\n');					
+					},
+					sectionRecordings: function(){
+						return _.filter(this.recordings, x => x.indexOf('Section ' + this.recSection +'/') != -1);
 					},
 					lesson_meta: function(){
 						return !this.notesName && this.notesName != 0 ? null : this.hnmeta.lessons[ this.notesName ];
