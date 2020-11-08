@@ -27,7 +27,7 @@
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>
-                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Study Notes</A>
+                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Study & Practice</A>
                     <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
                     &nbsp;&nbsp;
 				</span>
@@ -164,9 +164,10 @@
 						var meta = this.lesson_meta;
 						var yt = meta && meta.yt;
 						var videos = [];
+						var playlist = '&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc';
 						yt = Array.isArray(yt) ? yt : [yt];
 						for(var i=0; i <= yt.length; ++i){
-							var embedCode = yt[i] && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD') && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD').length && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD')[0];
+							var embedCode = yt[i] && yt[i].split(playlist) && yt[i].split(playlist).length && yt[i].split(playlist)[0];
 							embedCode = embedCode && embedCode.replace('https://www.youtube.com/watch?v=', '');
 							// ex: https://www.youtube.com/watch?v=_RD2Hs_KXsU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=112"
 							var url = !embedCode ? null : ('https://www.youtube-nocookie.com/embed/' + embedCode + '?start=0');
