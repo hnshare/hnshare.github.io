@@ -35,29 +35,29 @@
 			<input type="radio" id="8" value="8" v-model="recSection"><label for="8">8</label>
 			<input type="radio" id="9" value="9" v-model="recSection"><label for="9">9</label>
 			<!-- <span>Picked: {{ recSection }}</span> -->
-
+			<BR>
 
 			<span v-for="audio in sectionRecordings">
-				<H4>{{ audio }}</H4>
+				<span class=nodecontent>{{ get_name_embed_audio(audio) }}</span>
 				<span>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <A href=#0 @click="showRecording(audio, $event)">Play audio</A>
-                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<A href=#0 @click="showRecording(audio, $event)">Play audio</A>
                     &nbsp;&nbsp;
 				</span>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span v-if="audio" title="External Direct link (to download, rightclick and select save as...">Ext link: </span>
 				<span v-if="audio">
-					<A :href="get_url_embed_audio(audio)" target=_>Audio</A> (right click to download)
+					<A :href="get_url_embed_audio(audio)" target=_ title=" (right click to download)">Ext link</A>
 				</span>
 
 				<div v-if="recordingsName == audio"> <!-- Book pages images -->
 					<audio controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
 						Your browser does not support the <code>audio</code> element.
 					   </audio>	
-				</div>
+				</div><BR>
 			</span>
 		</div>
 
@@ -189,6 +189,10 @@
 					get_url_embed_audio: function(audio){
 						var urlPrefix = 'https://raw.githubusercontent.com/hnshare/sarf-audio/main/'; // 'https://github.com/hnshare/sarf-audio/blob/main/';
 						return urlPrefix + audio;
+					},
+					get_name_embed_audio: function(audio){
+						var section = this.recSection;
+						return audio.replace('Section '+section +'/' , '').replace('.mp3', '');
 					},
 				},
 				computed: {
