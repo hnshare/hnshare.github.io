@@ -27,10 +27,19 @@
 			<span v-for="audio in recordings">
 				<H4>{{ audio }}</H4>
 				<span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <A href=#0 @click="showRecording(audio, $event)">Play audio</A>
                     <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
                     &nbsp;&nbsp;
 				</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span v-if="audio" title="External Direct link (to download, rightclick and select save as...">Ext link: </span>
+				<span v-if="audio">
+					<A :href="get_url_embed_audio(audio)" target=_>Audio</A> (right click to download)
+				</span>
+
 				<div v-if="recordingsName == audio"> <!-- Book pages images -->
 					<audio controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
 						Your browser does not support the <code>audio</code> element.
@@ -39,7 +48,7 @@
 			</span>
 		</div>
 
-
+<BR><BR><HR>
         <H4>Lessons:</H4>
             <div v-for='(lesson, name, index) in hnmeta.lessons'>
                 <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
@@ -52,7 +61,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span v-if="lesson.slides || lesson.yt">Ext links: </span>
+				<span v-if="lesson.slides || lesson.yt" title="External Direct link">Ext link: </span>
 				<!-- Slides -->
 				<!-- <span v-if="lesson.slides"> 
 					<img src="imgs/icon.pdf.svg" alt="notes pdf" width=18>
@@ -161,7 +170,12 @@
 						page = page && (page+'');
 						var paddedPage = !page ? null : page.length==3 ? page : page.length==2? ('0'+page) : page.length==1? ('00'+page) : null;
 						return paddedPage;
-					}
+					},
+
+					get_url_embed_audio: function(audio){
+						var urlPrefix = 'https://raw.githubusercontent.com/hnshare/sarf-audio/main/'; // 'https://github.com/hnshare/sarf-audio/blob/main/';
+						return urlPrefix + audio;
+					},
 				},
 				computed: {
 					recordings: function(){
@@ -189,7 +203,7 @@
 					url_embed_audio: function(){
 						var meta = this.recordings;
 						var audio = this.recordingsName;
-						var urlPrefix = 'https://github.com/hnshare/sarf-audio/blob/main/';
+						var urlPrefix = 'https://raw.githubusercontent.com/hnshare/sarf-audio/main/'; // 'https://github.com/hnshare/sarf-audio/blob/main/';
 						return urlPrefix + audio;
 					},
 					url_embed_youtube: function(){
