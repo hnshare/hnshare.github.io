@@ -1,48 +1,162 @@
 var hnmeta = {
-    lessons: {
+    lessons: 
+    [
+        {
+          "title": "First Steps To Understanding Sarf 1",
+          "yt": "https://www.youtube.com/watch?v=FEPiOBUYlLw&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 2",
+          "yt": "https://www.youtube.com/watch?v=5uUS2ULUfTU&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 3",
+          "yt": "https://www.youtube.com/watch?v=g45QuqDzMfY&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 4",
+          "yt": "https://www.youtube.com/watch?v=hRkEGr-HYVM&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 5",
+          "yt": "https://www.youtube.com/watch?v=w4DyzXKK9og&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 6",
+          "yt": "https://www.youtube.com/watch?v=TOyj_Z9zaHU&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 7",
+          "yt": "https://www.youtube.com/watch?v=7pNAgx6W84Q&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 8",
+          "yt": "https://www.youtube.com/watch?v=Z7--K0g5RLw&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 9",
+          "yt": "https://www.youtube.com/watch?v=Afnr310yZiM&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 10",
+          "yt": "https://www.youtube.com/watch?v=ztNoqmrysIg&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 11",
+          "yt": "https://www.youtube.com/watch?v=k91N4fTUovc&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 12",
+          "yt": "https://www.youtube.com/watch?v=IbL6jkeSukQ&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 13",
+          "yt": "https://www.youtube.com/watch?v=hA48p7Zkzis&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 14",
+          "yt": "https://www.youtube.com/watch?v=K3FloLc1t4E&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 15",
+          "yt": "https://www.youtube.com/watch?v=V2sT-2WDbqk&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 16 | الأمر للغائب",
+          "yt": "https://www.youtube.com/watch?v=z_ChsDMT5rg&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 17| المصدر المشتق الجامد",
+          "yt": "https://www.youtube.com/watch?v=ixwYuYOsIEs&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 18 | اسم الفاعل",
+          "yt": "https://www.youtube.com/watch?v=QgvMRmUXE1Q&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 19 | اسم الظرف",
+          "yt": "https://www.youtube.com/watch?v=4QeKqBwV-2g&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 20 | اسم الآلة",
+          "yt": "https://www.youtube.com/watch?v=qkINxROi29k&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 21 | الصفة المشبهة باسم الفاعل",
+          "yt": "https://www.youtube.com/watch?v=QuzifWuDi-I&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        },
+        {
+          "title": "First Steps To Understanding Sarf 24 | Types of Verbs According to the type of حروف أصلية",
+          "yt": "https://www.youtube.com/watch?v=8V9F7-kCm7U&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=$INDEX",
+          "audio": ""
+        }
+      ]
+
+    ,Xlessons: {
 
 
-        1: { yt: ['https://www.youtube.com/watch?v=FfhrWYOnlJ8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=1', 'https://www.youtube.com/watch?v=1kHPmlw0umY&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=2', 'https://www.youtube.com/watch?v=nq0RsUi8k_0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=3'], 
-            slides: 'Hidayatun Nahw 1',
-            page: 6,
-            deck: '872fb8a433b444f0b213e4f3e4dc8d67',},
+        1: { yt: 'https://www.youtube.com/watch?v=FEPiOBUYlLw&list=PLzn0qdi6JpdvWf0IDGNfaiM-okPqDuQoc&index=1', 
+            Xslides: 'Hidayatun Nahw 1',
+            Xpage: 6,
+            Xdeck: '872fb8a433b444f0b213e4f3e4dc8d67',},
         2: { yt: 'https://www.youtube.com/watch?v=TiRCbMsLVZI&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=4', 
-            slides: 'Hidayatun Nahw 2',
-            page: 6,
-            deck: '5cd40b2afc1c4508aac8401d1512dd66',},
+            Xslides: 'Hidayatun Nahw 2',
+            Xpage: 6,
+            Xdeck: '5cd40b2afc1c4508aac8401d1512dd66',},
         3: { yt: 'https://www.youtube.com/watch?v=Wt61BfYHj20&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=5', 
-            slides: 'Hidayatun Nahw 3',
-            page: 7,
-            deck: 'b3c4deb3a51d4db7aa7ffaeb625455ba',},
+            Xslides: 'Hidayatun Nahw 3',
+            Xpage: 7,
+            Xdeck: 'b3c4deb3a51d4db7aa7ffaeb625455ba',},
         4: { yt: ['https://www.youtube.com/watch?v=L_4UW5kJpD8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=6', 'https://www.youtube.com/watch?v=4PStsBsO6II&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=7',],
-            slides: 'Hidayatun Nahw 4',
-            page: 7,
-            deck: 'ff13dc29fb704f8e9847158e28772696',},
+            Xslides: 'Hidayatun Nahw 4',
+            Xpage: 7,
+            Xdeck: 'ff13dc29fb704f8e9847158e28772696',},
         5: { yt: ['https://www.youtube.com/watch?v=ZtTBJRL0Whw&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=8', 'https://www.youtube.com/watch?v=x1Tz5k-8vF0&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=9', 'https://www.youtube.com/watch?v=kHCas-zyvmQ&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=10',], 
-            slides: 'Hidayatun Nahw 5',
-            page: 8,
-            deck: '7ff599be757847688c7908ba15518d2b',},
+            Xslides: 'Hidayatun Nahw 5',
+            Xpage: 8,
+            Xdeck: '7ff599be757847688c7908ba15518d2b',},
         6: { yt: ['https://www.youtube.com/watch?v=_KpYXXnLhMk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=11', 'https://www.youtube.com/watch?v=rg3l9pv7Kk8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=12',], 
-            slides: 'Hidayatun Nahw 6',
-            page: 9,
-            deck: '36fbc8f29fa247a7b38ef2542e3e79f0',},
+            Xslides: 'Hidayatun Nahw 6',
+            Xpage: 9,
+            Xdeck: '36fbc8f29fa247a7b38ef2542e3e79f0',},
         7: { yt: ['https://www.youtube.com/watch?v=_WF_H5aUdnU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=13', 'https://www.youtube.com/watch?v=ffxyEs6V8_8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=14',], 
-            slides: 'Hidayatun Nahw 7 المقدمة، الفصل الثاني، الحرف',
-            page: 9,
-            deck: '26d15ca2cf9b4291b9e91af83d16ca7e',},
+            Xslides: 'Hidayatun Nahw 7 المقدمة، الفصل الثاني، الحرف',
+            Xpage: 9,
+            Xdeck: '26d15ca2cf9b4291b9e91af83d16ca7e',},
         8: { yt: ['https://www.youtube.com/watch?v=QGFOVdtUFE8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=15', 'https://www.youtube.com/watch?v=HvWuLohYpSE&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=16',], 
-            slides: 'Hidayatun Nahw 8 المقدمة، الفصل الثالث في تعريف الكلام',
-            page: 11,
-            deck: '33df0bbeca6d418f80f3886ef6977122',},
+            Xslides: 'Hidayatun Nahw 8 المقدمة، الفصل الثالث في تعريف الكلام',
+            Xpage: 11,
+            Xdeck: '33df0bbeca6d418f80f3886ef6977122',},
         9: { yt: 'https://www.youtube.com/watch?v=odHlNoFNklk&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=17', 
-            slides: 'Hidayatun Nahw 9 القسم الأول',
-            page: 11,
-            deck: '04dc3ce6408d4b938dbba2b0a4d05a2a',},
+            Xslides: 'Hidayatun Nahw 9 القسم الأول',
+            Xpage: 11,
+            Xdeck: '04dc3ce6408d4b938dbba2b0a4d05a2a',},
 
         10: { yt: ['https://www.youtube.com/watch?v=9QlwG7f8bZ8&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=18', 'https://www.youtube.com/watch?v=5-H7LEYvwF4&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=19'], 
-            slides: 'Hidayatun Nahw 10 القسم الأول، الباب الأول، المقدمة، الفصل الأول',
-            page: 12,
-            deck: '30236109b71b46ddb2ba659f0b052e05',},
+            Xslides: 'Hidayatun Nahw 10 القسم الأول، الباب الأول، المقدمة، الفصل الأول',
+            Xpage: 12,
+            Xdeck: '30236109b71b46ddb2ba659f0b052e05',},
         11: { yt: 'https://www.youtube.com/watch?v=0hZbf0oOZpA&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=20', 
             slides: 'Hidayatun Nahw 11 القسم الأول، الباب الأول، المقدمة الفصل الثاني',
             page: 12,
