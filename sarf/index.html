@@ -37,28 +37,32 @@
 			<!-- <span>Picked: {{ recSection }}</span> -->
 			<BR>
 
-			<span v-for="audio in sectionRecordings">
-				<span class=nodecontent>{{ get_name_embed_audio(audio) }}</span>
-				<span>
+			<table>
+			<tr v-for="audio in sectionRecordings">
+				<td class=nodecontent>{{ get_name_embed_audio(audio) }}</td>
+				<td>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<A href=#0 @click="showRecording(audio, $event)">Play audio</A>
                     &nbsp;&nbsp;
-				</span>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span v-if="audio">
+				</td>
+				<td>
+					<div v-if="recordingsName == audio"> <!-- Book pages images -->
+						<audio controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
+							Your browser does not support the <code>audio</code> element.
+						   </audio>	
+					</div><BR>
+				</td>
+				<td v-if="audio">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<A :href="get_url_embed_audio(audio)" target=_ title=" (right click to download)">Ext link</A>
-				</span>
+				</td>
 
-				<div v-if="recordingsName == audio"> <!-- Book pages images -->
-					<audio controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
-						Your browser does not support the <code>audio</code> element.
-					   </audio>	
-				</div><BR>
-			</span>
+			</tr>
+		</table>
 		</div>
 
 <BR><BR><HR>
