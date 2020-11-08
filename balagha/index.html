@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="js/lib/vue.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+  </head>
+  <body>
+    <H1>Sarf practice recordings, Lessons</H1>
+
+    <style>
+        .nodecontent{
+            font-size: x-large
+        }
+		.bookpage{
+			max-width: 33%;
+		}
+    </style>
+    
+    <div>
+      What is this? It's a mashup of various online resources related to Balagha to help in learning Arabic Rhetoric & related sciences. Credit goes to resources listed at end.<BR/><BR/>
+	</div><HR>
+		
+		<div id="app" Xclass=container>
+
+			<div v-if=recordings>
+			<H4>Recordings (for practice):</H4>
+			<div>
+				Select Section: 
+				<input type="radio" id="1" value="1" v-model="recSection"><label for="1">1</label>
+				<input type="radio" id="2" value="2" v-model="recSection"><label for="2">2</label>
+				<input type="radio" id="3" value="3" v-model="recSection"><label for="3">3</label>
+				<input type="radio" id="4" value="4" v-model="recSection"><label for="4">4</label>
+				<input type="radio" id="5" value="5" v-model="recSection"><label for="5">5</label>
+				<input type="radio" id="6" value="6" v-model="recSection"><label for="6">6</label>
+				<input type="radio" id="7" value="7" v-model="recSection"><label for="7">7</label>
+				<input type="radio" id="8" value="8" v-model="recSection"><label for="8">8</label>
+				<input type="radio" id="9" value="9" v-model="recSection"><label for="9">9</label>
+				<!-- <span>Picked: {{ recSection }}</span> -->
+				<BR>
+
+				<table>
+				<tr v-for="audio in sectionRecordings">
+					<td class=nodecontent>{{ get_name_embed_audio(audio) }}</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<A href=#0 @click="showRecording(audio, $event)">▶️</A>&nbsp;&nbsp;
+						<A href=#0 @click="showRecording(audio, $event)">Play audio</A>
+						&nbsp;&nbsp;
+					</td>
+					<td>
+						<div v-if="recordingsName == audio"> <!-- Book pages images -->
+							<audio autoplay controls :src="url_embed_audio" Xsrc=https://github.com/hnshare/sarf-audio/blob/main/Section%201/1.1.mp3?raw=true>
+								Your browser does not support the <code>audio</code> element.
+							</audio>	
+						</div><BR>
+					</td>
+					<td v-if="audio">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<A :href="get_url_embed_audio(audio)" target=_ title=" (right click to download)">Ext link</A>
+					</td>
+
+				</tr>
+			</table>
+			</div>
+
+	<BR><BR><HR>
+			</div>
+
+			
+        <H4>Lessons:</H4>
+            <div v-for='(lesson, name, index) in hnmeta.lessons'>
+                <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? ((1+name)+'. ') :'') + lesson.title) : (name + '. Beginning Sarf Lesson ' + name) }}</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <A href=#0 @click="showNotes(name, $event, lesson, index)">See video</A>
+                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
+                    &nbsp;&nbsp;
+				</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span v-if="lesson.slides || lesson.yt" title="External Direct link">Ext link: </span>
+				<!-- Slides -->
+				<!-- <span v-if="lesson.slides"> 
+					<img src="imgs/icon.pdf.svg" alt="notes pdf" width=18>
+                    <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pptx.pdf':'') " target=_slide>Slides</A>
+                    &nbsp;&nbsp;
+				</span> -->
+				<!-- Videos -->
+				<span v-if="lesson.yt"> 
+					<img src="../imgs/icon.yt.svg" alt="Youtube video" width=18>
+                    <span v-if="!Array.isArray(lesson.yt)">
+                        <A :href="lesson.yt" target=_>Video</A>
+                    </span>
+                    <span v-if="Array.isArray(lesson.yt)">
+                        Videos:
+                        <span v-for="(part, index) in lesson.yt">
+                            <A :href="part" target=_>Part {{ index+1 }}</A>
+                            &nbsp;
+                        </span>
+                    </span>
+                    &nbsp;&nbsp;
+                </span>
+                <!-- <div v-if="notesName == name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span v-html="notes"></span>
+                </div> -->
+                
+                <div v-if="notesName == name"> <!-- Book pages images -->
+					<span v-for="image in url_embed_page_images">
+						<IMG class=bookpage :src="image" />
+					</span>
+					<div class="speakerdeck-embed-wrapper">
+						<iframe v-if="url_embed_speakerdeck" width="560" height="315" class="speakerdeck-iframe" frameborder="0" 
+							:src="url_embed_speakerdeck" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+							style="border: 0px; background: padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; Xwidth: 660px; Xheight: 495px;">
+						</iframe>
+						<span v-for="video in url_embed_youtube">
+							<iframe width="560" height="315" 
+								:src="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+							</iframe>
+						</span>
+					</div>		
+				</div>
+
+				<div v-if="notesName == name"> <!-- Notes from Ejtaal -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span v-html="notes"></span>
+                </div>
+                <HR>
+            </div>
+        <BR>
+        </div>
+
+            
+        <div>
+            <H3>Credits:</H3>
+            <ul>
+			<li>Videos & Slides: <a href="https://www.alqalaminstitute.org" target=_>Al-Qalam institute</A> Teachers. 
+				<ul>
+					<li>Durusul Balagha Videos: <a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpdvvXVuJ7kIusNquSxeyKJvc" target=_>youtube playlist</a></li>
+					<li>First steps to understanding Balagha Videos: <a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpduDfGlrbMhAWg2lNzdd7OA1" target=_>youtube playlist</a></li>
+					<li>Slides etc: <a href="https://www.alqalaminstitute.org/resources" target=_>https://www.alqalaminstitute.org/resources</a></li>
+				  </ul>
+			</li>
+			<li>Soon to be linked resources: credit: Ustadh Mohtanick Jamil 
+				<ul>
+					<li>Ilm ul-Ma'aani <a href=https://www.youtube.com/playlist?list=PL61A6EDB7C10FA1DA target=_>
+						youtube playlist</a></li>
+					<li>Ilm ul-Badee <a href=https://www.youtube.com/playlist?list=PLBC677E8648130DCC target=_>
+						youtube playlist</a></li>
+				</ul>
+			</li>
+			<li>All mistakes are mine. Contact at: hnshare AT gmx .com (remove spaces)</li>
+            </ul>
+        </div>
+
+
+<template id=notes></template>
+
+
+        <script src="js/balagha.js"   charset="utf-8"      ></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    hnmeta: hnmeta,
+                    notesNode: null,
+                    notes: null,
+					notesName: null,
+					recordingsName: null,
+					recSection: 1,
+                },
+                methods: {
+					showRecording: function(audio, e){
+						e.stopPropagation();
+						this.recordingsName = audio;
+					},
+                    showNotes: function(name, e, lesson, index){ // console.log(arguments);
+                        e.stopPropagation();
+                        var ditto = name == this.notesName;
+                        this.notes = this.notesName = null;
+                        if(ditto) return; // if clicked same notes again, toggle.
+                        if(!this.notesNode){
+                            var notes = document.getElementById('notes').innerHTML;
+                            var notesNode = document.createElement('span');
+                            notesNode.innerHTML = notes;
+                            this.notesNode = notesNode;
+                        }
+                        var result = this.notesNode && this.notesNode.getElementsByClassName(name ) && this.notesNode.getElementsByClassName(name )[0] && this.notesNode.getElementsByClassName(name )[0].outerHTML;
+                        this.notes = result || ''; // '- Summary notes not found; check back later -';
+                        this.notesName = name;
+                        console.log( name + ' notes found of length: ' + (result?result.length:result) );
+                        return result;
+					},
+					
+					padPage: function(page){
+						page = page && (page+'');
+						var paddedPage = !page ? null : page.length==3 ? page : page.length==2? ('0'+page) : page.length==1? ('00'+page) : null;
+						return paddedPage;
+					},
+
+					get_url_embed_audio: function(audio){
+						var urlPrefix = 'https://raw.githubusercontent.com/hnshare/sarf-audio/main/'; // 'https://github.com/hnshare/sarf-audio/blob/main/';
+						return urlPrefix + audio;
+					},
+					get_name_embed_audio: function(audio){
+						var section = this.recSection;
+						return audio.replace('Section '+section +'/' , '').replace('.mp3', '');
+					},
+				},
+				computed: {
+					recordings: function(){
+						return this.hnmeta.recordings && this.hnmeta.recordings.split('\n');					
+					},
+					sectionRecordings: function(){
+						return _.filter(this.recordings, x => x.indexOf('Section ' + this.recSection +'/') != -1);
+					},
+					lesson_meta: function(){
+						return !this.notesName && this.notesName != 0 ? null : this.hnmeta.lessons[ this.notesName ];
+					},
+					lessons_count: function(){
+						return Object.keys( this.hnmeta.lessons ).length;
+					},
+					lesson_next: function(){
+						return !this.notesName ? null : (1 + parseInt(this.notesName));
+					},
+					lesson_next_meta: function(){
+						var lesson_next = this.lesson_next,
+							lessons_count = this.lessons_count;
+						return !lesson_next ? null : ( (lesson_next <= lessons_count) ? this.hnmeta.lessons[ lesson_next ] : null );
+					},
+					url_embed_speakerdeck: function(){
+						var meta = this.lesson_meta;
+						var deck = meta && meta.deck;
+						return !deck ? '': ('https://speakerdeck.com/player/' + deck +'?slide=3');
+					},
+					url_embed_audio: function(){
+						var meta = this.recordings;
+						var audio = this.recordingsName;
+						var urlPrefix = 'https://raw.githubusercontent.com/hnshare/sarf-audio/main/'; // 'https://github.com/hnshare/sarf-audio/blob/main/';
+						return urlPrefix + audio;
+					},
+					url_embed_youtube: function(){
+						var meta = this.lesson_meta;
+						var yt = meta && meta.yt;
+						var videos = [];
+						var playlist = '&list=PLzn0qdi6JpdvvXVuJ7kIusNquSxeyKJvc';
+						yt = Array.isArray(yt) ? yt : [yt];
+						for(var i=0; i <= yt.length; ++i){
+							var embedCode = yt[i] && yt[i].split(playlist) && yt[i].split(playlist).length && yt[i].split(playlist)[0];
+							embedCode = embedCode && embedCode.replace('https://www.youtube.com/watch?v=', '');
+							// ex: https://www.youtube.com/watch?v=_RD2Hs_KXsU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=112"
+							var url = !embedCode ? null : ('https://www.youtube-nocookie.com/embed/' + embedCode + '?start=0');
+							if(url) videos.push(url); console.log(url);
+						}
+						return videos;
+					},
+					url_embed_page_images: function(){
+						var template = 'https://raw.githubusercontent.com/hnshare/hn-data-classic-annotated-more/main/$1.png';
+						var meta = this.lesson_meta,
+							meta_next_lesson = this.lesson_next_meta;
+						var page = meta && meta.page && parseInt(meta.page);
+						var pageEnd = meta_next_lesson && meta_next_lesson.page && parseInt(meta_next_lesson.page);
+						var pages = [];
+						// console.log([page, pageEnd, meta, meta_next_lesson]);
+						for(var i=page; i <= (pageEnd || page); ++i){
+							var paddedPage = this.padPage( i );
+							var url = !paddedPage ? null : template.replace(/\$1/g, paddedPage); 
+							pages.push(url); console.log(url);
+						}
+						return pages;
+					},
+				}
+            });
+        </script>
+  </body>
+</html>
