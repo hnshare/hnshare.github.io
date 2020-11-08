@@ -1,1 +1,1552 @@
-TEST
+<!doctype html>
+<html>
+  <head>
+    <script src="js/lib/vue.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+  </head>
+  <body>
+    <H1>Hidayatun Nahw notes</H1>
+
+    <style>
+        .nodecontent{
+            font-size: x-large
+        }
+		.bookpage{
+			max-width: 33%;
+		}
+    </style>
+    
+    <div>
+      What is this? It's a mashup of various online resources related to Hidayatun Nahw textbook to help in learning Arabic grammar. Credit goes to resources listed at end.<BR/><BR/>
+    </div><HR>
+        
+        <H4>Individual Lessons:</H4>
+        <div id="app" Xclass=container>
+
+            <div v-for='(lesson, name, index) in hnmeta.lessons'>
+                <div>{{ lesson.title ? ( (lesson.title.indexOf(name +'. ') == -1 ? (name+'. ') :'') + lesson.title) : (name + '. Hidayatun Nahw Lesson ' + name) }}</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>
+                    <A href=#0 @click="showNotes(name, $event, lesson, index)">Study Notes</A>
+                    <!-- <input type="button" @click="showNotes(name, lesson, index)" title="Notes" value=notes /> -->
+                    &nbsp;&nbsp;
+				</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span v-if="lesson.slides || lesson.yt">Ext links: </span>
+				<span v-if="lesson.slides"> <!-- Slides -->
+					<img src="imgs/icon.pdf.svg" alt="notes pdf" width=18>
+                    <A :href="'slides/'+ lesson.slides + (lesson.slides.indexOf('pdf') == -1 ? '.pptx.pdf':'') " target=_slide>Slides</A>
+                    &nbsp;&nbsp;
+                </span>
+				<span v-if="lesson.yt"> <!-- Videos -->
+					<img src="imgs/icon.yt.svg" alt="notes pdf" width=18>
+                    <span v-if="!Array.isArray(lesson.yt)">
+                        <A :href="lesson.yt" target=_>Video</A>
+                    </span>
+                    <span v-if="Array.isArray(lesson.yt)">
+                        Videos:
+                        <span v-for="(part, index) in lesson.yt">
+                            <A :href="part" target=_>Part {{ index+1 }}</A>
+                            &nbsp;
+                        </span>
+                    </span>
+                    &nbsp;&nbsp;
+                </span>
+                <!-- <div v-if="notesName == name">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span v-html="notes"></span>
+                </div> -->
+                
+                <div v-if="notesName == name"> <!-- Book pages images -->
+					<span v-for="image in url_embed_page_images">
+						<IMG class=bookpage :src="image" />
+					</span>
+					<div class="speakerdeck-embed-wrapper">
+						<iframe v-if="url_embed_speakerdeck" width="560" height="315" class="speakerdeck-iframe" frameborder="0" 
+							:src="url_embed_speakerdeck" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+							style="border: 0px; background: padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; Xwidth: 660px; Xheight: 495px;">
+						</iframe>
+						<span v-for="video in url_embed_youtube">
+							<iframe width="560" height="315" 
+								:src="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+							</iframe>
+						</span>
+					</div>		
+				</div>
+
+				<div v-if="notesName == name"> <!-- Notes from Ejtaal -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span v-html="notes"></span>
+                </div>
+                <HR>
+            </div>
+        <BR>
+        </div>
+
+		<BR>
+
+		<H4>Grouped Lessons:</H4>
+		<ol>
+        	<li><A HREF=htmls/01_about_nahw.html>About Nahw</A><BR></li>
+        	<li><A HREF=htmls/02_mu3rab_1.html>Mu3rab - 9 categories of Ism i3raab</A><BR></li>
+			<li><A HREF=htmls/03_mu3rab_2.html>Mu3rab - ghair munsarif causes</A><BR></li>
+			<li><A HREF=htmls/04_marfoo3aat.html>Marfoo3aat</A><BR></li>
+			<li><A HREF=htmls/05_mansoobaat.html>Mansoobaat</A><BR></li>
+			<li><A HREF=htmls/06_majrooraat.html>Majrooraat</A><BR></li>
+			<li><A HREF=htmls/07_tawabi3.html>Tawabi3</A><BR></li>
+			<li><A HREF=htmls/08_asmaaul_mabniyy.html>Asmaaul mabniyy</A><BR></li>
+			<li>Remaining: TBD<BR></li>
+		</ol>
+    
+           
+        
+		<BR><BR><H4>Miscellaneous:</H4>
+			<ul>
+				<li>Vocabulary: <A HREF="https://docs.google.com/spreadsheets/d/1w6MhfKtD_BB_Dytg7-W7lv3nBeDSHSsojKT6RG8HOOE/edit#gid=0" target=_>Hidayatun Nahw vocabulary</A> (Work in progress)
+				</li>
+				<li>Bushra online book: <A HREF="https://archive.org/stream/DarsENizamiDarjaSaniah2ndYear1/HidayaTunNahwAlBushra#mm-6">on archive.org</A>
+				</li>
+				<li><A HREF=htmls/Quran_adad.html>3adad (Numbers): in Qur'aan</A>&nbsp;&nbsp;(taken from Mutaraadifaatil Qur'aan book)<BR>
+				</li>
+				<li>
+					Beta/concept page to selftest your HN reading: <A HREF="htmls/book.html">Book</A> (tashkil hidden and revealed on mouseover)  (Tutorial: see how it <A href="imgs/tutorial_HN_notes.gif" target=_>works</A>)
+				</li>
+			</ul>
+            
+        <HR>
+        <div>
+            <H3>Credits:</H3>
+            <ul>
+			<li>Videos & Slides: <a href="https://www.alqalaminstitute.org" target=_>Al-Qalam institute</A> Teachers. 
+				<ul>
+					<li>Videos: <a href="https://www.youtube.com/playlist?list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD" target=_>youtube playlist</a></li>
+					<li>Slides etc: <a href="https://www.alqalaminstitute.org/resources" target=_>https://www.alqalaminstitute.org/resources</a></li>
+				  </ul>
+			</li>
+			<li>No-Tashkil HN book: <a href="https://www.shariahprogram.ca/" target=_>https://www.shariahprogram.ca/</a> and <a href="https://www.learnarabiconline.com/" target=_>https://www.learnarabiconline.com/</a> Teachers</li>
+			<li>Notes: <a href=https://ejtaal.net/hidayatun-nahw/hidayatun-nahw.html# target=_>ejtaal.net</A> HN notes</li>
+			<li>All mistakes are mine. Contact at: hnshare AT gmx .com (remove spaces)</li>
+            </ul>
+        </div>
+
+
+<template id=notes>
+    <li class="col" id="FMID_1546300281FM"><div class="nodecontent">Hidayatun Nahw</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">About نحو</div>
+		<ul class="subexp">
+	<li class="basic 3   1 2"><div class="nodecontent">Nahw Definition: It is a science with principles with which are known the case endings of the 3 types of words where it concerns declinable and non declinable words and the method of how they are ordered with each other. The objective is to avoid mistakes in the speech of the Arabs.</div><div class="zAdded nodecontent">It concerns two objects: الكلمة and الكلام .</div></li>
+	<li class="col"><div class="nodecontent">It concerns two objects: الكلمة and الكلام . </div>
+		<ul class="subexp">
+
+
+	<li class="col 4"><div class="nodecontent">الكلمة: it is an utterance with a single meaning and it comprises 3 types:</div>
+		<ul class="subexp">
+
+
+
+	<li class="col 5"><div class="nodecontent">اسم .1</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">حدّه (its definition) It has a meaning which is not dependant on any of the 3 times: الماضي أو الحال أو الإستقبال</div></li>
+	<li class="col"><div class="nodecontent">علامته (its signs) are 10:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. يصحّ الإخبار عنه (Information is given about it): a judgement is made about it due to it being either a فاعل أو مفعول أي نائب فاعل أو مبتدأ: زيد قائم</div></li>
+	<li class="basic"><div class="nodecontent">2. ألإضافة (construct phrase): غلام زيد</div></li>
+	<li class="basic"><div class="nodecontent">3. لام التعريف: الرجل</div></li>
+	<li class="basic"><div class="nodecontent">4 &amp; 5. جرّ و تنوين: بزيدٍ</div></li>
+	<li class="basic"><div class="nodecontent">6. التثنية: رجلان</div></li>
+	<li class="basic"><div class="nodecontent">7. الجمع: طالبون</div></li>
+	<li class="basic"><div class="nodecontent">8. النعت: رجل عالم</div></li>
+	<li class="basic"><div class="nodecontent">9. التصغير: رُجَيل</div></li>
+	<li class="basic"><div class="nodecontent">10. النداء: يا زيدُ</div></li></ul></li></ul></li>
+
+
+	<li class="col 6"><div class="nodecontent">2. فعل: It has a meaning which is connected to one of 3 time frames and its meaning is given by its مصدر</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">علامته (its signs) are 10:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. It gives information about something and it not informed about.</div></li>
+	<li class="basic"><div class="nodecontent">2-5. The entering of قد و السين و سَوفَ و الجزم</div></li>
+	<li class="basic"><div class="nodecontent">6. Its form is changed to make it ماضي أو مضارع</div></li>
+	<li class="basic"><div class="nodecontent">7. It can be a أمر أو نهي</div></li>
+	<li class="basic"><div class="nodecontent">8. The attachment of the ضمير المرفوع البارز (the visible nominative pronoun): ضربتَُِ</div></li>
+	<li class="basic"><div class="nodecontent">9. The تاء التأنيث الساكن: ضربتْ</div></li>
+	<li class="basic"><div class="nodecontent">10. The two نونs of emphasis: ليضربنّ و ليضربنْ</div></li></ul></li></ul></li>
+
+
+	<li class="col 7"><div class="nodecontent">3. حرف: It has no meaning in itself but indicates a meaning in something else. It is not specifically intended such as مسند و مسند إليه rather it comes on the side (حرف أو طرف)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">علامته (its signs)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. No information is given about it nor does it inform about anything else.</div></li>
+	<li class="basic"><div class="nodecontent">2. None of the signs of the فعل أو أسم are present.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">It is used to connect:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">two اسمs: زيد قي الدار</div></li>
+	<li class="basic"><div class="nodecontent">two فعلs: أريد أن تَضربَ</div></li>
+	<li class="basic"><div class="nodecontent">اسم و فعل: ضربتُ بالخشبة</div></li>
+	<li class="basic"><div class="nodecontent">two sentences: إن جاءني زيد أكرَمتُه</div></li>
+	<li class="basic"><div class="nodecontent">Others, see section of الحرف</div></li></ul></li></ul></li>
+</ul></li>
+
+
+	<li class="col 8"><div class="nodecontent">الكلام</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Definition: speech in which 2 words are joined with a connection between them, from one to the other, so that it forms a complete statement or sentence.</div></li></ul></li>
+
+</ul></li></ul></li>
+    
+
+
+	<!-- ISM - PARENT -->
+
+	<li class="col 9 z10 z11 z12 z13"><div class="nodecontent">الاسم</div>
+		<ul class="subexp">
+
+
+	<!-- ISM UL MU3RAB - PARENT -->
+	<li class="col 10"><div class="nodecontent">المعرب (the declinable noun)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Its principles:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. It is every noun that is joined with something else (in a sentence, not by itself) and it does not resemble an intrinsic مبني which are: الحرف و الأمر الحاضر و الماضي</div></li>
+
+
+	<li class="col 11"><div class="nodecontent">2. Its rulings are:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">that its case ending changes by different عاملs either:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">explicitly in speech: قام زيد و رأيت زيدا و مررت بزيد</div></li>
+	<li class="basic"><div class="nodecontent">or in its ruling as in: رأيت أحمد و مررت بأحمد</div></li>
+	<li class="basic"><div class="nodecontent">or implicitly: قام موسى و رأيت موسى و مررت بموسى</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">الإعراب (the case ending) are those things by which the end of the معرب changes and it of 3 types: رفع و نصب و جر and the عاملs are those things that effect these case endings.</div></li>
+	<li class="basic"><div class="nodecontent">Only the الاسم المتمكّن و الفعل المضارع are declined in the Arabic language</div></li></ul></li>
+
+
+	<li class="col 12"><div class="nodecontent">3. The categories of إعراب الاسم are 9:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. رفع بالضمة و نصب بالفتحة و جرّ بالكسرة and this is specific for الاسم المفرد المنصرف الصحيح which are those words that don't end in weak or double letters unless it ends in واو أو ياء and the letter before it is a ساكن like زيد و دلْو و ظبْي  and those words which are جمع مكسر منصرف (declinable broken plurals) like رجال</div></li>
+	<li class="basic"><div class="nodecontent">2. رفع بالضمة و نصب و جرّ بالكسرة  and this is specific for جمع مؤنث سالم (sound feminine plural)</div></li>
+	<li class="basic"><div class="nodecontent">3.TODO: link to diptote explanation  رفع بالضمة و نصب و جرّ بالفتحة and this is specific for غير منصرف أو ممنوع من الصرف (diptotes)</div></li>
+	<li class="basic"><div class="nodecontent">4. رفع بالواو و نصب بالألف و جرّ بالياء and this is specific for 6 nouns when singular and not in their تصغير form nor connected with ياء المتكلم</div></li>
+	<li class="col"><div class="nodecontent">5. رفع بالألف و نصب و جرّ بالياء المفتوح ما قبله and this is specific to duals</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The نون is always مكسور and drops in إضافة: جائني غلاما زيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">6. رفع بالواو المضموم ما قبله و نصب  و جرّ بالياء المكسور ما قبله and this is specific for جمع مذكر سالم (sound male plural) and أولو and the numbers عشرون and its likes.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The نون is always مفتوح and drops in إضافة: جائني مسلمو مصر</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">7.  رفع بتقدير الضمة و نصب بتقدير الفتحة و جرّ بتقدير الكسرة: (with the assumption of ضمة …) and this is specific to words ending with an الف مقصورة and the words that are مضاف إلى ياء المتكلم other than the  جمع مذكر سالم: جاءني العصا و غلامي و رأيت العصا و غلامي</div></li>
+	<li class="basic"><div class="nodecontent">8. رفع بتقدير الضمة و نصب بالفتحة لفظا و جرّ بتقدير الكسرة and this is specific to the منقوص which are those words that end in a ياء after a كسرة: جاني القاضي و رأيت القاضيَ و مررت بالقاضي</div></li>
+	<li class="basic"><div class="nodecontent">9. رفع بالتقدير الضمة و نصب و جرّ بالياء لفظا and this is specific to جمع مذكر سالم مضاف إلى ياء المتكلم: جاني مسلميّ و رأيتمسلميّ و مررت بمسلميّ</div></li></ul></li>
+</ul></li>
+
+
+	<!-- end of zAdded li -->
+	<li class="basic 13"><ul>
+	<!-- MUNSARIF Start of #13 -->
+    <li class="basic"><div class="nodecontent">منصرف (triptotes) These are most normal words that don't contain any 2 causes of the غير منصرف words or 1 of their causes other than those that count for 2 and such a word is also called اسم متمكن or متمكن امكن: A noun that is able (to be declined) and its ruling is that it accepts the 3 case endings with تنوين</div></li>
+    
+
+	<!-- GHAIR MUNSARIF -->
+	<li class="col"><div class="nodecontent">غير منصرف or ممنوع من الصرف or متمكن غير امكن (diptotes) the nouns for which declension has been prevented.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These are words containing 2 causes out of the 9 or only 1 that takes the place of 2</div></li>
+	<li class="basic"><div class="nodecontent">They accept neither تنوين nor a كسرة</div></li>
+	<li class="col"><div class="nodecontent">The 9 causes are:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. العدل (change)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">in these words the form has changed from its original explicitly or implicitly</div></li>
+	<li class="basic"><div class="nodecontent">it will not come together with a form that is similar to a فعل but it can come with an علم أو وصف (proper nouns or a description).</div></li>
+	<li class="basic"><div class="nodecontent">It comprises these forms: فُعَال و مَفْعَل و فُعَل و فَعْلِ و فِعْلِ و فَعَالِ: ثُلاث و مَثلَث و أُخَر و جُمَع و عُمَر و أمس و سحر و قطام</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. الوصف (a description)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">its condition is that it was used as a description in its original coinage: مررت بنسوة أربَع and here أربع is منصرف because it was not originally used as a description.</div></li>
+	<li class="basic"><div class="nodecontent">it does not come together with an original علم (proper noun) however names may have been derived from words that were originally descriptions: أسوَد و أرقَم</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3. التنيث بالتاء (The feminine form with a ة)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Its conditions are one of the following:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It comes as an علم be it male or female and for the female it may be implied: طلحة و زينب</div></li>
+	<li class="col"><div class="nodecontent">If it comes as a non foreign (= Arabic) علم of 3 letters with a ساكن in the middle it can come either as منصرف أو غير منصرف: هندٌُ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">However if the name is foreign it will have to be غير منصرف: ماه و جُور (names of 2 villages)</div></li></ul></li>
+	<li class="col"><div class="nodecontent">The following takes the place of 2 causes for being غير منصرف and that is if it comes with:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. الف مقصورة: حُبلى و دُنيا</div></li>
+	<li class="basic"><div class="nodecontent">2. الف ممدودة: حَمراء</div></li></ul></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">4. المعرفة (definiteness)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It refers to an علم and it can join all other causes except the وصف</div></li></ul></li>
+	<li class="col"><div class="nodecontent">5. العُجْمَة (foreign = non-Arabic)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Its condition is that is an علم في العجمة (proper noun in a foreign language) with it being either:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">longer than 3 letters: إبرهيم but not لِجَام due to it not being a proper noun in the foreign language</div></li>
+	<li class="basic"><div class="nodecontent">3 letters long with the middle not being ساكن: شَتَر but not نوح as its middle is ساكن</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">6. الجمع (plural)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Its condition is that it is from the منتهى الجموع which comprises words which have after their الف الجمع only 2 letters: مساجد  or a doubled letter: دوابّ or 3 letters the middle of which is ساكن for those words that do not accept a ة: مصابيح</div></li>
+	<li class="basic"><div class="nodecontent">It also takes the place of 2 causes for being غير منصرف</div></li></ul></li>
+	<li class="col"><div class="nodecontent">7. التركيب (compound word)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Its condition is that is should be an علم but not in إضافة (construct phrase) nor in إسناد (sentence?): بعلبك و معدِ يْكَرُبَ</div></li></ul></li>
+	<li class="col"><div class="nodecontent">8. الالف و النون الزائدتان</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">If they occur in an اسم its condition is that it is an علم: عثمان و عمران</div></li>
+	<li class="basic"><div class="nodecontent">If they occur in a صفة then its conditions is that it has no female counterpart with a ة: سَكران</div></li></ul></li>
+	<li class="col"><div class="nodecontent">9. وزن الفعل (The pattern of a verb)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Its conditions is that it is a word with a form which is specific to verbs: شمّر و ضُرب</div></li>
+	<li class="basic"><div class="nodecontent">When the form is not specific to verbs its condition is that is must start with one of the حروف المضارع and not accepting of a ة: أحمد و يشكُر و تغلِب و نرجِس</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">Two categories have words that will decline when they are نكرة: جاءني طلحة و طلحةٌ آخَر</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. The causes which contain the condition of علمية due to there not remaining a cause left</div></li>
+	<li class="basic"><div class="nodecontent">2. Those causes that only join with 1 other cause: TODO: some more examples here</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">A كسرة will come with all words that are غير منصرف when they occur in a construct phrase, be it مضاف or مضاف اليه or have ال: مررت بأحمدكم و بالأحمد</div></li></ul></li>
+
+	</ul></li> <!-- end of zAdded li -->
+</ul></li>
+    
+
+
+
+
+
+
+	<li class="col parent z14 z15 z16 z17 z18 z19 z20 z21"><div class="nodecontent">المرفوعات (The nominative words) which are 8 types:</div>
+		<ul class="subexp">
+	<li class="col 14"><div class="nodecontent">1. الفاعل: It is an اسم coming after a فعل أو صفة which is connected to it in such a way that is exists with it and is not acted upon it: قام زيد و زيد ضارب أبوه عمروا</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Every فعل has a فاعل مرفوع which can be:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">مظهر (clearly visible): ذهب زيد in which case the فعل will always be singular: ذهب الزيدون</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">If the فاعل is a مؤنث حقيقيّ (something which has a male counterpart from living things) the فعل will always be مؤنث: قامت هند</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">unless there is a separation in which case there is a choice: ضرب اليوم هند</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Likewise for the مؤنث غير حقيقيّ: طلع الشمس</div></li></ul></li></ul></li>
+	<li class="basic"><div class="nodecontent">With broken plurals conforming to the gender is optional: قامت الرجال</div></li></ul></li>
+	<li class="col"><div class="nodecontent">مضمر بارز (a visible pronoun): ضربتَُِ زيدا in which case the فعل will follow the number of the فاعل: الزيدون ذهبوا and the gender: الشمس طلعت or it can beمستتر (hidden): زيد ذهب</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">With broken plurals conforming to the gender is optional: الرجال قامت أو قاموا</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">A فعل متعدي will also have a مفعول: صرب زيد عمروا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The فاعل may come after the مفعول: ضرب عمروا زيد unless both are مقصور: ضرب عيسى موسى</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">Due to context either the فعل and also the فاعل may be omitted such as in replies to questions: من قام؟ زيد. أقام زيد؟ نعم</div></li>
+	<li class="basic"><div class="nodecontent">The مفعول may become a نائب الفاعل: It will take the place of the فاعل with a فعل مجهول: ضُرب زيد</div></li>
+
+
+	<li class="col 15"><div class="nodecontent">When 2 فعلs dispute over a single اسم ظاهر the following applies:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">There are 4 possible combinations of dispute:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. The فاعل only: ضربني و أكرمني زيد</div></li>
+	<li class="basic"><div class="nodecontent">2. The مفعول only: ضربت و أكرمت زيدا</div></li>
+	<li class="basic"><div class="nodecontent">3. فاعل و مفعول: ضربني و أكرمت زيدٌاً</div></li>
+	<li class="basic"><div class="nodecontent">4. مفعول و فاعل: ضربت و أكرمني زيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">In these cases either of the فعلs may take action</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">الفراء disagrees and allows only the second فعل to take over in situation 1 and 3, due to the necessity of 1 of 2 things that are not allowed:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. Deletion of the فاعل</div></li>
+	<li class="basic"><div class="nodecontent">2. Mentioning the ضمير before mentioning what it refers to.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">The Basris give preference to the second فعل doing عمل on the basis of proximity.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Here the first فعل may be in need of a فاعل by way of a ضمير accordingly: ضربوني و أكرمني الزيدون and ضربوني و أكرمت الزيدين</div></li>
+	<li class="basic"><div class="nodecontent">LINK: If the first فعل is from the أفعال القلوب its مفعول must be visible: حسبني منطلقا و حسبت زيدا منطلقا else it may be deleted as in situation 2 and 4.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">The Kufis give preference to the first فعل doing عمل on the basis of first come first serve</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Here the second فعل may be in need of a فاعل ضمير: ضربني و أكرموني الزيدون و ضربت و أكرموني الزيدين</div></li>
+	<li class="basic"><div class="nodecontent">If both فعلs are not from the أفعال القلوب then the مفعول of the second فعل may either be deleted or come as a ضمير: ضربت و أكرمتهم الزيدين</div></li></ul></li></ul></li></ul></li></ul></li>
+	
+	
+	<li class="basic 16"><div class="nodecontent">2. نائب الفاعل or مفعول ما لم يسمّ فاعله (The object where the subject is not mentioned): ضُرب زيد and it follows the same rules regarding the agreement of number and gender as the normal فاعل</div></li>
+	
+	
+	<li class="col 17"><div class="nodecontent">3. المبتدأ و الخبر</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">They are مرفوع without any explicit عامل but an implied one of الابتداء (The start):  زيد قائم</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">The مبتدأ is originally معرفة and a مسند إليه (exists independently)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It can be a صفة when it comes after a حرف النفي أو الاستفهام: ما قائم زيد و أقائم زيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">The خبر is originally نكرة and a مسند به (needs something else to exist)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">However if the نكرة has a صفة or other specification it may come as a مبتدأ: أ رجل في الدار أم امرأة و ما احد خير منك  و في الدار رجل و سلام عليك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">TODO: include baht on making a nakirat specific/special which will explain the examples</div></li></ul></li>
+	<li class="col"><div class="nodecontent">It can also occur as a جملة: زيد أبوه قائم و زيد قام أبوه و زيد إن جاءني فأكرمته</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">زيد خلفك and here the ظرف will be connected to an implied deleted verb such as استقر</div></li>
+	<li class="basic"><div class="nodecontent">These sentences will all need a ضمير that refers back to the مبتدأ but this may be deleted due to context: البُرّ الكُرّ بستّين درهما (The wheat, a measure (of it) costs 60 dirham) and deleted from it is the ضمير: منه</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It may also be brought forward: قي الدار زيد</div></li>
+	<li class="basic"><div class="nodecontent">There may be more than 1: زيد عالم فاضل عاقل</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">If both words are معرفة then they can be arranged either way: الله إلهنا</div></li></ul></li></ul></li>
+
+
+	<li class="col 18"><div class="nodecontent">5. خبر إنّ و أخواتها  and its 5 sisters are: أنّ كأنّ لكنّ ليْت لعلّ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They enter upon a مبتدأ و خبر and make them منصوب و مرفوع respectively: إنّ زيدا قائم</div></li>
+	<li class="basic"><div class="nodecontent">Bringing the خبر before its اسم is not allowed except with a ظرف: إنّ فب الدار زيدا</div></li></ul></li>
+
+
+	<li class="col 19"><div class="nodecontent">6. اسم كان و أخواتها TODO: link to section under الفعل</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">صار أصبح أمسى أضحى</div></li>
+	<li class="basic"><div class="nodecontent">These verbs enter upon a مبتدأ و خبر and render them مرفوع و منصوب respectively: كان زيد قائما</div></li>
+	<li class="col"><div class="nodecontent">The خبر may precede the اسم and even the verb itself except with the verbs that start with ما: قائما كان زيد</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">There is اختلاف about whether this is allowed with ليس</div></li></ul></li></ul></li>
+
+
+	<li class="col 20"><div class="nodecontent">7. ما و لا that resemble ليس</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ما is used for نكرة و معرفة but لا is specifically used for نكرة: ما زيد قائما و لا رجل أفضل منك</div></li></ul></li>
+
+
+	<li class="col 21"><div class="nodecontent">8. لا لنفي الجنس (The la that negates the whole genus)</div>
+		<ul class="subexp">
+    <li class="basic"><div class="nodecontent">It is a مسند: لا رجلَ قائم</div></li></ul></li></ul></li>
+    
+
+
+
+
+	<li class="col z22 z23 z24 z25 z26 z27 z28 z29 z30 z31 z32 z33"><div class="nodecontent">المنصوبات and they are of 12 types:</div>
+		<ul class="subexp">
+	<li class="col 22"><div class="nodecontent">1. المفعول مطلق</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It is a مصدر with the meaning of a preceding verb and it is used for 3 things:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">للتأكيد: ضربت ضربا</div></li>
+	<li class="basic"><div class="nodecontent">النوع (to specify the type of action) using the scale of فِعلَة: جلست جِلسَةَ القاري</div></li>
+	<li class="basic"><div class="nodecontent">لبيان العدد (to specify the number of actions) using the scale of فَعلَة: جلست جَلسة أو جلستين</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It may come from a different word or باب as long as it has a similar meaning as the verb that is used: قعدت جلوسا و أنبت نباتا</div></li>
+	<li class="basic"><div class="nodecontent">The verb may be deleted due to context like it is said to one arriving: خير مقدم  from قدمت قدوما خير مقدم</div></li>
+	<li class="basic"><div class="nodecontent">The verb must be deleted due to common usage: شكرا و حمدا for شكرتك شكرا و حمدتك حمدا</div></li></ul></li>
+	
+	
+	<li class="col 23"><div class="nodecontent">2. المفعول به (The object)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is an اسم upon which the action of a verb falls: ضرب زيد عمروا</div></li>
+	<li class="basic"><div class="nodecontent">TODO: link to section above: It may precede the فاعل: ضرب عمروا زيد</div></li>
+	<li class="col"><div class="nodecontent">Deleting the verb:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">may be done due to context such as answering a question: من أضرِب؟ زيدا</div></li>
+	<li class="col"><div class="nodecontent">must be done in 4 cases:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. Due to common usage: امرأً و نفسَه for اترك امرأ و نفسه or أهلا و سهلا for أتيت أهلا لا أجانب و طيت سهلا من البلاد لا حزنا and other phrases that can be deduced like this.</div></li>
+	<li class="basic"><div class="nodecontent">2. التحذير (Warning) where it is understood with an implied اَتّقِ: إيّاك والأسدَ and it may also be mentioned with repetition: الطريق الطريق</div></li>
+	<li class="basic"><div class="nodecontent">3. On the condition that it is followed by an explanation: زيدا ضربته and this type has many branches.</div></li>
+	<li class="col"><div class="nodecontent">LINK: to other section(s) on the vocative 4. المنادى (the vocative)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">There are 5 particles: see under the relevant section of الحروف TODO</div></li>
+	<li class="col"><div class="nodecontent">The إعراب of the منادى in the following cases is:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">مجرور بلام or منصوب بالف when seeking help or lamenting: يا لزيدٍ! و يا زيدَاهْ</div></li>
+	<li class="col"><div class="nodecontent">Upon its normal علامة المرفوع when it comes:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">as a single معرفة word such as ضمة: يا زيدُ و يا رجلُ as long as the intended person is known</div></li>
+	<li class="basic"><div class="nodecontent">with ال in which case it will also need أيّها or أيّتها added: يا أيها الرجل و يا أيتها المرأة</div></li></ul></li>
+	<li class="col"><div class="nodecontent">منصوب with</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">إضافة: يا عبدَ الله</div></li>
+	<li class="basic"><div class="nodecontent">when it resembles إضافة: يا طالعا جبلا</div></li>
+	<li class="basic"><div class="nodecontent">when it is a unspecified نكرة like a blind man would say: يارجلا خذْ بيدي</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">With المنادى المرخَّم (apocope or abbreviation) it can be either مرفوع or with its original حركة after removing the last letters of a name: When calling حارس: يا حارُ أو يا حارِ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">The particle has the meaning of أدعو أو أطلب</div></li>
+	<li class="basic"><div class="nodecontent">It may be omitted in speech: زيدُ اجلس هنا TODO: better example</div></li>
+	<li class="basic"><div class="nodecontent">It is also used for mourning and wailing together with وا which is specifically for it: يا زيداه و وا زيداه and the ruling for its إعراب is the same as for the normal منادى</div></li></ul></li></ul></li></ul></li></ul></li>
+
+	
+	<li class="col 24"><div class="nodecontent">3. المفعول فيه</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It contains either a زمان أو مكان (time or place) for the action of the فاعل and it is called a ظرف</div></li>
+	<li class="col"><div class="nodecontent">ظروف الزمان:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">has 2 types:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. مبهم (unlimited): دهر و حين</div></li>
+	<li class="basic"><div class="nodecontent">2. محدود (limited): يوم و ليلة و شهر و سنة</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It is منصوب due to the assumption of في before it: صمت دهرا for صمت في دهر</div></li></ul></li>
+	<li class="col"><div class="nodecontent">ظروف المكان</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">has 2 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. مبهم (unlimited): جلست خلفك و امامك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is منصوب due to the assumption of في before it:</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">2. محدود (limited) but here it is necessary to bring it with في: جلست في الدار</div></li></ul></li></ul></li></ul></li>
+	
+	
+	<li class="col 25"><div class="nodecontent">4. المفعول له</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It explains the reason for the aforementioned فعل and it is منصوب due to the assumption of a لام: ضربته تأديبا for للتأديب</div></li></ul></li>
+
+
+	<li class="col 26"><div class="nodecontent">5. المفعول معه</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is what comes after a و with the meaning of مع: جاء البرد و الجبّاتَ و جئت أنا و زيد</div></li>
+	<li class="col"><div class="nodecontent">If the فعل is explicit and if عطف is...</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">allowed then the إعراب can go both ways: جئت أنا و زيداً أو زيدٌ</div></li>
+	<li class="basic"><div class="nodecontent">not allowed then it has to be منصوب: جئت و زيدا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">If the فعل is implicit and if عطف is...</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">allowed then it has to use the عطف: ما لزيد و عمرو؟</div></li>
+	<li class="basic"><div class="nodecontent">not allowed then it has to be منصوب:ما لك و زيدا</div></li></ul></li></ul></li>
+
+
+	<li class="col 27"><div class="nodecontent">6. حال</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Indicates the state of the فاعل or the مفعول, or both: جاءني زيد راكبا و ضربت زيدا مشدودا و لقيت عمروا راكبين</div></li>
+	<li class="basic"><div class="nodecontent">Its فاعل may be implied, such as with إشارة or omitted completely: زيد في الدار قائما with the verb استقرّ deleted or: هذا زيد قائما which means: المشار إليه قائما هو زيد</div></li>
+	<li class="col"><div class="nodecontent">Its عامل is a فعل or aشبه فعل or any word that can have the meaning of a فعل: هذا زيد قائما with the meaning of أنبّه و أشير TODO: include list and explain more?</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It may be deleted due to context as is said to the traveller: سالما غانما with the verb ترجع deleted.</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It is always نكرة and the ذو الحال mostly معرفة.</div></li>
+	<li class="basic"><div class="nodecontent">When the ذو الحال is نكرة it must precede the حال: جائني راكبا رجل to avoid confusion of it being a صفة: رأيت رجلا راكبا (I saw a man who was in the state of riding) as opposed to رأيت راكبا رجلا: (I saw a male rider?) TODO: check translations of these</div></li>
+	<li class="basic"><div class="nodecontent">It may also be a جملة خبرية: جاءني زيد و غلامه راكبا أو يركب غلامه</div></li></ul></li>
+	
+	
+	<li class="col 28"><div class="nodecontent">7. التمييز</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It is نكرة and specifies an unclear or unspecified amount of:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">numbers: عندي عشرون درهما</div></li>
+	<li class="basic"><div class="nodecontent">volume/weight/measure: قَفِيزان بُرّا و منوان سمنا</div></li>
+	<li class="basic"><div class="nodecontent">area/distance: جريبان قطْنا و ما في السماء قدْر راحةٍ سحابا</div></li>
+	<li class="col"><div class="nodecontent">type of material (rare): هذا خاتم حديدا و سوار ذهبا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is usually مجرور in إضافة: خاتمُ حديدٍ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">something else: على التمرة مثلها زبدا (Upon the date is its like in weight of butter)</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It can also come after a جملة to clear up confusion: طاب زيد نفساً أو علما أو أبا</div></li></ul></li>
+	
+	
+	<li class="col 29"><div class="nodecontent">8. المستثنى</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is mentioned after إلّا and its sisters and it excludes something from the مستثنى منه (that which is being excluded from)</div></li>
+	<li class="col"><div class="nodecontent">It has 2 types</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">متّصل when the مستثنى was a part of the مستثنى منه: جاءني القوم إلّا زيدا</div></li>
+	<li class="basic"><div class="nodecontent">منقطع or منفصل when the مستثنى was not part of the مستثنى منه: جاءني القوم إلّا حمارا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">It declines in 4 ways:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. منصوب if it is:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1a. متّصل and comes after إلّا with a موجب (positive statement not a negative, question or prohibition): جاءني القوم إلّا زيدا</div></li>
+	<li class="basic"><div class="nodecontent">1b. منقطع</div></li>
+	<li class="basic"><div class="nodecontent">1c. brought forward upon the مستثنى منه: ما جاءني إلّا زيدا أحد</div></li>
+	<li class="basic"><div class="nodecontent">1d. After خلا و عدا according to the majority of grammarians</div></li>
+	<li class="col"><div class="nodecontent">1e. After ما خلا و ما عدا و ليس و لا يكون: جاءني القوم خلا زيدا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">خلا و عدا etc. could also be used as verb, rendering the مستثنى accordingly as a فاعل.</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">2-3. After إلّا with a غير موجب (negative statement or prohibition or question) and the مستثنى منه is....</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">mentioned: it can be منصوب or بدل of the مستثنى منه: ما جاءني أحد إلّا زيدًا أو زيدٌ</div></li>
+	<li class="basic"><div class="nodecontent">مفرّغ (not mentioned): According to the normal إعراب without إلّا: ما جاءني إلّا زيد و ما رأيت إلّا زيدا و ما مررت إلّا بزيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">4. مجرور according to the majority if it is after غير و سِوَى و سواء و حاشا: جاءني القوم غير زيد</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The إعراب of غير will follow the إعراب that the مستثنى would have with إلّا: TODO all examples?</div></li></ul></li></ul></li>
+	<li class="basic"><div class="nodecontent">غير was initially coined as a صفة (“other than”) but can also be used for exclusion and likewise إلّا has sometimes been used for a صفة with the meaning of غير: لا إله إلّا الله as usually إلّا is used for universal concepts (which are groups of things).</div></li></ul></li>
+	
+	
+	<li class="col 30"><div class="nodecontent">9. خبر of كان and its sisters</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It becomes the مسند: كان زيد قائماً</div></li>
+	<li class="basic"><div class="nodecontent">Its rulings are the same as for the خبر of a مبتدأ except that a معرفة may precede the اسم: كان القائمَ زيدٌ</div></li></ul></li>
+
+
+	<li class="col 31"><div class="nodecontent">10. اسم إنّ  and its sisters</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It becomes the مسند إليه: إنّ زيداً قائم</div></li></ul></li>
+	
+	
+	<li class="col 32"><div class="nodecontent">11. لا for negation of the whole genus</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It becomes the مسند إليه</div></li>
+	<li class="basic"><div class="nodecontent">It may come as a نكرة مضافة: لا غلامَ رجل في الدار or it can resemble it: لا عشرين درهما في الكيس</div></li>
+	<li class="basic"><div class="nodecontent">If it comes as a single نكرة it will have a فتحة: لا رجلَ في الدار</div></li>
+	<li class="basic"><div class="nodecontent">If it comes as a معرفة or a نكرة with something between it and لا it will be مرفوع and لا will have to be mentioned again with another اسم which will follow the same إعراب: لا زيدٌ في الدار ولا عمروٌ و لا فيها رجلٌ و لا امرأةٌ</div></li>
+	<li class="basic"><div class="nodecontent">The اسم may be deleted due to context: لا عليك for لا بأس عليك</div></li></ul></li>
+	
+	
+	<li class="col 33"><div class="nodecontent">12. خبر of ما و لا that resemble ليس</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It becomes the مسند: ما زيد قائماً و لا رجل حاضراً and this is for the language of the people of حجاز.</div></li>
+	<li class="basic"><div class="nodecontent">Its action is negated if it comes after إلّا: ما زيد إلّا قائم or when the خبر is brought before the اسم: ما قائم زيد or if إنْ has been added: ما إن زيد قائم</div></li>
+    <li class="basic"><div class="nodecontent">In the language of بنو تميم the ما و لا don't have any action from the outset.</div></li></ul></li></ul></li>
+    
+
+
+	<li class="col 34"><div class="nodecontent">المجرورات</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It comprises the مضاف اليه only. In it is contained an explicit  حرف الجر: مررت بزيد or an implicit one: غلام زيد for: غلام لزيد</div></li>
+	<li class="basic"><div class="nodecontent">From the مضاف are deleted the following: تنوين or what takes its place like نون التثنية والجمع: جاءني غلامُ زيد و غلاما زيد و مسلمو مصر</div></li>
+	<li class="col"><div class="nodecontent">There are 2 types of إضافة</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">معنوية in which the مضاف is not a صفة and this contains the meaning of a حرف الجر be it a لام أو مِنْ أو في: غلام زيد و خاتم فضة و صلاة الليل</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Its benefit is knowing the مضاف to be معرفة when the مضاف إليه is معرفة or to have something specified when the مضاف إليه is نكرة: غلام رجل</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">اللفظية: The مضاف here is a صفة connected to the word it affects with separation and easing pronunciation its goal: ضارب زيد و حَسَنُ الوجه</div></li></ul></li>
+	<li class="col"><div class="nodecontent">الإضافة إلى ياء المتكلم</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">When a اسم صحيح (an اسم without any حرف علة) or TODO is made مضاف to ياء المتكلم the end receives a كسرة and the ياء either a ساكن او فتحة: غلامي و دلوي و ظبيي</div></li>
+	<li class="basic"><div class="nodecontent">If an اسم ends with an ألف it remains: عصاي و رحاي contrary to what الهذيل claims: عصيّ و رحيّ</div></li>
+	<li class="basic"><div class="nodecontent">If an اسم ends with an ياء مكسور they are assimilated due to التقاء الساكنين and the ياء المتكلم receives a فتحة as in the case with قاضي: قاضيّ</div></li>
+	<li class="basic"><div class="nodecontent">If an اسم ends with an واو مضموم it is changed into a ياء and becomes like the other cases: جاءني مسلميّ</div></li>
+    <li class="basic"><div class="nodecontent">الأسماء الستة become شس follows: أخي و أبي و حمي و هني و فيّ or فمي according to a some and when not in an إضافة they are أخ و أب و حم و هن و فم و ذو however ذو always comes in an إضافة but not to a ضمير except in rare cases: TODO example?</div></li></ul></li></ul></li>
+    
+
+
+
+
+	<li class="col 35 z36 z37 z38 z39 z40"><div class="nodecontent">التوابع (followers: and their declension is not due to any عامل acting on them, but solely due to following a preceding word)</div>
+		<ul class="subexp">
+	<li class="col 36"><div class="nodecontent">1. النعت (or صفة)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">it describes:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">a quality of the followed word: جاءني رجل عالم. It follows the متبوع in 10 things:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1-3. الإعراب الثلاث</div></li>
+	<li class="basic"><div class="nodecontent">4. التعريف</div></li>
+	<li class="basic"><div class="nodecontent">5. التنكير</div></li>
+	<li class="basic"><div class="nodecontent">6. الإفراد</div></li>
+	<li class="basic"><div class="nodecontent">7. التثنية</div></li>
+	<li class="basic"><div class="nodecontent">8. الجمع</div></li>
+	<li class="basic"><div class="nodecontent">9. التذكير</div></li>
+	<li class="basic"><div class="nodecontent">10.التأنيث</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">something connected to it: جاءني رجل عالم أبوه (A man came, whose father was knowledgeable). It only follows in the first 5 items: (النساء:٧٥)ق:مِن هَذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا</div></li>
+	<li class="basic"><div class="nodecontent">Not a ضمير nor can a ضمير be a نعت</div></li></ul></li>
+	<li class="col"><div class="nodecontent">its uses:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. specifying the منعوت when it is نكرة . Note that the نعت may also be a جملة خبرية: مررت برجل أبوه عالم/ قام أبوه</div></li>
+	<li class="basic"><div class="nodecontent">2. clarifying the منعوت when it is معرفة : الرجل العالم</div></li>
+	<li class="basic"><div class="nodecontent">3. for praise only: بسم الله الرحمن الرحيم</div></li>
+	<li class="basic"><div class="nodecontent">4. for ridicule/dispraise: أعوذ بالله من الشيطان الرجيم</div></li>
+	<li class="basic"><div class="nodecontent">5. for emphasis: (ق:نَفْخَةٌ وَاحِدَةٌ(الحاقة:١٣</div></li></ul></li></ul></li>
+
+
+	<li class="col 37"><div class="nodecontent">2. العطف بالحرف (or عطف النسْق)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It attributes to the تابع what is attributed to its متبوع . Its conditions:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">That this attribution is what is intended as it might also be عطف الجمل: TODO: example</div></li>
+	<li class="basic"><div class="nodecontent">That one of the 10 حروف العطف is between it and its متبوع: قام زيد و عمرو</div></li>
+	<li class="basic"><div class="nodecontent">If the متبوع is a مجرور pronoun, the حرف الجرّ has to be repeated: مررت بك و بزيد: Rule of thumb: only if the معطوف can be a substitute for the معطوف عليه then it will follow it in being either a صفّة أو خبر أو صلة أو حال else it can't. TODO: example of the contrary?</div></li>
+	<li class="basic"><div class="nodecontent">Two معمولs of two different عاملs may be joined if the معطوف عليه is مجرور مقدّم: في الدار زيد و الحجرةِ عمرو: It is allowed by الفراء even when it is not مقدّم but سيبويه doesn't allow any of this.</div></li></ul></li></ul></li>
+	
+	
+	<li class="col 38"><div class="nodecontent">3. التأكيد</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is used to firmly establish an attribute of the متبوع or to indicate that every part/individual of a universal concept falls under the same ruling.</div></li>
+	<li class="basic"><div class="nodecontent">1. لفظيّ (explicitly): By repeating the first word: جاءني زيد زيد و جاء جاء زيد</div></li>
+	<li class="col"><div class="nodecontent">2. معنويّ (implicitly): By using a number of words:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">النفس و العَين for singulars, duals and plurals by changing the form and its pronoun: جاءني زيد نفسُه و الزيدان انفسهما أو نفساهما and a ضمير مرفوع متّصل must be brought with its منفصل form: ضربت أنت نفسُك</div></li>
+	<li class="basic"><div class="nodecontent">كِلا و كِلتا for the masc. and fem. duals</div></li>
+	<li class="col"><div class="nodecontent">كلٌّ و أجمَعُ و أكتَعُ و أبتَعُ و أبصَعُ. for other than duals  by changing the ضمير for كلّ and the form in the others: جاءني القوم كلّهم أجمعون أكتعون و قامت النساء كلّهنّ جُمَعُ كُتَعُ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Only for those words that comprise parts either physically or legally:  أكرمت القوم كلهم أو اشتريت العبد كلّه</div></li>
+	<li class="basic"><div class="nodecontent">The words from أكتع onwards can only come after أجمع and not before it nor without it.</div></li></ul></li></ul></li></ul></li>
+	
+	
+	<li class="col 39"><div class="nodecontent">4. البدل (apposition or substitution) here the تابع is the actual intended object instead of the متبوع and it has 4 types:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. بدل الكل من الكل and it refers to the whole of the متبوع: جاءني زيد أخوك</div></li>
+	<li class="basic"><div class="nodecontent">2. بدل البعض من الكل and it refers to part of the متبوع: ضربت زيدا رأسَه</div></li>
+	<li class="basic"><div class="nodecontent">3. بدل الاشتمال which refers to something that is attached to the متبوع: سُلب زيد ثوبُه</div></li>
+	<li class="basic"><div class="nodecontent">4. بدل اغلط which is only in speech to correct a mistake: جاءني زيد جعفر</div></li>
+	<li class="basic"><div class="nodecontent">Only in the case when you have a بدل نكرة and a متبوع معرفة it must come with a نعت: ق:بالنّاصِيَةِ نَاصِيَةٍ كَاذِبَةٍ</div></li></ul></li>
+
+
+	<li class="col 40"><div class="nodecontent">5.عطف البيان: here the تابع is not a صفة of the متبوع but rather a clarification with the more famous of 2 names for something and the متبوع is the intended object: قام أبو حفْص عمر و قام عبد الله بن عمر</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It may be confused with بدل الكل in the meaning of a sentence, depending on whether the intended object is the تابع or the متبوع</div></li>
+    <li class="basic"><div class="nodecontent">It may not be confused explicitly as in: أنا ابنُ التاركِ البَكريِّ بِشرٍ (here بشر cannot substitute البكري)</div></li></ul></li></ul></li>
+    
+
+
+
+
+	<li class="col 41 z42 z43 z44 z45 z46 z47 z48 z49"><div class="nodecontent">الاسم المبني (also known as اسم غير متمكِّن)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It has 2 types of words:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. Words that come by themselves and are potentially معرب but alone are مبني upon رفع: زيد, أ, ب, واحد, اثنان</div></li>
+	<li class="basic"><div class="nodecontent">2. Words that resemble the مبني الأصل in that they were never معرب originally but only receive a meaning with a context like the اسم الإشارة or if they have less than 3 letters or if they contain the meaning of a حرف such as: ذا و مَنْ و أحد عشر إلى تسعةِ عشرَ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">Its ruling is that the end of the word does not change when different عاملs act upon it.</div></li>
+	<li class="col"><div class="nodecontent">It has 8 categories:</div>
+		<ul class="subexp">
+
+
+	<li class="col 42"><div class="nodecontent">1. المضمرات (pronouns)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These are words that refer back to the 1st, 2nd or 3rd person if they have been previous mentioned explicitly, implicitly or according to the ruling (TODO explain ruling)</div></li>
+	<li class="col"><div class="nodecontent">It has 2 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. متصل: These are always connected to another word and they can be منصوب و مرفوع و مجرور :ضربت  ضربني و إنّني و غلامي و لي</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">There are 2 hidden for the مرفوع state in the ماضي: ضرب و ضربت and 5 in the مضارع: أضرب و نضرب و تضرب و يضرب and it is generally hidden when it comes as a صفة (TODO explain صفة)</div></li>
+	<li class="basic"><div class="nodecontent">2 additional ضميرs have been identified that create attention in the audience: ضمير الشان which explains the matter at hand: (قُل هو الله أحد) and ضمير القصة which explains a story: إنّها زينب قائمة</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. منفصل: They come alone and can be مرفوع و منصوب: أنا و أعطيته إيّاي</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It may only be used if there is a difficulty in using the متصل: (إيّاك نَعْبُد) و ما ضربك إلّا أنا و أنا زيد و ما أنت إلّا قائما</div></li>
+	<li class="basic"><div class="nodecontent">A ضمير الفصل is inserted between a مبتدأ معرفة and either a خبر or تفضيل with من to avoid confusion of it being a موصوف و صفة pair which would be an incomplete sentence: زيد هو القائم و كان زيد هو أفضل من عمرو</div></li></ul></li></ul></li></ul></li>
+	
+	
+	<li class="col 43"><div class="nodecontent">2. الأسماء الإشارة</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">They are 5 words for 6 meanings</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">For مذكر: ذا and its dual: ذان و ذَين</div></li>
+	<li class="basic"><div class="nodecontent">For مؤنث: تا و تي و ذِي و تِهِ و ذِهِ و تِهي و ذِهي and its dual: تان و تَين</div></li>
+	<li class="basic"><div class="nodecontent">For جمع: أُولآء</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">ذا is used for things that are near, ذلك for far and ذاك for in between.</div></li>
+	<li class="basic" id="FMID_672095212FM"><div class="nodecontent">They are prefixed with ها to create attention: هذا و هذان و هؤلاء</div></li>
+	<li class="col"><div class="nodecontent">They can have the حرف الخطاب (the 2nd person pronouns) attached to their endings: ذاك و ذاكما وذانك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Which results in 5x5=25 different words.</div></li></ul></li></ul></li>
+	
+	
+	<li class="col 44"><div class="nodecontent">3. الاسم الموصول</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It can only be understood with its corresponding جملة خبرية which is called its صلة and must contain an عائد (something that refers back) to the موصول: جاء الّذي أبوه قائم أو قام أبوه</div></li>
+	<li class="basic"><div class="nodecontent">For مذكر: الّذي and for its dual: اللّذان و اللّذَين and its جمع: الّذِين و الْأُلى</div></li>
+	<li class="basic"><div class="nodecontent">For مؤنث:الّتي and its dual: اللّتان و اللّتَين and its جمع: اللاتي و اللوَاتي و اللّاءِ و اللّائِي</div></li>
+	<li class="col"><div class="nodecontent">Others:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ما و مَنْ و أيّ و أيّة of which the latter 2 are مضاف</div></li>
+	<li class="basic"><div class="nodecontent">The ال with the meaning of اللّذي when its صلة is a اسم الفاعل و مفعول: جاءني الضارب زيدا و جاءني المضروب غلامه</div></li>
+	<li class="basic"><div class="nodecontent">The tribe called بني طيّ also use ذو in the meaning of اللّذي: فإنّ الماء ماء أبي و جدّي و بئري ذو حفرت و ذو طويت with the meaning of اللّذي حفرته و اللّذي طويته</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">The عائد may be omitted if it comes as a مفعول: قام اللّذي ضربت for ضربته</div></li>
+	<li class="basic"><div class="nodecontent">أي و أية are معرفة except when the beginning of their صلة has been deleted: TODO: example</div></li></ul></li>
+	
+	
+	<li class="col 45"><div class="nodecontent">4. أسماء الأفعال (Noun verbs)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These are nouns in the meaning of an أمر أو ماضي: رُوَيْدَ زيدا for أمْهِلْه and هَيْهَاتَ زيد for بعُد</div></li>
+	<li class="col"><div class="nodecontent">Also comes on the scale of فَعالِ with the meaning of أمر and these are deducible from the triliteral verbs: نَزَالِ for إنزِل and تَراكِ for أترُك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">However, this scale is also used for a مصدر معرفة: فَجارِ for الفجور or a feminine description when used with the vocative only: يا فَساقِ أو لَكاعِ for فاسقة و لاكعة or it is an actual feminine name: قطام و غلاب و حضار</div></li></ul></li></ul></li>
+	
+	
+	<li class="basic 46"><div class="nodecontent">5. الأصوات (Onomatopoeia), words that describe sounds: غاق for a crow or words used for calling animals: نَخّ to make a camel sit.</div></li>
+
+
+	<li class="col 47"><div class="nodecontent">6. المركبات (compound nouns): words made by joining 2 words that are not related</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">If the second word contains a حرف the words are مبني with a فتحة: أحد عشر و تسعة عشر else the most eloquent way is to give the first a فتحة and the second according to غير منصرف: بَعْلَبَكَّ</div></li></ul></li>
+	
+	
+	<li class="col 48"><div class="nodecontent">7. الكنايات (place holders): words that indicate an unknown quantity or reference: كم و كذا and كَيْتَ و ذَيْتَ (such and such/blah blah) but فلان و فلانة for names are معرب</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">كم</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">is of 2 types:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. استفهامية: what follows is a singular منصوب تمييز: كم رجلا عندك؟</div></li>
+	<li class="basic"><div class="nodecontent">2. خبرية: is followed by a singular or pluralمجرور: كم مالٍ أنفقتُه! و كم رجالٍ لقيته and it indicates a myriad</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">من may enter both types: كم من رجل لقيته و كم من مال أنفقته</div></li>
+	<li class="basic"><div class="nodecontent">The تمييز may be deleted due to context: كم مالك for كم دنارا مالك؟ and كم ضربتُ for كم ضربةً ضربتُ</div></li>
+	<li class="col"><div class="nodecontent">It may be implied to be in different states of إعراب:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It can be منصوب if it is:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">مفعول به of a verb that follows it which doesn't already have a ضمير as مفعول: كم رجلا ضربت و كم غلامٍ ملكتُ</div></li>
+	<li class="basic"><div class="nodecontent">مصدر (as a مفعول مطلق؟): كم ضربةً ضربتَ؟ و كم َضربةٍ ضربتُ</div></li>
+	<li class="basic"><div class="nodecontent">مفعول فيه: كم يوما سرتَ و كم يومٍ صمتُ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It can be مجرور if it is preceded by a حرف جر or a مضاف: بكم رجلا مررتُ و على كم رجل حكمتُ و غلام كم رجلا ضربت و مال كم سلبت</div></li>
+	<li class="basic"><div class="nodecontent">It will be مرفوع otherwise and then either a مبتدأ: كم رجلا أخوك و كم رجل ضربته or a خبر when it is a ظرف: كم يوما سفرُك و كم شهرٍ صومي</div></li></ul></li></ul></li></ul></li>
+	
+	
+	<li class="col 49"><div class="nodecontent">8. الظروف المبنية: The indiclinable adverbs</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">They are of several types:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. When cut of from their إضافة when the مضاف اليه is omitted: قبْلُ و بعْدُ و فوقُ و تحتُ (TODO:examples) but only if this is intended by the speaker else it may be معرب</div></li>
+	<li class="basic"><div class="nodecontent">2. حيثُ is usually مضاف to a جملة and sometimes to a single word: أما ترى حيثُ سهيل طالعا for مكان سهيل and the condition for … TODO is that it is مضاف to a جملة</div></li>
+	<li class="col"><div class="nodecontent">3. إذا gives a meaning for future if it comes with a ماضي and it contains the meaning of a condition and after may come a جملة اسمية: آتيك إذا الشمس طالعة but preferably فعلية: آتيك إذا طلعت الشمس</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is also used for المفاجأة (surprise) after which a جملة اسمية comes:  خرجت فإذا السبُعُ واقف</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">4. إذ is used for the ماضي and can be followed by a جملة فعلية أو خبرية: جئتك إذ طلعت الشمس و إذ الشمس طالعة</div></li>
+	<li class="basic"><div class="nodecontent">5. أَيْنَ و أَنّى used for مكان in استفهام: أين تمشي؟ و أنّى تقعد؟ and can also indicate a condition: أين تجلس أجلس و أنّى تقم أقم</div></li>
+	<li class="basic"><div class="nodecontent">6. متى for شرط أو استفهام: متى تصم أصم و متى تسافر؟</div></li>
+	<li class="basic"><div class="nodecontent">7. كيف for questioning about a state: كيف أنت؟ for في أي هال أنت؟</div></li>
+	<li class="basic"><div class="nodecontent">8. أيّان for questioning about a time: أيّان يوم الدين?</div></li>
+	<li class="basic"><div class="nodecontent">9. مذ و مُنْذُ and they can either indicate the start of a time or total duration of a time: ما رأيته مذ أو منذ يوم الجمعة و مذ أو منذ يومين as reply depending on how the question was asked.</div></li>
+	<li class="basic"><div class="nodecontent">10. لدى و لَدُن in the meaning of عند: المال لديك with the difference that عند does not require the actual presence of the thing mentioned: TODO example</div></li>
+	<li class="basic"><div class="nodecontent">11. قطّ: negates the past entirely: ما رأيته قطّ</div></li>
+	<li class="basic"><div class="nodecontent">12. عَوْضَُِ: negates the future entirely: لا أضربه عوض</div></li>
+	<li class="basic"><div class="nodecontent">13. أمسِ with a كسرة as it is said by the people of الحجاز</div></li></ul></li>
+    <li class="basic"><div class="nodecontent">If a ظرف is made مضاف to a جملة it may receive a فتحة: يوْمَُئذ و حينئذ and likewise مِثْلُ و غَيْرُ when they come with ما و أنْ و أنّ: ضربته مثلَُ ما ضرب زيد و غيرَُ أنَّ ضرب زيد</div></li></ul></li></ul></li></ul></li>
+    
+
+
+
+
+			<!-- PARENT of khatimah -->
+	<li class="col z50 z51 z52 z53 z54 z55 z56 z57 z58 z59"><div class="nodecontent">Conclusion</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Principles according to which an اسم becomes معرب أو مبني:</div>
+		<ul class="subexp">
+
+
+	<li class="col 50"><div class="nodecontent">1. An اسم is of 2 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. المعرفة (definite): That اسم that has been coined for something and it has 6 types:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. المضمرات (pronouns)</div></li>
+	<li class="basic"><div class="nodecontent">2. الأعلام (proper nouns): That what has been coined for something and cannot be described with any other single word</div></li>
+	<li class="basic"><div class="nodecontent">3. المبهمات (unspecified things): أسماء الإشارات (demonstrative pronouns) and الموصولات (relative pronouns)</div></li>
+	<li class="basic"><div class="nodecontent">4. المعرف باللام</div></li>
+	<li class="basic"><div class="nodecontent">5. A مضاف to any of the above in إضافة معنوية</div></li>
+	<li class="basic"><div class="nodecontent">6. المعرف بالنداء: What is specified by calling</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">2. النكرة (indefinite): What has been coined for something unspecified: رجل و فرس</div></li></ul></li>
+	
+	
+	<li class="col 51"><div class="nodecontent">2. أسماء العدد (The numbers): What has been coined to indicate the quantity of singular things and it has 12 basic words: واحدة إلى عشرة و مائة و ألف</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1 and 2 agree with the gender of the counted object: رجل واحد و رجلان اثنان و امرأة واحدة و امرأتان اثنتان</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They occur as صفة and there is no مميز as the words themselves do not need the number to be mentioned: عندي رجل و رجلان</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3 till 10 disagree with the gender of the مميز: ثلاثة رجال و عشرة رجال و ثلاث نِسوَة و عشر نسوة</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The مميز is مجرور and plural except for مائة where it may remain singular: ثلاث مائة و ثلاث مآت و ثلاث مِئِين</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">10 till 19 in which the مميز will be singular منصوب: أحد عشر رجلا و اثنا عشر رجلا و ثلاثة عشر رجلا إلى تسعة عشر رجلا و إحدى عشرة امرأة و اثنتا عشرة امرأة و ثلاث عشرة امرأة إلى تسع عشرة امرأة</div></li>
+	<li class="basic"><div class="nodecontent">With 20 and above the male and female forms are the same:عشرون رجلا أو امرأة إلى تسعين رجلا أو امرأة و أحد و عشرون رجلا و إحدى و عشرون امرأة و اثنان و عشرون رجلا و اثنتان و عشرون امرأة و ثلاثة و عشرون رجلا و ثلاث و عشرون امرأة إلى تسعة و تسعين رجلا و تسع و تسعين امرأة</div></li>
+	<li class="basic"><div class="nodecontent">100 and above in which the مميز will be singular and مجرور: مائةُ رجل أو امرأة و ألف رجل أو امرأة و مائتا رجل أو امرأة و ألفا رجل أو امرأة</div></li>
+	<li class="basic"><div class="nodecontent">Combining numbers: First come the thousands, then hundreds, then singulars, then tens: عندي ألف و مائة و أحد و عشرون رجلا و ألفان و مائتان و اثنان و عشرون رجلا و أربعة آلاف و تسع مائة و خمس و أربعون امرأة</div></li></ul></li>
+	
+	
+	<li class="col 52"><div class="nodecontent">3. The gender of an اسم</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It is masculine by default or feminine according to:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Explicit signs: a ة: طلحة or an ألف مقصورة: حبلى or an ألف مدودة: حمراء</div></li>
+	<li class="basic"><div class="nodecontent">Implicit signs: أرض و دار as indicated by their diminutive: أُرَيضة و دُويرة</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">Femininity of an اسم is either حقيقي where a word has an actual male counterpart: امرأة و ناقة or لفظي otherwise: ظلمة و عين</div></li></ul></li>
+
+
+	<li class="col 53"><div class="nodecontent">4. Duals: nouns that have attached to their ending an ألف أو ياء and a ن with a فتحة before them: رجلان و رجلين</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">For the مقصور nouns, if an ألف was originally a و then it will return: عصا و عصوان else it will become a ي: رحى و رحيان و حبلى و حبليان</div></li>
+	<li class="basic"><div class="nodecontent">The ممدودة nouns, if the ء was originally there it remains: قرّاء و قرّاءآن and if it was for femininity it becomes a و: حمراء و حمراوان and if it replaces a و or a ي it may either stay or change: كساوان أو كساءان</div></li>
+	<li class="basic"><div class="nodecontent">The ن must be deleted from a مضاف: جاءني غلاما زيد و مسلما مصرٍ</div></li>
+	<li class="basic"><div class="nodecontent">If a dual is مضاف to another dual then the first must be changed to a جمع: أَيْدِيَهما</div></li></ul></li>
+	
+	
+	<li class="col 54"><div class="nodecontent">5. Plurals</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">To indicate multiple entities by either changing a word or by intending it for words whose singulars and plurals are the same: فُلْك and words like قوم و رهْط even if they refer to single entities.</div></li>
+	<li class="col"><div class="nodecontent">مصحّح: when they contain the same form of the singular word:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Masculine: It ends with ـُونَ  أو ـِينَ: مسلمُونَ و مسلمِينَ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">For the منقوص the ي is deleted: قاضون و داعون and for the مقصور the ألف is deleted and a فتحة before it takes its place: مصطفَون and it is specific for intelligent being.</div></li>
+	<li class="basic"><div class="nodecontent">The ن is deleted from a مضاف: مسلمو مصرَ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">Feminine: It ends with ـَات: مسلمات but only when talking about a group that contains no males else it will be مسلمون and also not when the singular contains no ة: حائض و حامل unless it is not a صفة: هندات</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">مكسّر (broken plurals): They are on many patterns for the triliterals which are سماعي: رجال و أفراس و فلوس and for the quads: فَعَالِل و فَعَالِيل</div></li>
+	<li class="basic"><div class="nodecontent">Plurals themselves are also of 2 types: جمع قلّة and this is used for less then 10and is on the patterns of: أَفْعُل و أفعَال و أفعِلة و فِعلَة and the جمع كثرة is used for above 10. TODO: check correctness and add examples</div></li></ul></li>
+	
+	
+	<li class="col 55"><div class="nodecontent">6. المصدر (verbal noun): They indicate an occurrence and from them verbs are derived. Their form areسماعي for the root triliteral verbs but deductible for the مزيد قيه</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">If it is not a مفعول مطلق then like its verb it can make its فاعل مرفوع: أجبني قيام زيد or  its مفعول منصوب: أجبني ضرب زيد عمروا but neither of them may precede the مصدر and it can also be a مضاف to both: كرهتُ ضرب زيد عمروًا أو عمرٍو زيدٌ</div></li>
+	<li class="basic"><div class="nodecontent">If it is a مفعول مطلق then only the verb before it does the action: ضربتُ ضربا عمروا</div></li></ul></li>
+
+
+	<li class="col 56"><div class="nodecontent">7. اسم الفاعل: It is the noun for the one that performs the action of the verb</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is on the scale of فاعِل for the regular triliterals and for the مزيد فيه the مضارع is taken then the حرف المضارع replaced by مُـ and the second to last letter is given a كسرة: مُدخِل و مُستخرِج</div></li>
+	<li class="col"><div class="nodecontent">It does the action of a فعل معروف for nouns that are indefinite:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">if it comes in the meaning of present or future tense it can represent a:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">مبتدأ: زيد قائم أبوه</div></li>
+	<li class="basic"><div class="nodecontent">ذو الحال: جاءني زيد ضاربا أبوه عمروا</div></li>
+	<li class="basic"><div class="nodecontent">موصول: مررت بالضارب أبوه عمروا</div></li>
+	<li class="basic"><div class="nodecontent">موصوف: عندي رجل ضارب أبوه عمروًا</div></li>
+	<li class="basic"><div class="nodecontent">همزة الاستفهام: أ قائم زيد</div></li>
+	<li class="basic"><div class="nodecontent">حرف النفي: ما قائم زيد</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">For the past tense it must be a مضاف: زيد ضارب عمروٍ أمس</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">The definite form can be used for all tenses: زيد الضارب أبوه عمروا الآن أو غدا أو أمس</div></li></ul></li>
+	
+	
+	<li class="col 57"><div class="nodecontent">8. اسم المفعول (the object): A noun indicating whom the action of the verbs falls upon</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It comes in the regular triliterals on the scale of مفعول:مضروب explicitly or implicitly: مقُول و مرمِيٌّ or similar to the اسم الفاعل of the مزيد فيه but with ـَ on the second to last letter: مُدخَل و مُستخرَج</div></li>
+	<li class="basic"><div class="nodecontent">It does the action of the passive verb with the same conditions of the اسم الفاعل: زيد مضروب غلامه الآن أو غدا أو أمس</div></li></ul></li>
+	
+	
+	<li class="col 58"><div class="nodecontent">9. الصفة المشبّهة (noun derived from an adjective): It affirms the quality of the verb for something</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Its pattern is not fixed but سماعي: حَسَن و صعْب و شُجَاع و شريف و ذلول</div></li>
+	<li class="basic"><div class="nodecontent">It action can occur in 18 (2x3x3) different situations: It comes with or without ال and then the affected word is a مضاف or it comes with or without ال and that word can then have the 3 regular case endings: جاءني زيد الحسن وجهَُِه and similarly: الحسن الوجهَُِ والحسن وجهًٌٍ و حسن وجهَُِه و حسن الوجهَُِ و حسن وجهًٌٍ</div></li>
+	<li class="basic"><div class="nodecontent">TODO: the 5 different types of</div></li></ul></li>
+	
+	
+	<li class="col 59"><div class="nodecontent">10. اسم التفضيل (the comparative and superlative): A noun that indicates for something that it has more of a quality than something or everything else.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">For regular triliterals not indicating colours or defects it is on the scale of أفعَلُ: زيد أفضل الناس</div></li>
+	<li class="basic"><div class="nodecontent">For verbs indicating colours or defects or مزيد فيه  it has to be constructed with another اسم التفضيل from the regular triliterals followed by the مصدر of that verb being منصوب as a تمييز: هو أشدّ استخراجا و أقوَى حُموةً و أقبح عَرَجًا</div></li>
+	<li class="basic"><div class="nodecontent">It is usually used for the فاعل but sometimes for the مفعول: أعذر و أشغل و أشهر</div></li>
+	<li class="col"><div class="nodecontent">It is used in 3 ways:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">2 for the comparative:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">as a مضاف where making the number correspond is optional: زيد أفضل القوم و الزيدون أفضل أو أفضلو القوم</div></li>
+	<li class="basic"><div class="nodecontent">with مِن: زيد أفضل من عمرٍو and here the تفضيل must always be male singular: هند و الزيدان و المسامات أفضل من عمرو</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">The superlative with ال: زيد الأفضلُ and here the number must correspond: الزيدون الأفضلون</div></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    
+    
+
+
+
+    <!-- <li class="60 col"><div class="nodecontent">فعل</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. ماضي</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The past tense: what occurred before your time and it is مبني upon a فتحة unless it comes with a متحرك pronoun or a و in which case it ends in a ساكن or ضمة respectively: ضربَ و ضربْتَُِ و ضربُوا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. مضارع</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It starts with one of the letters of أتين</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These are with ضمة in the رباعي and the مزيد فيه which have 4 letters in their  ماضي: يُدَحرِجُ و يُخرِجُ و يُنَزِّلُ and they will have فتحة in all others.</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">May be preceded by لام تأكيد: إنّ زيدا لَيَقُومُ (or لام الابتداء or لام المزحلقة) which only applies to the present.</div></li>
+	<li class="basic"><div class="nodecontent">It gives the meaning of joining the present with the future like the اسم فاعل which is why it is called مضارع (the similar one).</div></li>
+	<li class="basic"><div class="nodecontent">When preceded by س or سَوفَ it denotes the future and سوف may also be prefixed with the لام تأكيد</div></li>
+    <li class="basic"><div class="nodecontent">TODO: Need clarification on section on origin of verbs and its iraab</div></li>
+    </li>
+    </ul></li> -->
+    
+
+
+    <li class="60 HUGEPARENT col"><div class="nodecontent">فعل</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. ماضي</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The past tense: what occurred before your time and it is مبني upon a فتحة unless it comes with a متحرك pronoun or a و in which case it ends in a ساكن or ضمة respectively: ضربَ و ضربْتَُِ و ضربُوا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. مضارع</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It starts with one of the letters of أتين</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These are with ضمة in the رباعي and the مزيد فيه which have 4 letters in their  ماضي: يُدَحرِجُ و يُخرِجُ و يُنَزِّلُ and they will have فتحة in all others.</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">May be preceded by لام تأكيد: إنّ زيدا لَيَقُومُ (or لام الابتداء or لام المزحلقة) which only applies to the present.</div></li>
+	<li class="basic"><div class="nodecontent">It gives the meaning of joining the present with the future like the اسم فاعل which is why it is called مضارع (the similar one).</div></li>
+	<li class="basic"><div class="nodecontent">When preceded by س or سَوفَ it denotes the future and سوف may also be prefixed with the لام تأكيد</div></li>
+    <li class="basic"><div class="nodecontent">TODO: Need clarification on section on origin of verbs and its iraab</div></li>
+    
+
+
+
+	<li class="61 col"><div class="nodecontent">It declines in 4 ways:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. for صحيح verbs for the singular form other than the second person</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. رفع with a ضمة</div></li>
+	<li class="basic"><div class="nodecontent">2. نصب with a فتحة</div></li>
+	<li class="basic"><div class="nodecontent">3. جزم with a ساكن</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. for تثنية و جمع المذكّر and the singular second person be it صحيح or not:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. رفع with a ن: هما يفعلان و هم يفعلون و أنتِ تفعلين</div></li>
+	<li class="basic"><div class="nodecontent">2. نصب and جزم by omitting the ن:لن يفعلا و لن يفعلوا و لن تفعلي</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3. for the ناقص يائي و واوي verbs except for the forms تثنية و جمع و المخاطب</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. رفع with an implied ضمة: هو يرمِي و يغزُو</div></li>
+	<li class="basic"><div class="nodecontent">2. نصب with an explicit فتحة: لن يرمِيَ و يغزوَ</div></li>
+	<li class="basic"><div class="nodecontent">3. جزم by the deletion of the 3rd radical: لم يرمِ و يغزُ</div></li></ul></li>
+	<li class="col"><div class="nodecontent">4. for the ناقص ألفيّ verbs except for the forms تثنية و جمع و المخاطب</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. رفع with an implied ضمة: هو يسعى</div></li>
+	<li class="basic"><div class="nodecontent">2. نصب with an implied فتحة: لن يسعى</div></li>
+	<li class="basic"><div class="nodecontent">3. جزم by the deletion of the 3rd radical: لم يسعَ</div></li></ul></li></ul></li>
+    
+    
+    
+    <li id=62 class=62 class="basic"><div class="nodecontent">المرفوع: Its cause is implied by the absence of anything that causes نصب أو جزم</div></li>
+    
+    
+    <li id=63 class=63 class="col"><div class="nodecontent">منصوب: It is caused by 5 particles:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. أنْ: أريد أن أذهبَ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">After علم (to know) it does not make a verb منصوب as أن implies a wish or desire (something unknown) whereas what follows after علم is something definitely known : TODO</div></li>
+	<li class="basic"><div class="nodecontent">After ظنّ (to think) you can choose to make a verb منصوب or not: ظننتُ أن سَيَقُومُ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">2. لنْ: لن أضربَك</div></li>
+	<li class="basic"><div class="nodecontent">3. كَيْ: أسلمتُ كَي أدخُلَ الجَنّةَ</div></li>
+	<li class="basic"><div class="nodecontent">4. إذَنْ: إذَنْ يغْفِرَ الله لك</div></li>
+	<li class="col"><div class="nodecontent">5. أنْ المقدّر (implied) and this occurs in 7 places:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. After حتّى:  أسلمتُ حتّى أدخُلَ الجَنّةَ</div></li>
+	<li class="col"><div class="nodecontent">2. ِWith لام كَي: قام زيد ليذهبَ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">أن may be explicitly mentioned here:  أسلمتُ لأن أدخُلَ الجَنّةَ</div></li>
+	<li class="basic"><div class="nodecontent">أن must be explicitly mentioned when it comes with لام النفي: لئلا يعلم (lest) TODO: better example</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">3. With لام الجَحدِ which is used in خبر كان to emphasize a negative كان ماضي: TODO</div></li>
+	<li class="col"><div class="nodecontent">4. With the ف that occurs in:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">جواب الأمر: أَسلِمْ فتَسلِم</div></li>
+	<li class="basic"><div class="nodecontent">نهي: لا تَصعِ فَتُعذِّب</div></li>
+	<li class="basic"><div class="nodecontent">الاستفهام: هل تعلّم فتنجُو</div></li>
+	<li class="basic"><div class="nodecontent">النفي: ما تزورنا فنُكرِمُك</div></li>
+	<li class="basic"><div class="nodecontent">التمنّى: لَيتَ لي مالا فأُنفِقُه</div></li>
+	<li class="basic"><div class="nodecontent">العرض: ألا تَنزِلُ بنا فتُصِيب خيرا</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">5. With the و that comes with all of the aforementioned: أَسلِمْ و تَسلِم</div></li>
+	<li class="basic"><div class="nodecontent">6. After أو that comes with the meaning of إلى أنْ أو إلّا أن: لأحبِسنّك أو تُعطيني حقّي (unless)</div></li>
+	<li class="col"><div class="nodecontent">7. After واو العطف when the معطوف عليه is a clear اسم: أعجَبَني قيامُك و تَخرُجَ because أن renders it in the meaning of a an اسم</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">أن may be explicitly mentioned here: و أن تَخرُجَ</div></li></ul></li></ul></li></ul></li>
+
+
+
+    <li id=64 class=64 class="col"><div class="nodecontent">مجزوم (The jussive verb)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">نهي (negations)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">لم: This changes the meaning from the present tense to the past negative tense</div></li>
+	<li class="basic"><div class="nodecontent">لمّا: idem but there is an expectation of the action after it and a duration before it: قام اﻷمير لمّا يركب. The فعل may be deleted with لمّا only: ندم زيد و لمّا</div></li>
+	<li class="basic"><div class="nodecontent">لام الأمر: لِيدخُلْ</div></li>
+	<li class="basic"><div class="nodecontent">لا: لا تدخلْ</div></li></ul></li>
+	<li class="col"><div class="nodecontent">كَلِم مجازات (The conditional words): It is a حرف أو اسم that enters upon جملتين:شرط و جزاء (a condition and consequence)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They are: إن و مهما و إذ ما  و حيثُما و أين و متى و ما و منْ و أيّ و أنّى و إن</div></li>
+	<li class="col"><div class="nodecontent">Rules</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">If both شرط and جزاء are مضارع then both have to be مجزوم: إن تُكرِمْنِي أُكرِمْكَ</div></li>
+	<li class="basic"><div class="nodecontent">Nothing changes if both are ماضي: إن ضربتَ ضربتُ</div></li>
+	<li class="basic"><div class="nodecontent">If only the جزاء is ماضي then the شرط must be مجزوم: إن تضربْني ضربتُك</div></li>
+	<li class="basic"><div class="nodecontent">If only the شرط is ماضي the  جزاء can optionally be مجزوم: إن جئتني أكرِمُْك</div></li>
+	<li class="col"><div class="nodecontent">In 4 cases the جزاء has to start with ف</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Except in 2 cases:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">If the جزاء is ماضي without قد then the شرط may not start with a ف: إن أكرمتني أكرمْتك as also in:( ق:وَ مَنْ دَخَلَه كَانَ آمِناً(آل عمران:٩٧</div></li>
+	<li class="basic"><div class="nodecontent">If the جزاء is مضارع in the affirmative (مثبت) or نفي بلا it may optionally start with ف: إن تضربْني أضربْك أو فأضربْك / إن تَشتِمني لا أضربْك أو فلا أضربْك</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">1. When the جزاء is ماضي with قد: TODO</div></li>
+	<li class="basic"><div class="nodecontent">2. When the جزاء is مضارع منفي بغير لا: لإ: TODO</div></li>
+	<li class="col"><div class="nodecontent">3. When the جزاء is a جملة اسمية: TODO</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">إذا may take the place of the ف: TODO</div></li></ul></li>
+	<li class="col"><div class="nodecontent">4. When the جزاء is a جملة إنشائية be it one of:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">أمر: TODO</div></li>
+	<li class="basic"><div class="nodecontent">نهي: TODO</div></li>
+	<li class="basic"><div class="nodecontent">استفهام: إن تَركتَنا فمن يرحَمُنا</div></li>
+	<li class="basic"><div class="nodecontent">دعاء: إن أكرمتنا فيرحَمُك الله</div></li>
+	<li class="col"><div class="nodecontent">إن may be assumed with 5 verbs when you intend that the first part is the cause for the second:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. أمر: تَعَلَّمْ تنج</div></li>
+	<li class="basic"><div class="nodecontent">2. نهي: لا تَكذِبْ يكن خيراً لك</div></li>
+	<li class="basic"><div class="nodecontent">3. استفهام: هل تزورنا نُكرِمْكَ</div></li>
+	<li class="basic"><div class="nodecontent">4. التمنّي: لَيتَك عِندِي أخدِمْك</div></li>
+	<li class="basic"><div class="nodecontent">5. العرضُ (suggestion): ألا تنزِل بِنا تُصِب خيرا</div></li>
+	<li class="basic"><div class="nodecontent">6. And also with نفي in some places: لا تَفعلُ شرًّا يكن خيرًا لك and the assumption of إن at the beginning will prevent you from saying: لا تَكفُرَ تدخُل النار</div></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    
+    
+    
+    <li id=65 class=65 class="col"><div class="nodecontent">3. أمر</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Rules:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It is formed by removing the حرف المضارع and if it is followed by a…</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ساكن then by adding aهمزة الوصل which gets a ضمة if the third letter has this as well: اُنصُرْ else it gets a كسرة: اِعلَمْ و اِضرِبْ و اِسْتَخرِج</div></li>
+	<li class="col"><div class="nodecontent">متحرّك it doesn't need a همزة: عِد و حاسِب</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">باب الإفعال is from this type as يُكرِم comes originally from يأكرم</div></li></ul></li></ul></li>
+    <li class="basic"><div class="nodecontent">It is مبني upon its مجزوم form.</div></li></ul></li></ul></li>
+    
+
+
+	<li id=66 class=66 class="col"><div class="nodecontent">Passive verbs (فعل ما لم يُسمَّ فاعله or فعل مجهول)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">In it the فاعل is deleted and the مفعول takes its place and this is specific to transitive (متعدّي) verbs</div></li>
+	<li class="col"><div class="nodecontent">Its signs:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">In the ماضي verbs the second to last letter has a كسرة and one of following:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Only the 1st letter has a ضمة in those بابs where the first letter is not a همزة الوصل: ضُرِبَ و دُحرِجَ و أُكرِمَ</div></li>
+	<li class="basic"><div class="nodecontent">The 1st and 2nd letter have a ضمة in those بابs where the first letter is a تاء زائدة: تُفُضِّلَ و تُضُورِبَ</div></li>
+	<li class="basic"><div class="nodecontent">The 1st and the 3rd letter have a ضمة in those بابs where the first letter is a همزة الوصل: اُستُخرِجَ و اُقتُدِرَ and the همزة will only have the ضمة if it is not assimilated due to اجتماع الساكنين.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">In the مضارع, the حرف المضارع has a ضمة and the second to last letter has a كسرة: يُضرَبُ و يُسْتخْرَجُ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Except for those بابs where the ضمة is present by default so the only sign will be the كسرة: المفاعلة و الإفعال و التقعيل و القعللة و ملحقاتها الثمانية: يُحاصَبُ و يُدحْرَج</div></li></ul></li>
+	<li class="col"><div class="nodecontent">Exception: الأجوف verbs:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ماضي: the ف will have a كسرة: قِيلَ و بِيعَ and TODO</div></li>
+    <li class="basic"><div class="nodecontent">مضارع: the ف will have the فتحة instead of the ع: يُقالُ و يُباعُ</div></li></ul></li></ul></li></ul></li>
+    
+
+
+	<li id=67 class=67 class="col"><div class="nodecontent">فعل متعدّي أو لازم</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">لازم (Intransitive): When the action only affects the فاعل: قعد و قَامَ</div></li>
+	<li class="col"><div class="nodecontent">متعدّي (Transitive): when the action falls upon other than the فاعل: ضرب and it can have...</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">one مفعول only: ضرب زيد عمروًا</div></li>
+	<li class="basic"><div class="nodecontent">or مفعولين: أعطى زيد عمروًا درْهما and this may be shorted to only 1: أعطيتُ زيدا او أعطيتُ درْهما except for علِمتُ</div></li>
+	<li class="col"><div class="nodecontent">or 3 مفعولs: أعلم اللهُ زيدًا عمرًا فالاً and the other 6 verbs for which this is possible are: أرى و أنْبأ و نبِّأ و أخْبَرَ و خبّر و حدّث</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These may also be shorted to the first مفعول only: أعلم الله زيداً</div></li>
+    <li class="basic"><div class="nodecontent">The 2nd and the 3rd مفعول are like the مفعولين علِمتُ in that they must occur together, not only one of them.</div></li></ul></li></ul></li></ul></li>
+    
+
+
+
+
+	<li id=68 class=68 class="col"><div class="nodecontent">أفعال القلوب: They enter upon a مبتدأ و خبر and both are made منصوب: علِمتُ زيدا فاضلا و ظنَنتُ عمروا عالما</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They are: علِمتُ و ظَنَنتُ و حسِبتُ و جِلتُ و رَأيتُ و زعَمتُ و وجَدتّ</div></li>
+	<li class="col"><div class="nodecontent">Its special properties:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The مفعولين may not be shortened to a single مفعول as with أعطيتُ</div></li>
+	<li class="basic"><div class="nodecontent">The مفعولين may be omitted if the verb falls between or after a مبتدأ و خبر: زيد ظننتُ عالم أو زيد قائم ظننتُ</div></li>
+	<li class="col"><div class="nodecontent">It may be attached to the front of:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">الاستفهام: علمتُ أزيد عندك أم عمرو</div></li>
+	<li class="basic"><div class="nodecontent">النفي: علمتُ ما زيد في الدار</div></li>
+	<li class="basic"><div class="nodecontent">لام الابتداء: علمتَ لزيد منطلق</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">The فاعل and the مفعول may both be attached pronouns: علمتَني منطلقا و ظننتُك فاضلا</div></li>
+	<li class="col"><div class="nodecontent">Some verbs can come with a different meaning and only one مفعول منصوب in which case they will no longer be from أفعال القلوب</div>
+		<ul class="subexp">
+    <li class="basic"><div class="nodecontent">ظننتُ بمعنى اتّهَمتُ و علمت بمعنى عرَفتُ و رأيتُ بمعنى أبصرتُ و وجدتُّ بمعنى أصَبتُ الضالة :TODO translation?</div></li></ul></li></ul></li></ul></li>
+    
+
+
+
+	<li id=69 class=69 class="col"><div class="nodecontent">الأفعال الناقصة : So called because they only indicate the time, not the meaning of the verb's مصدر and they come with a خبر منصوب</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They are: كان و صار و أصبَحَ و أمسَىَ etc...</div></li>
+	<li class="basic"><div class="nodecontent">They enter upon a جملة اسميّة: كان زيد قائما</div></li>
+	<li class="col"><div class="nodecontent">كان comes in three forms:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1.  ناقصة: This indicates that the خبر applies to the فاعل either in the past, perpetual or that it has discontinued: TODO</div></li>
+	<li class="basic"><div class="nodecontent">2. تامّة : it will have the meaning of ثبَتَ أو حَصَلَ: كان القِتَال</div></li>
+	<li class="basic"><div class="nodecontent">3. زائدة: it is extra and omitting it will not change the meaning of the sentence: TODO</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">صار is used to indicate a transition: صار زيد غنيّا أو صار الطين حجرا</div></li>
+	<li class="col"><div class="nodecontent">أصبح و أمسى و أضحَى are used...</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">to indicate the time of the sentence that follows: أصبح زيد ذاكرا</div></li>
+	<li class="basic"><div class="nodecontent">with the same meaning as صار: أصبح زيد غنيّا</div></li>
+	<li class="basic"><div class="nodecontent">As فعل تامة where they will have the meaning of دخل في الصباح و الضحى و المساء</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">ظلّ و بات: indicate the time of the attached sentence, day or night: ظلّ زيد كاتبا and they also come with the meaning of صار</div></li>
+	<li class="basic"><div class="nodecontent">ما زال و ما فَتِئَ و ما بَرِحَ و ما أنفَكَّ indicate the continuation of the existence of the خبر with regards to the فاعل: ما زال زيد أميرا and it must come with a حرف النفي</div></li>
+	<li class="basic"><div class="nodecontent">ما دام indicates the establishment of something for the time that its خبر persists: أقُومُ ما دام الأمير جالساً</div></li>
+    <li class="basic"><div class="nodecontent">لَيسَ indicates an absolute negation of the meaning of a sentence for either the present time or at all times: ليس زيد قائما and refer to the other notes on ليس</div></li></ul></li>
+    
+
+
+	<li id=70 class=70 class="col"><div class="nodecontent">الأفعال المقاربة: They indicate the closeness of the خبر in regards to the فاعل and they are of 3 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. للرّجاء (for anticipation) with:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">عسى</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">this verb is only used in the ماضي and its action is like كاد except that its خبر is a فعل مضارع with أن: عسى زيد أن يقوم (Zaid might stand) where عسى here is a فعل ناقصand أن may also be deleted.</div></li>
+	<li class="basic"><div class="nodecontent">the خبر may also precede the اسم: عسى أن يقوم زيد in which case it will be تامة without needing a خبر as here زيد is the فاعل of يقوم</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">2. للحصول (for setting in/occurring) with:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">كاد: Its خبر is a  فعل مضارع without أن: كاد زيد يقوم (Zaid was about to stand) and أن may enter the خبر</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3. للأخذ و الشروع في الفعل (with the meaning of starting/beginning contained in the verbs) and they are:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">طَفِقَ و جعل و كرُب و أخذ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They are used like كاد: طفق زيد يَكتُب</div></li></ul></li>
+    <li class="basic"><div class="nodecontent">أوْشك and it is like كاد و عسى</div></li></ul></li></ul></li>
+    
+
+
+	<li id=71 class=71 class="col"><div class="nodecontent">فعل التعجّب (The verb of wonder/amazement)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">it comes in two forms for those verbs which have a اسم تفضيل form:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ما أفْعَلَه: ما أحسن زيدا which is derived from أيّ شيء أحسن زيدا in which هو is the فاعل</div></li>
+	<li class="basic"><div class="nodecontent">أَفْعِل به: أحسن بزيد here زيد is the فاعل according to سيبويه</div></li></ul></li>
+	<li class="col"><div class="nodecontent">it will be obtained with others such as the مزيد فيه و الرباعي like so:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ما أشَدَّ استخراجه و اِدُد باستخراجه</div></li></ul></li>
+    <li class="basic"><div class="nodecontent">bringing forward the مفعول و المجرور or taking the فعل back or inserting anything between the two are all not allowed, but المازنيّ has allowed allowed inserting a ظرف: ما أحسنَ اليوم زيدا</div></li></ul></li>
+    
+
+
+	<li id=72 class="72 col"><div class="nodecontent">أفعال المدح و الذمّ (Verbs of praise and dispraise)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">2 verbs for مدح:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">نِعمَ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">its فاعل is a اسم معروف باللام: نعم الرجل زيد or it can be a مضاف to that اسم: نعم غلام الرجل زيد</div></li>
+	<li class="basic"><div class="nodecontent">if its فاعل is a ضمير it must be specified with a تمييز in the form of a نكرة منصوبة: نعم رجلا زيد or with ما:</div></li>
+	<li class="basic"><div class="nodecontent">and زيد here is called المخصوص بالمدح</div></li></ul></li>
+	<li class="col"><div class="nodecontent">حبّذا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">it comprises the فعل المدح as حبّ and its فاعل as ذا: حبّذا زيد</div></li>
+	<li class="col"><div class="nodecontent">the مخصوص may switch places with a:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">تمييز:  حبّذا رجلا زيد و حبّذا زيد رجلا</div></li>
+    <li class="basic"><div class="nodecontent">حال:  حبّذا راكبا زيد حبّذا و حبّذا زيد راكبا</div></li></ul></li></ul></li></ul></li>
+    
+	<li class="basic"><div class="nodecontent">2 verbs for dispraise: بِئسَ و سَاءَ and they are both used exactly like نعم</div></li></ul></li></ul></li>
+    
+    
+    
+    <li id=73 class="73 col"><div class="nodecontent">الحروف (The particles)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. حروف الجرّ: It is placed to attain the result of an فعل and what resembles it or an implied فعل to what follows it. There are 19:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. مِن: It is used:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">للابتداء الغاية: to indicate the start towards an objective or end: سِرتُ من البصرة إلى الكوفة</div></li>
+	<li class="basic"><div class="nodecontent">للتبيين: for clarification where it may be replaced by الذي: TODO</div></li>
+	<li class="basic"><div class="nodecontent">للتبعيض: indicating a portion of piece of something where it may be replaced by بعض: كُلْ من الطعام أو أخذت من الدراهم</div></li>
+	<li class="basic"><div class="nodecontent">زائدة: extra where the meaning is the same when it is left out: ما جاءني من أحد and the Basris claim it is not allowed in موجَب (positive/affirmative) statements, so only for نفي و الاستفهام contrary to what Kufis say.</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">2. إلى and it indicates the conclusion of the objective or end and something it has the meaning of مع: TODO</div></li>
+	<li class="basic"><div class="nodecontent">3. حتّى: and it is similar to من: نَمتُ البارحة حتّى الصباح and it often has the meaning of مع: قدم الحاجّ حتّى المُشاة and it has to come with an explicit word and not with a ضمير contrary to what المبرّد or some poets have said.</div></li>
+	<li class="basic"><div class="nodecontent">4. في: it is used as a ظرف (preposition): زيد في الدار  and sometimes it has the meaning of على: TODO</div></li>
+	<li class="col"><div class="nodecontent">5. ب and it is for</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. للإلصاق : closeness in reality: به داء or for passing by: مررت بزيد (my walking passed close by the place of Zaid)</div></li>
+	<li class="basic"><div class="nodecontent">2. للاستعانة : for seeking aid: كتبت بالقلم</div></li>
+	<li class="basic"><div class="nodecontent">3. للتعليل أو للسببية for explanation or causality: الحمد لله الذي أنقذه بي من النار</div></li>
+	<li class="basic"><div class="nodecontent">4. للمصاحبة : for companionship: خرج زيد بعشيرته</div></li>
+	<li class="basic"><div class="nodecontent">5. للمقالبة: for exchange: بعتُ هذا بذاك TODO: better example here</div></li>
+	<li class="basic"><div class="nodecontent">6. للتعدية: to make an intransitive verb transitive: ذهبت بزيد</div></li>
+	<li class="basic"><div class="nodecontent">7. للظرفيّة: as a preposition: جلست بالمسجد</div></li>
+	<li class="col"><div class="nodecontent">8. زائدة : where it comes extra and the meaning is understood by ignoring it in the following cases:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">خبر النفي: ما زيد بقائم</div></li>
+	<li class="basic"><div class="nodecontent">قي الاستفهام: هل زيد بقائم</div></li>
+	<li class="basic"><div class="nodecontent">سماعا: used traditionally for a مرفوع: بحسبك زيد and ق: كَفَى بالله شهِيداً or for a منصوب: القى بيده (throw his hand; throw himself)</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">6. الام is used</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">للاختصاص أو للمِلك : for specifying possession: المال لِزيد أو لَه</div></li>
+	<li class="basic"><div class="nodecontent">للتعليل: ضربته للتأديب</div></li>
+	<li class="basic"><div class="nodecontent">زائدة: TODO</div></li>
+	<li class="basic"><div class="nodecontent">with the meaning of عن where it is used with a قول: TODO</div></li>
+	<li class="basic"><div class="nodecontent">with the meaning of الواو القَسم (for swearing an oath): TODO</div></li></ul></li>
+	<li class="col"><div class="nodecontent">7. رُبّ is used for indicating small numbers similar to how كم الخبرية indicates large numbers: ربّ رجل كريم لقِيتُه</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">it may come with only the male singular ضمير with a تمييز نكرة منصوبة regardless of its number or gender: ربه رجالا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">the Kufis however claim the ضمير has to correspond to the number and gender of the تمييز: ربها امرأة</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">it may come with ما which blocks the effect of ربّ and it enters upon a جملة اسمية أو فعلية: TODO</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">8. واو رُبّ: TODO</div></li>
+	<li class="col"><div class="nodecontent">9, 10, 11. حروف القسم which are used for swearing an oath by something followed by or near what is confirmed.</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">They are:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">9. واو القسم it is only for clear nouns and not for a ضمير: و اللهِ TODO</div></li>
+	<li class="basic"><div class="nodecontent">10. تاء القسم : it is only for to be used with الله or sometimes in إضافة: تالرحمن أو ترَب الكعبة</div></li>
+	<li class="basic"><div class="nodecontent">11. باء القسم: it is for clear nouns as well as a ضمير: بالله أو بك</div></li></ul></li>
+	<li class="col"><div class="nodecontent">If a sentence starts with these particles then they are followed by a sentence called المقسم عليها</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">When it is affirmative it must have a لام when it is اسمية أو فعلية: والله لزيد بقائم و والله لأفعلنّ كذا or إنّ for اسمية: والله إنّ زيد لفائم</div></li>
+	<li class="basic"><div class="nodecontent">When it is negative it must come with لا أو ما: والله ما زيد بقائم و والله لا يقوم زيد and sometimes it is deleted: TODO</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It can also fall in the middle or after what is indicated at: زيد قائم والله و زيد والله قائم</div></li></ul></li>
+	<li class="col"><div class="nodecontent">12 عن is used for passing over or through: رميت السهم عن القوسِ إلى الصيد</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It can come with مِن  after which عن will then mean جانب (besides): جلستُ من عن يمينه</div></li></ul></li>
+	<li class="col"><div class="nodecontent">13. على is used for being over or above something: زيد على السطح</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It can come with مِن  after which على will then mean فوق (above): نزلتُ من على الفرس</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">14. الكاف للتشبيه (for resemblance): زيد كعمروٍ and it can also come زائدة or as an اسم itself: TODO</div></li>
+	<li class="basic"><div class="nodecontent">15,16. مُذ و مُنذ which indicate either a starting time in the past: ما رأيته مذ رَجَبَ (I haven't seen him since the month of Rajab) or a time period in the present:  ما رأيته مذ شهرنا و منذُ يومنا (I haven't seen him these months or these days)</div></li>
+	<li class="basic"><div class="nodecontent">17,18,19. خلا و عدا و حاشا: they indicate استثناء (exclusion): جاءني القوم خلا زيد و عدا بكرٍ و حاشا عمرو</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. الحروف مشبّهة بالفعل (Particles resembling verbs)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They enter upon a جملة اسمية و تنصب الاسم و ترفع الخبر</div></li>
+	<li class="col"><div class="nodecontent">They are 6:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. إنّ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Doesn't change the meaning of the sentence but only emphasizes it</div></li>
+	<li class="col"><div class="nodecontent">Can only be used:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">at the beginning of a جملة و قول و أمر و نهي و دعاء و نداء</div></li>
+	<li class="basic"><div class="nodecontent">after a موصول: ما رأيت الذي إنه في المساجد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">Emphasizing a خبر has to be done with a لام instead: إنّ زيدا لقائم</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">This لام must be present when إنّ has been lightened to إنْ: TODO</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">but it may also be omitted?</div></li>
+	<li class="basic"><div class="nodecontent">It can also enter upon verbs</div></li></ul></li></ul></li>
+	<li class="basic"><div class="nodecontent">عطف upon the اسم may be done by either رفع أو نصب: إنّ زيدا قائم و عمرو و عمروًا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. أنّ:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">This is used when the emphasized word is a:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">فاعل: بلغني أنّ زيدا قائم</div></li>
+	<li class="basic"><div class="nodecontent">مفعول: كرهتُ أنّك قائم</div></li>
+	<li class="basic"><div class="nodecontent">مبتدأ: عندي أنّك قائم</div></li>
+	<li class="basic"><div class="nodecontent">مضاف إليه: عجبت من طول بكرا قائم</div></li>
+	<li class="basic"><div class="nodecontent">مجرور: عجبتُ من أنّ بكرا قائم</div></li>
+	<li class="basic"><div class="nodecontent">After لو: لو أنّك عندنا لأكرمتك</div></li>
+	<li class="basic"><div class="nodecontent">After لولا: لولا أنّه حاضر لغاب زيد</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">It may also be lightened similarly to إنّ and then it enters upon a جملة فعلية أو اسمية and with the former the verbs must come with السين أو سوف أو قدْ أو حرف النفي: بلغني أنْ زيد قائم و بلغني أنْ قد قام زيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3. كأنّ is used for تشبيه (resemblance) and made up of الكاف التشبيه و إنّ with the إ changed into أ : كأنّ زيد الأسد</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It may also be lightened which will prevent its action: كأنْ زيدٌ أسدٌ</div></li></ul></li>
+	<li class="col"><div class="nodecontent">4. لكِنّ is used for استدراك (rectification) and it comes between two sentences that are different in meaning: ما جاء زيد لكنّ عمروا جاء و غاب زيد و لكنّ بكرا حاضر</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">it may come with a واو: قام زيد و لكنّ عمروا قاعدٌ</div></li>
+	<li class="basic"><div class="nodecontent">it may be lightened which will prevent its action: ذهب زيد لكنْ عمرو عندنا</div></li></ul></li>
+	<li class="col"><div class="nodecontent">5. ليت is used for تمنّى (wish/desire): ليت زيدا قائم (I wish Zaid was standing)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">الفراء has allowed ليت to mean أتمنى: ليت زيدا قائما</div></li></ul></li>
+	<li class="col"><div class="nodecontent">6. لعلّ is used for ترجّى (hope):  أُحِبُّ الصالحين و لستُ منهم لعلّ الله يرزقني صلاحا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">it may give جرّ in rare cases: لعلّ زيدٍ قائمٍ</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">Rules:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They may have ما attached which stops their action and it is used with verbs: إنّما قام زيد</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">3. حروف العطف (particles that join) and they are 10</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1-4: و ف ثمّ حتّى: These are for joining the معطوف عليه with its معطوف in their ruling.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">و is for absolute joining: جاءني زيد و عمرو</div></li>
+	<li class="basic"><div class="nodecontent">ف is for a succession without delay: قام زيد فعمرو (Zaid stood up and then Amr)</div></li>
+	<li class="basic"><div class="nodecontent">ثمّ is for a succession with a delay: دخل زيد ثمّ عمرو (Zaid entered and Amr followed shortly after)</div></li>
+	<li class="col"><div class="nodecontent"> حتّى is like ثمّ with the conditions that its معطوف is part of its معطوف عليه and it indicates its:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">strengthening: مات الناس حتى الأنبياء (The people died, even the Prophets)</div></li>
+	<li class="basic"><div class="nodecontent">weakening: قدم الحاجّ حتى المشاة (The pilgrim walked even? In the crowd)</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">5-7: أو إمّا أم: These are for establishing something ambiguous which is one of two things and not any one in particular: مررت برجل أو امرأة</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">إمّا is only an عطف if has come before in the sentence: العدد إمّا زوج و إمّا فرد (A number is either many or 1?)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">and it may also come before أو: زيد إمّا كاتب أو أمّي (Zaid is either literate or illiterate)</div></li>
+	<li class="basic"><div class="nodecontent">when used in a question the answer has to be نعم أو لا: أ جاءك إمّا زيد أو عمر as the questioner wants confirmation of the coming of either one and not about who exactly came.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">أم is of 2 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. متصلة (connected/continued/persistent) and with it the questioner can confirm something from an ambiguity and it is used with 3 conditions:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. That it comes with a همزة: أ زيد عندك أم عمرو</div></li>
+	<li class="basic"><div class="nodecontent">2. The word after the همزة must be similar to the word after أم in it being an اسم أو فعل: أ قام زيد أم قعد</div></li>
+	<li class="basic"><div class="nodecontent">3. The answer must be affirming one of the two things mentioned in the question.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. منقطعة It will mean بل with همزة الاستفهام and it is used to rectify a previous statement: You think you see a camel from far then doubt comes to you and you say:أم هي شاة  with the meaning of بل أ هي شاة</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">This أم is only used in the خبر as mentioned or in a question: أ عندك زيد أم عمرو (Is Zaid with you or rather is Amr?) where you abandon Zaid and really only ask about Amr</div></li></ul></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">8-10. لا بل لكنْ : These are all used to affirm one of two things.</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">لا is for TODO</div></li>
+	<li class="basic"><div class="nodecontent">بل is for abandoning the first and affirming the second: جاءني زيد بل عمرو و ما جاءني بكر بل خالد (Zaid and Khalid didn't come)</div></li>
+	<li class="basic"><div class="nodecontent">لكنْ is for rectification and a negation must either come after or before it:  ما جاءني زيد لكن عمر جاء و قام بكر لكن خالد لم يقمْ</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">4. حروف التنبيه (The particles for reminding/alerting) and they are 3:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1-2. ألا و أما They only enter upon a جملة اسمية أو فعلية: TODO</div></li>
+	<li class="basic"><div class="nodecontent">3. ها it enters upon a sentence: ها زيد قائم or a single item: هذا و هؤلاء</div></li></ul></li>
+	<li class="col"><div class="nodecontent">5. حروف النداء (Particles for calling) and they are 5:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1-2. أَ و أَيْ are for nearby</div></li>
+	<li class="basic"><div class="nodecontent">3-4. أيا و هيا are for far away</div></li>
+	<li class="basic"><div class="nodecontent">5. يا which is for both near and far</div></li></ul></li>
+	<li class="col"><div class="nodecontent">6. حروف الإيجاب (The particles of answering) and they are 6:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. نعم is for confirming what precedes it whether is was a affirmative or negative statement.</div></li>
+	<li class="basic"><div class="nodecontent">2. بلى is to confirm what preceded as a negative question or statement: لم يقمْ زيد و قلت بلى (Zaid did stand).</div></li>
+	<li class="basic"><div class="nodecontent">3. إي is for confirming a questioned and it must be followed by swearing an oath: هل كان كذا فقلت إي والله</div></li>
+	<li class="basic"><div class="nodecontent">4-6. أجل خير إنّ and they are used to confirm having faith in what has been said before.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">7. حروف الزائدة (The particles that come extra)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. إنْ and it is added to ما النافية: ما إن زيد قائم أو ما إن مدحتُ محمدا بمقالتي  لكن مدحت مقالتي بمحمد and sometimes to ما المصدرية: انتظر ما إن يجلس الأمير and with لمّا: TODO</div></li>
+	<li class="basic"><div class="nodecontent">2. أنْ and it is added to لمّا for time: TODO and between لو which has an oath that precedes it: والله أن لو قمتَ قمتُ</div></li>
+	<li class="basic"><div class="nodecontent">3. ما and it is added to the conditional particles إذا و متى و أيّ و أنّى و أين و إن such as in: إذا ما صمتَ صمتُ and also after some حروف الجرّ such as ب و ف و عن و من و ك</div></li>
+	<li class="basic"><div class="nodecontent">4. لا and it is added to واو after a negation: ما جاءني زيد و  لا عمرو and after ما المصدرية: TODO and after the verb to swear an oath: TODO</div></li>
+	<li class="basic"><div class="nodecontent">5-7. مِن و الباء واللام: see their section under حروف الجرّ</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">8. حرفا التفسير (The 2 explanatory particles): أي و أن by which you start an explanation of something that precedes it.</div></li>
+	<li class="col"><div class="nodecontent">9. حروف المصدر</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1-2. ما و أنْ these are only used for a جملة فعلية: TODO</div></li>
+	<li class="basic"><div class="nodecontent">3. أنّ is used for a جملة اسمية: علمتُ أنّك قائم with the meaning of قيامك (I knew about your standing)</div></li>
+	<li class="basic"><div class="nodecontent">4-5. كي و لو have been included in this group by some.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">10. حروف التحضيض (Particles used for encouragement)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">They are placed at the beginning of a sentence and only come with a فعل and are composed of a حرف النفي prefixed with a حرف الشرط أو الاستفهام أو حرف المصدر</div></li>
+	<li class="col"><div class="nodecontent">1-2. هلّا و ألّا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is for encouragement with a فعل مضارع: هلّا تأكُل</div></li>
+	<li class="col"><div class="nodecontent">It is for blame with a فعل ماضي: هلّا ضربت زيدا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The فعل could also be implied if it is followed by anاسم: هلّا زيدا with the meaning of هلّا ضربتَ زيدا</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">3-4. لولا و لوما: TODO: examples</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">These 2 can also carry another meaning, namely to indicate the prevention of the second sentence due to the existence of the first: لولا عليّ لهلك عمر and in this case the first sentence will always be اسمية</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">11. حرف التوقّع (The particle of expectation): قد</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">With a فعل ماضي it indicates</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">تقريب (nearness in time): قد ركب الأمير (The Ameer was riding just a short while ago) and therefore it is sometimes also called حرف التقريب (particle of nearness)</div></li>
+	<li class="basic"><div class="nodecontent">تأكيد (emphasis) if it is used to confirm a question: هل قام زيد؟ قد قام زيد</div></li></ul></li>
+	<li class="col"><div class="nodecontent">With a فعل مضارع it indicates</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">تقليل (infrequent occurrence): إنّ الكذوب قد يصدُق و إنّ الجواد قد يبخَلُ</div></li>
+	<li class="basic"><div class="nodecontent">تحقيق (confirmation) : TODO</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">There may be a قسم between it and its verb: قد والله أحسنتَ</div></li>
+	<li class="basic"><div class="nodecontent">Sometimes the فعل that follows is deleted due to context: TODO</div></li></ul></li>
+	<li class="col"><div class="nodecontent">12. حرفا الاستفهام (The 2 interrogative particles)</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1-2. هل و الهمزة and they come at the beginning of speech followed by either a جملة فعلية أو اسمية: أ زيد قائم أو هل قام زيد and usage with فعلية is the most common.</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">The همزة may occur in certain places where هل may not, some of them are:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">1. With an اسم مع فعل: أ زيدا ضربتَ</div></li>
+	<li class="basic"><div class="nodecontent">2. For voicing disapproval: أ تضرب زيدا و هو أخوك</div></li>
+	<li class="basic"><div class="nodecontent">3. With أم المتصلة: أ زيد عندك أم عمرو</div></li>
+	<li class="basic"><div class="nodecontent">4. With حروف العطف: أَ وَ مَنْ كَانَ</div></li></ul></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">13. حروف الشرط (Conditional particles) and they enter upon two sentences where either one can be a جملة اسمية أو فعلية</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. إنْ and it is used for the future even it comes with a فعل ماضي: إن زرتني أكرمتك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">The verb may also be implied: إن أنت زائري فأنا أكرمتك</div></li>
+	<li class="basic"><div class="nodecontent">It is only used for doubtful matters because for expected things you would use إذا: آتيك إذا طلعت الشمس</div></li>
+	<li class="col"><div class="nodecontent">If it occurs with a قسم preceding it then the verb must be ماضي either explicitly or implicitly: والله إن أتيتني لأكرمتك أو  والله إن لم تأتني لأهجرتك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Here the second part is the جواب القسم which has to come with a لام for positive statements or ما أو لا for negative statements but these may be omitted if the قسم occurs in the middle of the sentence: إن تأتني والله آتك.</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">2. لو is used for the past even it comes with a فعل مضارع: لو تزورني أكرمتك</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">Like إن  its verb may also be implied</div></li>
+	<li class="basic"><div class="nodecontent">It indicates the negation of the second sentence caused by the negation of the first.</div></li></ul></li>
+	<li class="col"><div class="nodecontent">3. أمّا is used for elaborating what preceded it as a summary: الناس سعيد و شقّي: أما الذين سعدوا ففي الجنّة و أمّا الذين شقوا ففي النار</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It must come with the ف in its جواب</div></li>
+	<li class="basic"><div class="nodecontent">The جواب must be caused by what is before it.</div></li>
+	<li class="basic"><div class="nodecontent">The فعل may be deleted as long as is also deleted in the other part: أمّا زيد فمنطلق which means: مهما يكن من شيء فزيد منطلق</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">14. حرف الردع (The preventative particle): كلّا</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It comes to prevent the speaker from: TODO</div></li>
+	<li class="basic"><div class="nodecontent">It can be used as a reply to an أمر: اضرب زيدا و فقلت كلّا which means: لا أفعل هذا قطّ</div></li>
+	<li class="basic"><div class="nodecontent">It can come with the meaning of حقّا (indeed): TODO</div></li>
+	<li class="basic"><div class="nodecontent">It can also come with the meaning of إنّ which emphasizes the whole sentence: TODO</div></li></ul></li>
+	<li class="col"><div class="nodecontent">15. تاء التأنيث الساكنة</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">It comes with a فعل ماضي wherever it refers to a feminine فاعل</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">When it is followed by a ساكن letter in the next word it will be given a كسرة: قد قامتِ الصلاة</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">16. التنوين (Nunnation) It is a نون ساكن that is added to the end of a word but not for emphasis of a فعل and it has 5 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">Only for an اسم:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. للتمكّن (For the declinable) and it is also called تنوين الصرف because it indicates that an اسم is منصرف: زيدٌ</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is sometimes deleted from a علم (proper noun) when it comes with ابن أو ابنة followed by another علم to shorten the speech: جاءني زيد  بن عمرو أو هند ابنة بكر</div></li></ul></li>
+	<li class="basic"><div class="nodecontent">2. للتنكير (For indefiniteness) and it indicates that an اسم is نكرة: TODO</div></li>
+	<li class="basic"><div class="nodecontent">3. للعوض (To substitute) and it is used to replace a مضاف إليه المحذوف: حينئذٍ و ساعَتَئِذٍ و يومئذ which means: حين إذ كان كذا etc...</div></li>
+	<li class="basic"><div class="nodecontent">4. للمقابلة (As a comparison) and it is in the جمع مؤنث سالم: مسامات as a counterpart of the ن in the جمع مذكر سالم: مسلمون</div></li></ul></li>
+	<li class="col"><div class="nodecontent">For either an اسم أو فعل</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">5. للترنّم (for song/chant) as is used in poetry: TODO</div></li></ul></li></ul></li>
+	<li class="col"><div class="nodecontent">17. نون التأكيد (The ن for emphasis)</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It is used for the أمر و مضارع when they indicate a request similarly to قد for the فعل ماضي</div></li>
+	<li class="col"><div class="nodecontent">It has 2 types:</div>
+		<ul class="subexp">
+	<li class="col"><div class="nodecontent">1. خفيفة (light) which is always ساكن: اضربَُِن</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">It does not occur for the تثنية و جمع المؤنّث as these forms cannot be resolved with the rules of اجتماع الساكنين</div></li></ul></li>
+	<li class="col"><div class="nodecontent">2. ثقيلة (heavy) which has a شدّة and it has:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">a فتحة if there is no ألف before it: اضربَُِنَّ</div></li>
+	<li class="basic"><div class="nodecontent">else a كسرة: اضربانِّ و اضربنانَّ</div></li></ul></li></ul></li>
+	<li class="basic"><div class="nodecontent">It may also enter upon النهي و الاستفهام و التمنّي و العرض و العرض as all of these contain a request: لا تضربنّ و هل تضربن و ليتك تضربنّ و ألا تنزِلنَّ بنا فتصيب خيرا TODO: some better examples</div></li>
+	<li class="basic"><div class="nodecontent">It can also enter upon the swearing of an oath to emphasise its latter part as the oath itself also contains emphasis: ولله لأفعلنّ كذا</div></li>
+	<li class="col"><div class="nodecontent">The letter preceding it will usually have a فتحة but can also have a:</div>
+		<ul class="subexp">
+	<li class="basic"><div class="nodecontent">ضمة to indicate the deleted و of the جمع مذكر: اضربُنّ</div></li>
+	<li class="basic"><div class="nodecontent">كسرة to indicate the deleted ي of the مخاطبة: اضربِنّ</div></li></ul></li></ul></li></ul></li></ul></li></ul></div>
+        </template>
+
+        <script src="js/sarf.js"   charset="utf-8"      ></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    hnmeta: hnmeta,
+                    notesNode: null,
+                    notes: null,
+					notesName: null,
+                },
+                methods: {
+                    showNotes: function(name, e, lesson, index){ // console.log(arguments);
+                        e.stopPropagation();
+                        var ditto = name == this.notesName;
+                        this.notes = this.notesName = null;
+                        if(ditto) return; // if clicked same notes again, toggle.
+                        if(!this.notesNode){
+                            var notes = document.getElementById('notes').innerHTML;
+                            var notesNode = document.createElement('span');
+                            notesNode.innerHTML = notes;
+                            this.notesNode = notesNode;
+                        }
+                        var result = this.notesNode && this.notesNode.getElementsByClassName(name ) && this.notesNode.getElementsByClassName(name )[0] && this.notesNode.getElementsByClassName(name )[0].outerHTML;
+                        this.notes = result || '- Summary notes not found; check back later -';
+                        this.notesName = name;
+                        console.log( name + ' notes found of length: ' + (result?result.length:result) );
+                        return result;
+					},
+					
+					padPage: function(page){
+						page = page && (page+'');
+						var paddedPage = !page ? null : page.length==3 ? page : page.length==2? ('0'+page) : page.length==1? ('00'+page) : null;
+						return paddedPage;
+					}
+				},
+				computed: {
+					lesson_meta: function(){
+						return !this.notesName ? null : this.hnmeta.lessons[ this.notesName ];
+					},
+					lessons_count: function(){
+						return Object.keys( this.hnmeta.lessons ).length;
+					},
+					lesson_next: function(){
+						return !this.notesName ? null : (1 + parseInt(this.notesName));
+					},
+					lesson_next_meta: function(){
+						var lesson_next = this.lesson_next,
+							lessons_count = this.lessons_count;
+						return !lesson_next ? null : ( (lesson_next <= lessons_count) ? this.hnmeta.lessons[ lesson_next ] : null );
+					},
+					url_embed_speakerdeck: function(){
+						var meta = this.lesson_meta;
+						var deck = meta && meta.deck;
+						return !deck ? '': ('https://speakerdeck.com/player/' + deck +'?slide=3');
+					},
+					url_embed_youtube: function(){
+						var meta = this.lesson_meta;
+						var yt = meta && meta.yt;
+						var videos = [];
+						yt = Array.isArray(yt) ? yt : [yt];
+						for(var i=0; i <= yt.length; ++i){
+							var embedCode = yt[i] && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD') && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD').length && yt[i].split('&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD')[0];
+							embedCode = embedCode && embedCode.replace('https://www.youtube.com/watch?v=', '');
+							// ex: https://www.youtube.com/watch?v=_RD2Hs_KXsU&list=PLzn0qdi6JpdtdAyaM2yvvY1Yk9i4EpLHD&index=112"
+							var url = !embedCode ? null : ('https://www.youtube-nocookie.com/embed/' + embedCode + '?start=0');
+							if(url) videos.push(url); console.log(url);
+						}
+						return videos;
+					},
+					url_embed_page_images: function(){
+						var template = 'https://raw.githubusercontent.com/hnshare/hn-data-classic-annotated-more/main/$1.png';
+						var meta = this.lesson_meta,
+							meta_next_lesson = this.lesson_next_meta;
+						var page = meta && meta.page && parseInt(meta.page);
+						var pageEnd = meta_next_lesson && meta_next_lesson.page && parseInt(meta_next_lesson.page);
+						var pages = [];
+						// console.log([page, pageEnd, meta, meta_next_lesson]);
+						for(var i=page; i <= (pageEnd || page); ++i){
+							var paddedPage = this.padPage( i );
+							var url = !paddedPage ? null : template.replace(/\$1/g, paddedPage); 
+							pages.push(url); console.log(url);
+						}
+						return pages;
+					},
+				}
+            });
+        </script>
+  </body>
+</html>
