@@ -1,0 +1,32 @@
+var verbs = [
+    'Aixotalafa', 'Ait~abaEa', 'Ait~axa*a', 'AinotahaY',
+    'Ainoqalaba',
+    'AisotaEojala', 'Aisotagofara', 'yasotakobiru',
+];
+_.map(verbs, gq.EnToAr)
+
+
+
+
+
+
+cookbook: to get from qassist.surge.sh
+======================================
+var input = gq.SARF_DATA_RAW.default.split('\n')
+input = _.filter(input, x => x.split(',')[2].indexOf('d') !== -1)
+var output = _.map(input, x => x.split(',')[ 9 ])
+output = _.map(output, gq.EnToAr)
+
+(93) ["بَدَّلَ", "بَشَّرَ", "بَيَّنَ", "زَيَّنَ", "سَبَّحَ", "سَخَّرَ", "صَدَّقَ", "عَذَّبَ", "عَلَّمَ", "قَدَّمَ", "كَذَّبَ", "نَبَّأَ", "نَزَّلَ", "نَجَّى", "وَلَّى", "جَاهَدَ", "قَاتَلَ", "نَادَى", "نَافَقَ", "هَاجَرَ", "أَبْصَرَ", "أَحْسَنَ", "أَخْرَجَ", "أَدْخَلَ", "أَرْجَعَ", "أَرْسَلَ", "أَسْرَفَ", "أَسْلَمَ", "أَشْرَكَ", "أَصْبَحَ", "أَصْلَحَ", "أَعْرَضَ", "أَغْرَقَ", "أَفْسَدَ", "أَفْلَحَ", "أَنْبَتَ", "أَنْذَرَ", "أَنْزَلَ", "أَنْشَأَ", "أَنْعَمَ", "أَنْفَقَ", "أَنْكَرَ", "أَهْلَكَ", "أَتَمَّ", "أَحَبَّ", "أَحَلَّ", "أَسَرَّ", "أَضَلَّ", "أَعَدَّ", "أَذَاقَ", "أَرَادَ", "أَصَابَ", "أَطَاعَ", "أَقَامَ", "أَمَاتَ", "أَحْيَا", "أَخْفَى", "أَرَى", "أَغْنَى", "أَلْقَى", "أَنْجَى", "أَوْحَى", "أَوْفَى", "مَنَ", " تَى", "ذَى", "تَفَكَّرَ", "تَذَكَّرَ", "تَوَكَّلَ", "تَبَيَّنَ", "تَرَبَّصَ", "تَوَلَّى", "تَوَفَّى", "تَبَارَكَ", "تَسَاءَلَ", "اِخْتَلَفَ", "اِتَّبَعَ", "اِتَّخَذَ", "اِتَّقَى", "اِفْتَرَى", "اِهْتَدَى", "اِبْتَغَى", "اِنْتَهَى", "اِنْقَلَبَ", "اِبْيَضَّ", "اِسْوَدَّ", "اِسْتَعْجَلَ", "اِسْتَغْفَرَ", "اِسْتَكْبَرَ", "اِسْتَهْزَأَ", "اِسْتَجَابَ", "اِسْتَطَاعَ", "اِسْتَقَامَ"]
+
+
+
+
+var input = gq.SARF_DATA_RAW.default.split('\n')
+input = _.filter(input, x => x.split(',')[2].indexOf('d') !== -1)
+_.map(input, x => x.split(',')[ 9 ])
+
+
+(93) ["bad~ala", "ba$~ara", "bay~ana", "zay~ana", "sab~aHa", "sax~ara", "Sad~aqa", "Ea*~aba", "Eal~ama", "qad~ama", "ka*~aba", "nab~a>a", "naz~ala", "naj~aY", "wal~aY", "jaAhada", "qaAtala", "naAdaY", "naAfaqa", "haAjara", ">aboSara", ">aHosana", ">axoraja", ">adoxala", ">arojaEa", ">arosala", ">asorafa", ">asolama", ">a$oraka", ">aSobaHa", ">aSolaHa", ">aEoraDa", ">agoraqa", ">afosada", ">afolaHa", ">anobata", ">ano*ara", ">anozala", ">ano$a>a", ">anoEama", ">anofaqa", ">anokara", ">aholaka", ">atam~a", ">aHab~a", ">aHal~a", ">asar~a", ">aDal~a", ">aEad~a", ">a*aAqa", ">araAda", ">aSaAba", ">aTaAEa", ">aqaAma", ">amaAta", ">aHoyaA", ">axofaY", ">araY", ">agonaY", ">aloqaY", ">anojaY", ">awoHaY", ">awofaY", "mana", " taY", "*aY", "tafak~ara", "ta*ak~ara", "tawak~ala", "tabay~ana", "tarab~aSa", "tawal~aY", "tawaf~aY", "tabaAraka", "tasaAXala", "Aixotalafa", "Ait~abaEa", "Ait~axa*a", "Ait~aqaY", "AifotaraY", "AihotadaY", "AibotagaY", "AinotahaY", "Ainoqalaba", "AiboyaD~a", "Aisowad~a", "AisotaEojala", "Aisotagofara", "Aisotakobara", "Aisotahoza>a", "AisotajaAba", "AisotaTaAEa", "AisotaqaAma"]
+
+

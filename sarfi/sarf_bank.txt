@@ -1,0 +1,205 @@
+1,fEl,b1,ftH,2,24,to do,krnA,105,faEala,yafoEalu,AifoEalo,faAEil,mafoEuwl,fiEol,f E l,1,ftH
+2,ftH,b1,ftH,2,76,"to open; to give victory",kwlnA,29,fataHa,yafotaHu,AifotaHo,faAtiH,mafotuwH,fatoH,f t H,1,ftH
+3,bEv,b1,ftH,2,56,to raise; to resurrect,hnA nA,65,baEava,yaboEavu,AiboEavo,baAEiv,maboEuwv,baEov,b E v,1,ftH
+4,jEl,b1,ftH,2,19,"to make; to place; to set up",krdynA,346,jaEala,yajoEalu,AijoEalo,jaAEil,majoEuwl,jaEol,j E l,1,ftH
+5,jmE,b1,ftH,3,25,"to gather;  to collect",jmE krnA,40,jamaEa,yajomaEu,AijomaEo,jaAmiE,majomuwE,jamoE,j m E,1,ftH
+6,*hb,b1,ftH,2,17,to go,jAnA,35,*ahaba,ya*ohabu,Ai*ohabo,*aAhib,,*ihaAb,* h b,1,ftH
+7,rfE,b1,ftH,2,63,to raise,AwnA krnA,28,rafaEa,yarofaEu,AirofaEo,raAfiE,marofuwE,rafoE,r f E,1,ftH
+8,sHr,b1,ftH,7,116,"to enchant; to bewitch",jAdw krnA,49,saHara,yasoHaru,AisoHaro,saAHir,masoHuwr,siHor,s H r,1,ftH
+9,SlH,b1,ftH,3,39,to act righteously,nyk hwnA,131,SalaHa,yaSolaHu,AiSolaHo,SaAliH,,maSolaHap,S l H,1,ftH
+10,lEn,b1,ftH,2,88,to curse,lEnt krnA,27,laEana,yaloEanu,AiloEano,laAEin,maloEuwn,laEon,l E n,1,ftH
+11,nfE,b1,ftH,2,102,to profit,nfE hnAnA,42,nafaEa,yanofaEu,AinofaEo,naAfiE,manofuwE,nafoE,n f E,1,ftH
+12,nSr,b2,nSr,2,250,to help; to deliver,mdd krnA,92,naSara,yanoSuru,AunoSuro,naASir,manoSuwr,naSor,n S r,1,nSr
+13,blg,b2,nSr,2,196,to reach,hnnA,49,balaga,yabolugu,Aubolugo,baAlig,,buluwg,b l g,1,nSr
+14,trk,b2,nSr,,,to leave,w dynA,43,taraka,yatoruku,Autoruko,taArik,matoruwk,tarok,t r k,1,nSr
+15,H$r,b2,nSr,4,172,to gather; to bring together,jmE krnA,43,Ha$ara,yaHo$uru,AuHo$uro,HaA$ir,maHo$uwr,Ha$or,H $ r,1,nSr
+16,Hkm,b2,nSr,,,to judge; to rule,fySlh krnA,80,Hakama,yaHokumu,AuHokumo,HaAkim,maHokuwm,Hukom,H k m,1,nSr
+17,xrj,b2,nSr,2,74,to come out,nklnA,61,xaraja,yaxoruju,Auxorujo,xaArij,,xuruwj,x r j,1,nSr
+18,xld,b2,nSr,3,15,to live forever,hmy$h rhnA,83,xalada,yaxoludu,Auxoludo,xaAlid,,xuluwd,x l d,1,nSr
+19,xlq,b2,nSr,2,21,to create out of nothing,ydA krnA,248,xalaqa,yaxoluqu,Auxoluqo,xaAliq,maxoluwq,xaloq,x l q,1,nSr
+20,dxl,b2,nSr,2,58,to enter,dAxl hwnA,78,daxala,yadoxulu,Audoxulo,daAxil,madoxuwl,duxuwl,d x l,1,nSr
+21,*kr,b2,nSr,,,to remember,yAd krnA,163,*akara,ya*okuru,Au*okuro,*aAkir,ma*okuwr,*ikor,* k r,1,nSr
+22,rzq,b2,nSr,2,3,to provide,rzq dynA,122,razaqa,yarozuqu,Aurozuqo,raAziq,marozuwq,rizoq,r z q,1,nSr
+23,sjd,b2,nSr,2,34,to prostrate,sjdh krnA,49,sajada,yasojudu,Ausojudo,saAjid,masojuwd,sujuwd,s j d,1,nSr
+24,$Er,b2,nSr,2,9,to perceive,smjnA,29,$aEara,ya$oEuru,Au$oEuro,$aAEir,,$uEuwr,$ E r,1,nSr
+25,$kr,b2,nSr,,,to be grateful,$kr krnA,63,$akara,ya$okuru,Au$okuro,$aAkir,ma$okuwr,$ukor,$ k r,1,nSr
+26,Sdq,b2,nSr,2,111,to be true; to say the truth,s bwlnA,89,Sadaqa,yaSoduqu,AuSoduqo,SaAdiq,maSoduwq,Sidoq,S d q,1,nSr
+27,Ebd,b2,nSr,1,5,to worship; to serve,EbAdt krnA,143,Eabada,yaEobudu,AuEobudo,EaAbid,maEobuwd,EibaAdap,E b d,1,nSr
+28,fsq,b2,nSr,2,59,to transgress,nAfrmAny krnA,54,fasaqa,yafosuqu,Aufosuqo,faAsiq,,fisoq fusuwq,f s q,1,nSr
+29,qtl,b2,nSr,2,54,to kill; to slay,qtl krnA mArnA,93,qatala,yaqotulu,Auqotulo,qaAtil,maqotuwl,qatol,q t l,1,nSr
+30,qEd,b2,nSr,3,168,to sit; to remain behind,bynA,23,qaEada,yaqoEudu,AuqoEudo,qaAEid,,quEuwd,q E d,1,nSr
+31,ktb,b2,nSr,,,to prescribe; to write,lknA,56,kataba,yakotubu,Aukotubo,kaAtib,makotuwb,kitaAbap,k t b,1,nSr
+32,kfr,b2,nSr,,,to disbelieve; to be ungrateful,AnkAr krnA nA$kry krnA,461,kafara,yakofuru,Aukofuro,kaAfir,makofuwr,kufor,k f r,1,nSr
+33,mkr,b2,nSr,,,to plot,Al lnA mkr krnA,43,makara,yamokuru,Aumokuro,maAkir,mamokuwr,makor,m k r,1,nSr
+34,nZr,b2,nSr,2,50,to look; to wait,dyknA,95,naZara,yanoZuru,AunoZuro,naAZir,manoZuwr,naZar,n Z r,1,nSr
+35,Drb,b3,Drb,2,26,to strike,mArnA,58,Daraba,yaDoribu,AiDoribo,DaArib,maDoruwb,Darob,D r b,1,Drb
+36,Hml,b3,Drb,2,248,to carry; to bear,AAnA,50,Hamala,yaHomilu,AiHomilo,HaAmil,maHomuwl,Hamol,H m l,1,Drb
+37,Sbr,b3,Drb,2,175,to bear with patience,Sbr krnA,94,Sabara,yaSobiru,AiSobiro,SaAbir,,Sabor,S b r,1,Drb
+38,Zlm,b3,Drb,2,54,to wrong,Zlm krnA,266,Zalama,yaZolimu,AiZolimo,ZaAlim,maZoluwm,Zulom,Z l m,1,Drb
+39,Erf,b3,Drb,2,146,to recognize,hAnnA,59,Earafa,yaEorifu,AiEorifo,EaArif,maEoruwf,maEorifap,E r f,1,Drb
+40,Eql,b3,Drb,2,44,to understand; to comprehend,Eql kA AstEmAl krnA,49,Eaqala,yaEoqilu,AiEoqilo,EaAqil,maEoquwl,Eaqol,E q l,1,Drb
+41,gfr,b3,Drb,2,58,to forgive;  to cover,bx$ dynA,95,gafara,yagofiru,Aigofiro,gaAfir,magofuwr,magofirap,g f r,1,Drb
+42,qdr,b3,Drb,2,264,to decree; to have power; ..,,47,qadara,yaqodiru,Aiqodiro,qaAdir,maqoduwr,qador qudorap,q d r,1,Drb
+43,k*b,b3,Drb,,,to lie,jw bwlnA,76,ka*aba,yako*ibu,Aiko*ibo,kaA*ib,mako*uwb,ka*ib,k * b,1,Drb
+44,ksb,b3,Drb,,,to earn,kmAnA,62,kasaba,yakosibu,Aikosibo,kaAsib,makosuwb,kasob,k s b,1,Drb
+45,mlk,b3,Drb,,,to possess,mAlk hwnA,49,malaka,yamoliku,Aimoliko,maAlik,mamoluwk,milok,m l k,1,Drb
+46,smE,b4,smE,2,7,to hear,snnA,100,samiEa,yasomaEu,AisomaEo,saAmiE,masomuwE,samaAEap,s m E,1,smE
+47,Hzn,b4,smE,2,38,to be grieved,gm krnA,30,Hazina,yaHozanu,AiHozano,HaAzin,,Huzon,H z n,1,smE
+48,Hsb,b4,smE,2,214,to think;  to consider,mAn krnA,46,Hasiba,yaHosabu,AiHosabo,HaAsib,maHosuwb,Hasob,H s b,1,smE
+49,HfZ,b4,smE,4,34,to guard; to protect,HfAZt krnA,27,HafiZa,yaHofaZu,AiHofaZo,HaAfiZ,maHofuwZ,HifoZ,H f Z,1,smE
+50,xsr,b4,smE,3,85,to lose,nqSAn my nA,51,xasira,yaxosaru,Aixosaro,xaAsir,,xusor,x s r,1,smE
+51,rHm,b4,smE,2,286,to have mercy on someone,rHm krnA,148,raHima,yaroHamu,AiroHamo,raAHim,maroHuwm,raHomap,r H m,1,smE
+52,$hd,b4,smE,2,84,to bear witness; to be present,wAhy dynA,66,$ahida,ya$ohadu,Ai$ohado,$aAhid,ma$ohuwd,$ahuwd,$ h d,1,smE
+53,Elm,b4,smE,2,13,to know,jAnnA,518,Ealima,yaEolamu,AiEolamo,EaAlim,maEoluwm,Eilom,E l m,1,smE
+54,Eml,b4,smE,2,25,to work; to do,Eml krnA,318,Eamila,yaEomalu,AiEomalo,EaAmil,maEomuwl,Eamal,E m l,1,smE
+55,krh,b4,smE,,,to dislike;  to detest,krAht krnA nAsnd krnA,25,kariha,yakorahu,Aikoraho,kaArih,makoruwh,kuroh,k r h,1,smE
+56,w*r,b5,wEd,26,166,to leave behind,w dynA,45,wa*ara,ya*aru,*aro,waA*ir,mawo*uwr,wa*or,w * r,1,smE
+57,wDE,b5,wEd,,,to put; to set,rk dynA,22,waDaEa,yaDaEu,DaEo,waADiE,mawoDuwE,wuDoE,w D E,1,smE
+58,wqE,b5,wEd,,,to befall,wAqE hwnA,20,waqaEa,yaqaEu,qaEo,waAqiE,,waquwE,w q E,1,smE
+59,whb,b5,wEd,3,8,to grant,dynA,23,wahaba,yahabu,habo,waAhib,mawohuwb,wahob,w h b,1,smE
+60,wjd,b5,wEd,2,96,to find,AnA,107,wajada,yajidu,jido,waAjid,mawojuwd,wujuwd,w j d,1,smE
+61,wrv,b5,wEd,4,176,to inherit,wArv hwnA,19,wariva,yarivu,rivo,waAriv,maworuwv,waraAvap,w r v,1,smE
+62,wzr,b5,wEd,6,31,to bear a load,bwj AAnA,19,wazara,yaziru,ziro,waAzir,mawozuwr,wizor,w z r,1,smE
+63,wSf,b5,wEd,6,100,to describe; to ascribe,byAn krnA,14,waSafa,yaSifu,Sifo,waASif,mawoSuwf,waSof,w S f,1,smE
+64,wEd,b5,wEd,2,268,to promise,wEdh krnA,124,waEada,yaEidu,Eido,waAEid,mawoEuwd,waEod,w E d,1,smE
+65,wqy,b5,wEd,2,201,to protect;  to save,bAnA,19,waqaY,yaqiy,qi,waAq,mawoqY,wiqaAyap,w q Y,1,smE
+66,wsE,b5,wEd,,,to embrace;  to comprehend,smA lynA wsyE hwnA,25,wasiEa,yawosaEu,AiyosaEo,waAsiE,mawosuwE,saEap,w s E,1,smE
+67,twb,b6,qAl,2,37,to repent,lnA,72,taAba,yatuwbu,tubo,taA}ib,,tawobap,t w b,1,smE
+68,*wq,b6,qAl,3,106,to taste,knA,42,*aAqa,ya*uwqu,*uqo,*aA}iq,ma*aAq,*awoq,* w q,1,smE
+69,fwz,b6,qAl,3,185,to succeed; to gain victory,kAmyAb hwnA,26,faAza,yafuwzu,fuzo,faA}iz,,fuwoz,f w z,1,smE
+70,qwl,b6,qAl,2,8,to say,khnA,1715,qaAla,yaquwlu,qulo,qaA}il,maquwl,qawol,q w l,1,smE
+71,qwm,b6,qAl,2,20,to stand up; to raise,kA hwnA,55,qaAma,yaquwmu,qumo,qaA}im,,qiyaAm qawomap,q w m,1,smE
+72,kwn,b6,qAl,,,to be,hwnA,1361,kaAna,yakuwnu,kuno,kaA}in,,kawon,k w n,1,smE
+73,mwt,b6,qAl,2,132,to die,mrnA b jAn hwnA,93,maAta,yamuwtu,muto,maA}it,,mawot,m w t,1,smE
+74,xwf,b6,qAl,2,112,to be afraid,rnA,112,xaAfa,yaxaAfu,xifo,xaA}if,,xawof,x w f,1,smE
+75,kwd,b6,qAl,,,to become nigh; to be close to,qryb hwnA,24,kaAda,yakaAdu,kido,kaA}id,,kawod,k w d,1,smE
+76,kyd,b6,qAl,,,to plot against,xfyh tdbyr krnA,35,kaAda,yakiydu,kido,kaA}id,makayd,kayod,k y d,1,smE
+77,zyd,b6,qAl,2,10,to increase,zyAdh krnA,51,zaAda,yaziydu,zido,zaA}id,maziyd,ziyaAdap,z y d,1,smE
+78,tlw,b7,dEA,,,to recite,tlAwt krnA,61,talaA,yatoluw,Autolu,taAlK,matoluw,tilaAwap,t l w,1,smE
+79,dEw,b7,dEA,2,23,to call; to pray,kArnA blAnA,197,daEaA,yadoEuw,AudoEu,daAEK,madoEuw~,duEaAX,d E w,1,smE
+80,Efw,b7,dEA,2,52,to forgo,mEAf krnA,30,EafaA,yaEofuw,AuEofu,EaAfK,maEofuw,Eafow,E f w,1,smE
+81,bgy,b7,dEA,3,83,"to want; to seek",AhnA zyAdty krnA,29,bagaY,yabogiy,Aibogi,baAgK,mabogaY,bagoY,b g Y,1,smE
+82,jry,b7,dEA,,,to flow,lnA  jAry hwnA,60,jaraY,yajoriy,Aijori,jaArK,,jarayaAn,j r Y,1,smE
+83,jzy,b7,dEA,,,to reward,bdlh dynA,116,jazaY,yajoziy,Aijozi,jaAzK,majoziy,jazaAX,j z Y,1,smE
+84,qDy,b7,dEA,,,to decree;  to fulfil,fySlh krnA wrA krnA,62,qaDaY,yaqoDiy,AiqoDi,qaADK,maqoDiy~,qaDaAX,q D Y,1,smE
+85,kfy,b7,dEA,,,to suffice,kAfy hwnA Drwrt wrA krnA,32,kafaY,yakofiy,Aikofi,kaAfK,makofiy~,kifaAyap,k f Y,1,smE
+86,hdy,b7,dEA,1,6,to guide;  to direct,rAsth btAnA,163,hadaY,yahodiy,Aihodi,haAdK,mahodiy~,hadoY,h d Y,1,smE
+87,x$y,b7,dEA,2,150,to fear,rnA xwf kAnA,48,xa$iya,yaxo$aY,Aixo$a,xaA$K,,xa$iy~ap,x $ y,1,smE
+88,rDy,b7,dEA,,,"to be satisfied; to be content",rADy hwnA xw$ hwnA,57,raDiya,yaroDaY,AiroDa,raADK,maroDiy~,riDowaAn,r D y,1,smE
+89,nsy,b7,dEA,2,44,to forget,bwl jAnA,36,nasiya,yanosaY,Ainosa,naAsK,manosiy~,nisoyaAn,n s y,1,smE
+90,sAl,b8,>mr,2,61,to ask,wnA,119,sa>ala,yaso>alu,salo  Aiso}alo,saA}il,maso}uwl,su&aAl,s >  l,1,smE
+91,qrA,b8,>mr,,,to read; to recite,nA,17,qara>a,yaqora>u,Aiqora>o,qaAri},maqoruwX,qiraAXap,q r >,1,smE
+92,Ax*,b8,>mr,2,55,to take; to catch,knA lynA,142,>axa*a,ya>oxu*u,xu*o,xi*,ma>oxuw*,>axo*,>  x *,1,smE
+93,Akl,b8,>mr,,,to eat,kAnA,101,>akala,ya>okulu,kulo,kil,ma>okuwl,>akol,>  k l,1,smE
+94,Amr,b8,>mr,2,27,to command,Hkm dynA,232,>amara,ya>omuru,muro,mir,ma>omuwr,>amor,>  m r,1,smE
+95,Amn,b8,>mr,2,196,to be safe; to feel safe; to trust,Amn my hwnA,25,>amina,ya>amanu,A}omano,min,,>amon,>  m n,1,smE
+96,Aby,b8,>mr,,,to refuse,sxt AnkAr krnA,13,>abaY,ya>obaY,Ai}oba,bK,,AibaAX,>  b Y,1,smE
+97,rAy,b8,>mr,2,55,to see,dyknA,269,ra>aY,yaraY,ra,raAXK,maroXiy~,ra>oyN,r >  Y,1,smE
+98,Aty,b8,>mr,,,to come,nA,263,>ataY,ya>otiy,Ai}oti,tK,ma>otiy~,AitoyaAn,>  t Y,1,smE
+99,$yA,b8,>mr,2,20,"to will; to wish",AhnA,277,$aAXa,ya$aAXu,$a>o,$aAXK,,ma$iy}ap,$ y X,1,smE
+100,swA,b8,>mr,,,to be evil,bruA hwnA,39,saAXa,yasuwXu,su&o,saAwi},,sawoX,s w X,1,smE
+101,jyA,b8,>mr,2,71,to come,nA,236,jaAXa,yajiyXu,ji}o,jaAXK,,majiyX,j y X,1,smE
+102,Dll,b9,Dal~a,2,108,to go astray; to err; to waste,mrAh hwnA,113,Dal~a,yaDil~u,Dil~a,DaAl~,,DalaAlap DalaAl,D l l,1,Dal~a
+103,Hyy,b9,Dal~a,4,86,to live; to greet,jynA zndh rhnA,83,Hay~a,yaHoyaA,Hay~a,Hay~,,HayaAp,H y y,1,Dal~a
+104,rdd,b9,Dal~a,2,109,to give back;  to return,lwAnA wAs krnA,45,rad~a,yarud~u,rud~a,raAd~,maroduwd,rad~,r d d,1,Dal~a
+105,Sdd,b9,Dal~a,3,99,to turn away;  to hinder,rwknA rknA,39,Sad~a,yaSud~u,Sud~a,SaAd~,maSoduwd,Sad~,S d d,1,Dal~a
+106,Drr,b9,Dal~a,2,102,to hurt; to harm,nqSAn hnAnA,31,Dar~a,yaDur~u,Dur~a,DaAr~,maDoruwr,Dar~,D r r,1,Dal~a
+107,Znn,b9,Dal~a,2,46,to think;   to believe,mAn krnA yqyn krnA,68,Zan~a,yaZun~u,Zun~a,ZaAn~,,Zan~,Z n n,1,Dal~a
+108,Edd,b9,Dal~a,14,34,to count,nnA $mAr krnA,17,Ead~a,yaEud~u,Eud~a,EaAd~,maEoduwd,Ead~,E d d,1,Dal~a
+109,grr,b9,Dal~a,,,to beguile,dwkh dynA,24,gar~a,yagir~u,gir~a,gaAr~,magoruwr,guruwr,g r r,1,Dal~a
+110,mdd,b9,Dal~a,13,3,to spread out;  to stretch,ylAnA mhlt dynA,17,mad~a,yamud~u,mud~a,maAd~,mamoduwd,mad~,m d d,1,Dal~a
+111,mss,b9,Dal~a,2,80,to touch,wnA,58,mas~a,yamas~u,mas~a,maAs~,mamosuws,mas~,m s s,1,Dal~a
+112,wdd,b9,Dal~a,2,96,to love; to wish,AhnA,18,wad~a,yawad~u,wad~a,waAd~,mawoduwd,wud~,w d d,1,Dal~a
+113,bdl,d2,sab~aHa,2,59,to change,bdl dynA,33,bad~ala,yubad~ilu,bad~ilo,mubad~il,mubad~al,tabodiyol,b d l,2,sab~aHa
+114,b$r,d2,sab~aHa,2,25,to give good news,b$Art xw$xbry dynA,48,ba$~ara,yuba$~iru,ba$~iro,muba$~ir,muba$~ar,tabo$iyor,b $ r,2,sab~aHa
+115,byn,d2,sab~aHa,2,68,to make clear,byAn krnA wADH krnA,35,bay~ana,yubay~inu,bay~ino,mubay~in,mubay~an,taboyiyon,b y n,2,sab~aHa
+116,zyn,d2,sab~aHa,2,212,to adorn / make st  to seem fair,xw$nmA bnAnA zynt dynA,26,zay~ana,yuzay~inu,zay~ino,muzay~in,muzay~an,tazoyiyn,z y n,2,sab~aHa
+117,sbH,d2,sab~aHa,2,30,to glorify;  to praise,Aky byAn krnA,48,sab~aHa,yusab~iHu,sab~iHo,musab~iH,musab~aH,tasobiyoH,s b H,2,sab~aHa
+118,sxr,d2,sab~aHa,2,164,to bring under control,msxr knrA,26,sax~ara,yusax~iru,sax~iro,musax~ir,musax~ar,tasoxiyr,s x r,2,sab~aHa
+119,Sdq,d2,sab~aHa,2,41,to pronounce ss to be true,sA mAnnA tSdyq krnA,31,Sad~aqa,yuSad~iqu,Sad~iqo,muSad~iq,muSad~aq,taSodiyoq,S d q,2,sab~aHa
+120,E*b,d2,sab~aHa,2,284,to punish;  to torment,E*Ab dynA,49,Ea*~aba,yuEa*~ibu,Ea*~ibo,muEa*~ib,muEa*~ab,taEo*iyob,E * b,2,sab~aHa
+121,Elm,d2,sab~aHa,2,31,to teach,skAnA,42,Eal~ama,yuEal~imu,Eal~imo,muEal~im,muEal~am,taEoliyom,E l m,2,sab~aHa
+122,qdm,d2,sab~aHa,2,95,to send forward, byjnA sAmn lAnA,27,qad~ama,yuqad~imu,qad~imo,muqad~im,muqad~am,taqodiyom,q d m,2,sab~aHa
+123,k*b,d2,sab~aHa,,,to accuse ss of falsehood,jlAnA,198,ka*~aba,yuka*~ibu,ka*~ibo,muka*~ib,muka*~ab,tako*iyob,k * b,2,sab~aHa
+124,nbw,d2,sab~aHa,,,to declare;  to apprise,xbr dynA btAnA,46,nab~a>a,yunab~i}u,nab~i}oo,munab~i},munab~a}o,tanobi}ap,n b w,2,sab~aHa
+125,nzl,d2,sab~aHa,2,23,to send down,AutArnA,79,naz~ala,yunaz~ilu,naz~ilo,munaz~il,munaz~al,tanoziyol,n z l,2,sab~aHa
+126,njy,d2,sab~aHa,,,to deliver;  to rescue,njAt dynA,39,naj~aY,yunaj~iy,naj~i,munaj~iy,munaj~aY,tanojiyap,n j Y,2,sab~aHa
+127,wly,d2,sab~aHa,2,115,to turn,rx krnA mnh mwnA,45,wal~aY,yuwal~iy,wal~i,muwal~iy,,tawoliyap,w l Y,2,sab~aHa
+128,jhd,d3,jaAhada,2,218,to struggle;  to strive,jhAd krnA,31,jaAhada,yujaAhidu,jaAhido,mujaAhid,mujaAhad,mujaAhadap,j h d,3,jaAhada
+129,qtl,d3,jaAhada,2,190,to fight,qtAl krnA lnA,54,qaAtala,yuqaAtilu,qaAtilo,muqaAtil,muqaAtal,muqaAtalap,q t l,3,jaAhada
+130,ndy,d3,jaAhada,,,to call out; to cry unto,kArnA,44,naAdaY,yunaAdiy,naAdi,munaAdK,munaAdaY,munaAdaAp,n d Y,3,jaAhada
+131,nfq,d3,jaAhada,3,167,to play hypocricy,mnAfqt krnA,34,naAfaqa,yunaAfiqu,naAfiqo,munaAfiq,,munaAfaqap,n f q,3,jaAhada
+132,hjr,d3,jaAhada,2,218,to migrate,hjrt krnA wnA,24,haAjara,yuhaAjiru,haAjiro,muhaAjir,,muhaAjarap,h j r,3,jaAhada
+133,bSr,d4,>asolama,2,17,to see; to watch,dyknA,36,>aboSara,yuboSiru,>aboSiro,muboSir,muboSar,<iboSaAr,b S r,4,>asolama
+134,Hsn,d4,>asolama,2,58,to do good; to do excellently,Ay TrH krnA,72,>aHosana,yuHosinu,>aHosino,muHosin,muHosan,<iHosaAn,H s n,4,>asolama
+135,xrj,d4,>asolama,2,22,to bring forth,bAhr nkAlnA,108,>axoraja,yuxoriju,>axorijo,muxorij,muxoraj,<ixoraAj,x r j,4,>asolama
+136,dxl,d4,>asolama,3,185,to make ss enter,dAxl krnA,45,>adoxala,yudoxilu,>adoxilo,mudoxil,mudoxal,<idoxaAl,d x l,4,>asolama
+137,rjE,d4,>asolama,,,to send back; to take back,lwAnA wAs krnA,33,>arojaEa,yurojiEu,>arojiEo,murojiE,murojaE,<irojaAE,r j E,4,>asolama
+138,rsl,d4,>asolama,2,119,to send,byjnA,135,>arosala,yurosilu,>arosilo,murosil,murosal,<irosaAl,r s l,4,>asolama
+139,srf,d4,>asolama,3,147,to exceed; to be extravagant,AsrAf krnA,23,>asorafa,yusorifu,Aasorifo,musorif,,<isoraAf,s r f,4,>asolama
+140,slm,d4,>asolama,2,112,to submit;  to surrender,Hkm mAnnA,72,>asolama,yusolimu,>asolimo,musolim,,<isolaAm,s l m,4,>asolama
+141,$rk,d4,>asolama,,,to ascribe a partner,$ryk krnA,120,>a$oraka,yu$oriku,>a$oriko,mu$orik,mu$orak,<i$oraAk,$ r k,4,>asolama
+142,SbH,d4,>asolama,3,103,to become,hwjAnA SbH krnA,34,>aSobaHa,yuSobiHu,>aSobiHo,muSobiH,,<iSobaAH,S b H,4,>asolama
+143,SlH,d4,>asolama,2,11,to become good; to make good,ASlAH krnA,40,>aSolaHa,yuSoliHu,>aSoliHo,muSoliH,muSolaH,<iSolaAH,S l H,4,>asolama
+144,ErD,d4,>asolama,2,83,to turn away; to backslide,mnh yrnA,53,>aEoraDa,yuEoriDu,>aEoriDo,muEoriD,,<iEoraAD,E r D,4,>asolama
+145,grq,d4,>asolama,2,50,to drown,bw dynA,21,>agoraqa,yugoriqu,>agoriqo,mugoriq,,<igoraAq,g r q,4,>asolama
+146,fsd,d4,>asolama,2,11,to spread corruption,xrAb krnA fsAd ylAnA,36,>afosada,yufosidu,>afosido,mufosid,mufosad,<ifosaAd,f s d,4,>asolama
+147,flH,d4,>asolama,2,5,to be successful,flAH AnA,40,>afolaHa,yufoliHu,>afoliHo,mufoliH,,<ifolaAH,f l H,4,>asolama
+148,nbt,d4,>asolama,2,61,to make st grow; to cause to grow,AAnA,16,>anobata,yunobitu,>anobito,munobit,,<inobiAt,n b t,4,>asolama
+149,n*r,d4,>asolama,2,6,to warn,rAnA,70,>ano*ara,yuno*iru,>ano*iro,muno*ir,muno*ar,<ino*aAr,n * r,4,>asolama
+150,nzl,d4,>asolama,2,4,to send down; to reveal,nAzl krnA,190,>anozala,yunozilu,>anozilo,munozil,munozal,<inozaAl,n z l,4,>asolama
+151,n$A,d4,>asolama,6,6,to produce/ create;  to make st grow,kA krnA,22,>ano$a>a,yuno$i}u,>ano$i}o,muno$i},muno$a},<ino$aAX,n $ >,4,>asolama
+152,nEm,d4,>asolama,1,7,to favor; to bestow grace,AnEAm krnA,17,>anoEama,yunoEimu,>anoEimo,munoEim,munoEam,<inoEaAm,n E m,4,>asolama
+153,nfq,d4,>asolama,2,3,to spend,xr krnA,69,>anofaqa,yunofiqu,>anofiqo,munofiq,munofaq,<inofaAq,n f q,4,>asolama
+154,nkr,d4,>asolama,,,to not recognize; to deny,AnkAr krnA,25,>anokara,yunokiru,>anokiro,munokir,munokar,<inokaAr,n k r,4,>asolama
+155,hlk,d4,>asolama,,,to destroy,hlAk krnA,58,>aholaka,yuholiku,>aholiko,muholik,muholak,<iholaAk,h l k,4,>asolama
+156,tmm,d4,>asolama,2,124,to complete,wrA krnA,17,>atam~a,yutim~u,>atomimo,mutim~,mutam~,<itomaAm,t m m,4,>asolama
+157,Hbb,d4,>asolama,2,165,to love,mHbt krnA,64,>aHab~a,yuHib~u,>aHobibo,muHib~,muHab~,<iHobaAb,H b b,4,>asolama
+158,Hll,d4,>asolama,2,187,to make lawful; to cause to dwell,HlAl krnA rkwAnA,21,>aHal~a,yuHil~u,>aHolilo,muHil~,muHal~,<iHolaAl,H l l,4,>asolama
+159,srr,d4,>asolama,2,77,to conceal; to speak secretly,AnA,18,>asar~a,yusir~u,>asoriro,musir~,musar~,<isoraAr,s r r,4,>asolama
+160,Dll,d4,>asolama,2,26,to leave in error; to send astray,mrAh krnA,68,>aDal~a,yuDil~u,>aDolilo,muDil~,muDal~,<iDolaAl,D l l,4,>asolama
+161,Edd,d4,>asolama,2,24,to prepare; to make st ready,tyAry krnA,20,>aEad~a,yuEid~u,>aEodido,muEid~,muEad~,<iEodaAd,E d d,4,>asolama
+162,*wq,d4,>asolama,6,65,to make sb taste,kAnA,22,>a*aAqa,yu*iyqu,>a*iqo,mu*iyq,mu*aAq,<i*aAqap,* w q,4,>asolama
+163,rwd,d4,>asolama,2,26,to intend;  to wish,ArAdh krnA,139,>araAda,yuriydu,>arido,muriyd,muraAd,<iraAdap,r w d,4,>asolama
+164,Syb,d4,>asolama,,,to befall; to inflict,nA,65,>aSaAba,yuSiybu,>aSibo,muSiyb,muSaAb,<iSaAbap,S y b,4,>asolama
+165,TwE,d4,>asolama,2,285,to obey,ATAEt krnA,74,>aTaAEa,yuTiyEu,>aTiEo,muTiyE,muTaAE,<iTaAEap,T wE,4,>asolama
+166,qwm,d4,>asolama,2,3,to establish;  to set upright,kA krnA,67,>aqaAma,yuqiymu,>aqimo,muqiym,muqaAm,<iqaAmap,q w m,4,>asolama
+167,mwt,d4,>asolama,2,28,to cause someone to die,mwt dynA,21,>amaAta,yumiytu,>amito,mumiyt,mumaAt,<imaAtap,m w t,4,>asolama
+168,Hyy,d4,>asolama,2,28,to give life,zndy dynA,53,>aHoyaA,yuHoyiy,>aHoyi,muHoyK,muHoyaA,<iHoyaAX,H y y,4,>asolama
+169,xfy,d4,>asolama,2,271,to conceal,AnA,18,>axofaY,yuxofiy,>axofi,muxofK,muxofaY,<ixofaAX,x f Y,4,>asolama
+170,rAy,d4,>asolama,2,73,to show,dikAnA,44,>araY,yuriy,>ari,murK,murF,<iraAXap,r > Y,4,>asolama
+171,gny,d4,>asolama,3,10,to enrich,kAm nA gny krnA,41,>agonaY,yugoniy,>agoni,mugonK,mugonaY,<igonaAX,g n Y,4,>asolama
+172,lqy,d4,>asolama,2,195,to throw; to cast; to place,AlnA,71,>aloqaY,yulqiy,>aloqi,mulqK,mulqaY,<ilqaAX,l q Y,4,>asolama
+173,njy,d4,>asolama,,,to rescue; to save; to deliver,njAt dynA,23,>anojaY,yunojiy,>anoji,munojK,munojaY,<inojaAX,n j Y,4,>asolama
+174,wHy,d4,>asolama,3,44,to reveal;  to inspire,wHy krnA,72,>awoHaY,yuwHiy,>awoHi,muwHK,muwHaY,<iyHaAX,w H Y,4,>asolama
+175,wfy,d4,>asolama,2,40,to fulfil,wrA krnA,18,>awofaY,yuwfiy,>awofi,muwfK,muwfaY,<iyfaAX,w f Y,4,>asolama
+176,Amn,d4,>asolama,2,3,to believe,AymAn lAnA,782,mana,yu&ominu,mino,mu&omin,mu&oman,<iymaAn,> m n,4,>asolama
+177,Aty,d4,>asolama,,,to give,dynA,274, taY,yu&otiy,ti,mu&otiy,mu&otaY,<iytaAX,> t Y,4,>asolama
+178,A*y,d4,>asolama,,,to give trouble; to harm; to annoy,tklyf dynA,16,*aY,yu&o*iy,*i,mu&o*iy,mu&o*aY,<iy*aAX,> * Y,4,>asolama
+179,fkr,d5,tadab~ara,,,to think over; to reflect,tfkr krnA gwr knA,17,tafak~ara,yatafak~aru,tafak~aro,mutafak~ir,mutafak~ar,tafak~ur,f k r,5,tadab~ara
+180,*kr,d5,tadab~ara,,,to receive admonition; to remember,nSyHt knA,51,ta*ak~ara,yata*ak~aru,ta*ak~aro,muta*ak~ir,muta*ak~ar,ta*ak~ur,* k r,5,tadab~ara
+181,wkl,d5,tadab~ara,,,to put one's trust,brwsh krnA,44,tawak~ala,yatawak~alu,tawak~alo,mutawak~il,mutawak~al,tawak~ul,w k l,5,tadab~ara
+182,byn,d5,tadab~ara,2,109,to become clear,ZAhr hwnA wADH hwnA,18,tabay~ana,yatabay~anu,tabay~ano,mutabay~in,mutabay~an,tabay~un,b y n,5,tadab~ara
+183,rbS,d5,tadab~ara,2,226,to wait & watch for opportunity,AntZAr krnA,17,tarab~aSa,yatarab~aSu,tarab~aSo,mutarab~iS,mutarab~aS,tarab~uS,r b S,5,tadab~ara
+184,wly,d5,tadab~ara,2,64,to turn away; to take for friend,dwsty krnA mnh mwnA,79,tawal~aY,yatawal~aY,tawal~a,mutawal~K,mutawal~aY,tawal~K,w l y,5,tadab~ara
+185,wfy,d5,tadab~ara,2,234,to make sb die; to receive in full,jAn nkAlnA,25,tawaf~aY,yatawaf~aY,tawaf~a,mutawaf~K,mutawaf~aY,tawaf~K,w f y,5,tadab~ara
+186,brk,d6,tadaArasa,,,to be blessed or exalted,bA brkt hwnA,9,tabaAraka,yatabaAraku,tabaArako,mutabaArik,,tabaAruk,b r k,6,tadaArasa
+187,sAl,d6,tadaArasa,4,1,to ask each other,s my wnA,9,tasaAXala,yatasaAXalu,tasaAXalo,mutasaAXil,mutasaAXal,tasaAXul,s > l,6,tadaArasa
+188,xlf,d7,Aixotalafa,,,to differ,AxtlAf krnA,52,Aixotalafa,yaxotalifu,Aixotalifo,muxotalif,muxotalaf,AixotilaAf,x l f,7,Aixotalafa
+189,tbE,d7,Aixotalafa,,,to follow,yrwy krnA AtbAE krnA,140,Ait~abaEa,yat~abiEu,Ait~abiEo,mut~abiE,mut~abaE,Ait~ibaAE,t b E,7,Aixotalafa
+190,Ax*,d7,Aixotalafa,,,to take; to adopt,AxtyAr krnA,128,Ait~axa*a,yat~axi*u,Ait~axi*o,mut~axi*,mut~axa*,Ait~ixaA*,> x *,7,Aixotalafa
+191,wqy,d7,Aixotalafa,,,to be on guard; to protect,tqwy krnA,215,Ait~aqaY,yat~aqiy,Ait~aqi,mut~aqiy,,Ait~iqaAX,w q y,7,Aixotalafa
+192,fry,d7,Aixotalafa,,,to fabricate a lie,jw bAndnA,59,AifotaraY,yafotariy,Aifotari,mufotarK,,AifotiraAX,f r y,7,Aixotalafa
+193,hdy,d7,Aixotalafa,,,to find or to follow the right path,hdAyt AnA,61,AihotadaY,yahotadiy,Aihotadi,muhotadK,,AihotidaAX,h d y,7,Aixotalafa
+194,bgy,d7,Aixotalafa,19,92,to seek,AhnA tlA$ krnA,48,AibotagaY,yabotagiy,Aibotagi,mubotagK,mubotagaY,AibotigaAX,b g y,7,Aixotalafa
+195,nhy,d7,Aixotalafa,,,to refrain; to end,w dynA rk jAnA,16,AinotahaY,yanotahiy,Ainotahi,munotahK,,AinotihaAX,n h y,7,Aixotalafa
+196,qlb,d8,Ainoqalaba,,,to turn around; to return,r jAnA,20,Ainoqalaba,yanoqalibu,Ainoqalibo,munoqalib,,AinoqilaAb,q l b,8,Ainoqalaba
+197,byD,d9,AiboyaD~a,3,106,to become white,sfyd hwnA,3,AiboyaD~a,yaboyaD~u,AiboyaD~a,muboyaD~K,,AiboyiDaAD,b y D,9,AiboyaD~a
+198,swd,d9,AiboyaD~a,3,106,to become black,kAlA hwnA,3,Aisowad~a,yasowad~u,Aisowad~a,musowad~K,,AisowidaAd,s w d,9,AiboyaD~a
+199,Ejl,d10,Aisotagofara,6,57,to seek ss to hasten,jldy krnA,20,AisotaEojala,yasotaEojilu,AisotaEojilo,musotaEojil,,AisotiEojaAl,E j l,10,Aisotagofara
+200,gfr,d10,Aisotagofara,2,199,to ask forgiveness,bx$$ mAnnA,42,Aisotagofara,yasotagofiru,Aisotagofiro,musotagofir,musotagofar,AisotigofaAr,g f r,10,Aisotagofara
+201,kbr,d10,Aisotagofara,,,to act arrogantly,mn krnA,48,Aisotakobara,yasotakobiru,Aisotakobiro,musotakobir,,AisotikobaAr,k b r,10,Aisotagofara
+202,hzA,d10,Aisotagofara,2,14,to mock at,A krnA,23,Aisotahoza>a,yasotahozi}u,Aisotahozi}o,musotahozi},musotahoza},AisotihozaAX,h z X,10,Aisotagofara
+203,jwb,d10,Aisotagofara,2,186,to accept;  to respond,qbwl krnA,28,AisotajaAba,yasotajiyb,Aisotajibo,musotajiyb,musotajaAb,AisotijaAbap,j w b,10,Aisotagofara
+204,TwE,d10,Aisotagofara,2,217,to be able to,krsknA,42,AisotaTaAEa,yasotaTiyEu,AisotaTiEo,musotaTiyE,musotaTaAE,AisotiTaAEap,T w E,10,Aisotagofara
+205,qwm,d10,Aisotagofara,1,6,to be straight;  to act straight,vAbt qdm rhnA,47,AisotaqaAma,yasotaqiymu,Aisotaqimo,musotaqiym,,AisotiqaAmap,q w m,10,Aisotagofara
