@@ -11,31 +11,73 @@
     <style>
         *{box-sizing:border-box}:root{--sans:1em/1.6 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Fira Sans,sans-serif;--mono:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,'Courier New',monospace;--c1:#0074d9;--c2:#eee;--c3:#fff;--c4:#000;--c5:#fff;--m1:8px;--rc:8px}@media (prefers-color-scheme:dark){:root{--c2:#333;--c3:#1e1f20;--c4:#fff}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;font:var(--sans);font-weight:400;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background-color:var(--c3);color:var(--c4)}iframe,img{border:none;max-width:100%}a{color:var(--c1);text-decoration:none}a:hover{color:var(--c1);text-decoration:underline}pre{font:1em/1.6 var(--mono);background:var(--c2);padding:1em;overflow:auto}code{font:1em/1.6 var(--mono)}blockquote{border-left:5px solid var(--c2);padding:1em 1.5em;margin:0}hr{border:0;border-bottom:1px solid var(--c4)}h1,h2,h3,h4,h5,h6{margin:.6em 0;font-weight:400}h1{font-size:2.625em;line-height:1.2}h2{font-size:1.625em;line-height:1.2}h3{font-size:1.3125em;line-height:1.24}h4{font-size:1.1875em;line-height:1.23}h5,h6{font-size:1em;font-weight:700}table{border-collapse:collapse;border-spacing:0;margin:1em 0}td,th{text-align:left;vertical-align:top;border:1px solid;padding:.4em}tfoot,thead{background:var(--c2)}button,code,img,input,pre,select,textarea{border-radius:var(--rc)}input,select,textarea{font-size:1em;color:var(--c4);background:var(--c2);border:0;padding:.6em}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;font-size:1em;display:inline-block;color:var(--c5);background:var(--c1);border:0;margin:4px;padding:.6em;cursor:pointer;text-align:center}button:focus,button:hover,input:hover,select:hover,textarea:hover{opacity:.8}section{display:flex;flex-flow:row wrap}[style*="--c:"],article,aside,section>section{flex:var(--c,1);margin:var(--m1)}article{background:var(--c2);border-radius:var(--rc);padding:1em;box-shadow:0 1px 0 rgba(0,0,0,.3)}[style*="--c:"]:first-child,article:first-child,section>section:first-child{margin-left:0}[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
     </style>
+    <style>
+        .ztext{
+            font-size: xx-large;
+        }
+        img{
+            border: 5px solid #555;
+        }
+        main,footer {
+            margin: 0 auto;
+            width: 60%;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        section>section {
+            color: #fff;
+            background-color: var(--c1);
+            padding: 15px;
+            margin: 10px 8px 10px 8px;
+            text-align: center;
+        }
+
+        @media (max-width: 481px) {
+            body {font-size: 18px}
+            main,footer {width: 98%}
+            section,article {flex:none; width:100%; margin-left: 0;}
+        }
+    </style>
 </head>
 
 <body>
+    <main>
     <div id=app>
-        <h4>{{ message }}</h4>
-        <input v-if="!correctAnswer" type="button" value="Start" @click="begin">
-        <input v-if="correctAnswer" type="button" value="Restart" @click="restart">
-        <br>
-        Choices: <span>{{ choices }}</span><br><br>
+        <h2>{{ message }}</h2>
+        <input v-if="!correctAnswer" type="button" value="Start Game" @click="begin">
+        <input v-if="correctAnswer" type="button" value="Restart Game" @click="restart">
         
-        
-        <H4>Random pick: <b><span>{{ correctAnswer }}</span></b></H4>
+        <BR><h3>Instructions</h3>
+            <ul>
+                <li>Objective: from among the af'aal you see below, one has been chosen. </li>
+                <li>Guess it in the least possible questions/attempts.</li>
+                <!-- <li>When you are ready to answer, pick answer at bottom. All the best!</li> -->
+            </ul>
+
+        <section>
+            <section class=ztext v-for="choice in choices">{{ choice }}</section>
+        </section>
+        <!-- Choices: <span>{{ choices }}</span><br><br> -->
 
         
-        <br><br><H4>Questions: </H4>
+        
+        <section><article>
+        <br><br><H4>Questions you can ask: </H4>
         <div v-for="question in questions">
             <input v-if="attempts.indexOf(question) === -1" type=button :value=question.name @click="ask(question)">
         </div>
         <span v-if="attempts.length === questions.length">
-            <font color=orange>No questions remain. You have used up possible questions!! </font><BR><BR>
+            <font color=orange>No questions remain. You have used up all possible questions!! </font><BR><BR>
         </span>
+        </article>
+    
+        <!-- </section>
+        <section> -->
 
-
+            <article>
         <div v-if=attempts.length>
-            <br><br><H4>Attempts:</H4>
+            <br><br><H4>Answers:</H4>
             <table>
                 <tr v-for="(item, index, xyz) in attempts">
                     <td>{{item.name}}</td>
@@ -43,21 +85,72 @@
                 </tr>
             </table>
         </div>
+    </article></section>
 
 
-        <br><br><H4>Guess the answer: </H4>
-        <div v-for="choice in choices">
-            <input v-if="guesses.indexOf(choice) === -1" type=button :value=choice @click="guess(choice)">
-        </div>
+        <br><br>
+        <section><article>
+            <H4>Ready to guess the answer? </H4>
 
+            <select   @change="guess($event)" :value="guessAttempt">
+                <option disabled value="">Please select one</option>
+                <option v-for="answer in choices" :disabled="guesses.indexOf(answer) !== -1" :value="answer" XXv-selected="'selected'">{{ answer }}</option>
+            </select>
 
+            <!-- <div v-for="choice in choices">
+                <input v-if="guesses.indexOf(choice) === -1" type=button :value=choice @click="guess(choice)">
+            </div> -->
+        </article>
+        <article>
+            <H4>Guesses:</H4>
+            <table>
+                <tr v-for="(item, index, xyz) in guesses">
+                    <td>{{item}}</td>
+                    <td v-html="guessAttempts[ index ] ? '&#x2714;' : '&#x2718;'"></td>
+                </tr>
+            </table>
+        </article>    
+        </section>
 
+        <section>
+            <section v-if=guessResult>{{ guessResult }}</section>
+        </section>
+
+        
+        <BR><BR>
+            <input type="checkbox" id="checkbox" v-model="cheat" @click="!correctAnswer && begin()">
+            <label for="checkbox">Cheat?</label>  <BR>
+            <H4 v-if="cheat">Correct answer: <b><span>{{ correctAnswer }}</span></b></H4>
+    
+        <BR>
+        <input v-if="!correctAnswer" type="button" value="Start Game" @click="begin">
+        <input v-if="correctAnswer" type="button" value="Restart Game" @click="restart">    
+        <BR><BR>
+        </main>
     </div>
     <script>
+        // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+        /* Randomize array in-place using Durstenfeld shuffle algorithm */
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
         const Engine = (function () {
             var _this = this;
             var pics = ["bellatrix.jpg", "dobby.jpg", "draco.jpg", "dudley.jpg", "dumbledore.jpg", "fred.png", "ginny.jpg", "hagrid.png", "harry.jpg", "hermione.jpg", "luna.jpeg", "lupin.jpg", "madeye.png", "mcgonagall.jpg", "molly.jpg", "arthur.jpg", "myrtle.jpg", "neville.jpg", "petunia.jpg", "ron.jpg", "snape.jpg", "vernon.jpg", "voldemort.jpg", "sirius.jpg", "fatlady.png"];
+
+            pics = ["أَضَلَّ", "تَوَفَّى", "بَيَّنَ", "اِخْتَلَفَ", "تَبَارَكَ", "أَنْعَمَ", "نَادَى",  "أَذَاقَ", "أَصْلَحَ", "تَوَلَّى", "هَاجَرَ", "اِتَّخَذَ", "تَفَكَّرَ", "اِسْتَجَابَ", "زَيَّنَ", "أَسَرَّ", "أَنْزَلَ", "جَاهَدَ", "اِسْوَدَّ", "اِفْتَرَى", "أَبْصَرَ", "اِبْيَضَّ", "أَنْبَتَ", "أَرْسَلَ", "تَبَيَّنَ", "أَدْخَلَ", "أَغْنَى", "أَسْلَمَ", "اِسْتَقَامَ", "أَوْفَى", "أَطَاعَ", "سَبَّحَ", "اِنْقَلَبَ", "تَذَكَّرَ", "اِسْتَطَاعَ", "عَلَّمَ", " تَى", "كَذَّبَ", "أَسْرَفَ", "اِسْتَكْبَرَ", "قَاتَلَ", "أَغْرَقَ", "أَصْبَحَ", "سَخَّرَ", "عَذَّبَ", "أَنْشَأَ", "اِسْتَعْجَلَ", "أَخْرَجَ", "أَنْجَى", "أَحَبَّ", "اِهْتَدَى", "أَنْذَرَ", "أَحَلَّ", "أَصَابَ", "قَدَّمَ", "أَرْجَعَ", "نَبَّأَ", "أَفْسَدَ", "نَزَّلَ", "اِتَّقَى", "اِسْتَغْفَرَ", "أَرَى", "اِبْتَغَى", "صَدَّقَ", "أَحْيَا", "أَعَدَّ", "أَتَمَّ", "أَلْقَى", "نَافَقَ", "أَفْلَحَ", "بَدَّلَ", "أَشْرَكَ", "أَحْسَنَ", "أَرَادَ", "تَرَبَّصَ", "تَسَاءَلَ", "مَنَ", "نَجَّى", "أَعْرَضَ", "أَخْفَى", "وَلَّى", "أَمَاتَ", "تَوَكَّلَ", "بَشَّرَ", "اِتَّبَعَ", "أَقَامَ", "أَهْلَكَ", "اِسْتَهْزَأَ", "أَنْكَرَ", "أَوْحَى", "اِنْتَهَى", "أَنْفَقَ"];
+            pics = pics.slice(0, 20)
+
+            pics = shuffleArray( pics );
             var getRandom = () => {
+                pics = shuffleArray(pics);
                 var myPic = Math.floor(Math.random() * pics.length);
                 return pics[myPic];
             }
@@ -94,26 +187,30 @@
                 // multiply: multiply
             }
         })();
+
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Hello Vue!',
+                message: 'Sarf game',
                 Engine: Engine,
                 // pics: Engine.pics,
                 // getRandom: Engine.getRandom,
                 questions: [
-                    { name: 'Does it have letter A?', fn: x => { let it = 'A'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have letter B?', fn: x => { let it = 'B'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have letter C?', fn: x => { let it = 'C'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have letter D?', fn: x => { let it = 'D'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have letter E?', fn: x => { let it = 'E'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have shaddah?', fn: x => { let it = 'A'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have alif in the middle?', fn: x => { let it = 'B'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have taa prefix?', fn: x => { let it = 'C'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have noon?', fn: x => { let it = 'D'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have seen?', fn: x => { let it = 'E'; return x && x.indexOf(it) !== -1; } },
                 ],
-                attempts: [
-                ],
-                replies: [
-                ],
+                attempts: [],
+                replies: [],
                 guesses: [],
                 correctAnswer: null,
+                guessAttempt: null,
+                guessAttempts: [],
+                guessResult: null,
+                shuffleArray: shuffleArray,
+                cheat: 0,
             },
             methods: {
                 begin: function(){
@@ -128,9 +225,8 @@
                 },
                 reset: function(){
                     var vm = this; if (!vm.randomPick) vm = window.app;
-                    vm.correctAnswer = null;
-                    vm.attempts = [];
-                    vm.replies = [];
+                    vm.guessResult = vm.guessAttempt = vm.correctAnswer = null;
+                    vm.guessAttempts = vm.attempts = vm.guesses = vm.replies = [];
                 },
                 ask: function(question){
                     // The view model.
@@ -151,15 +247,23 @@
                     console.log(['Answer is:', answer]);
                     return answer;
                 },
-                guess: function(guess){
-                    this.guesses.push(guess);
-                    console.log('user guessed: ' + guess)
-                    if (!this.correctAnswer) { this.begin(); }
-                    // var result = this.Engine.guess(guess);
-                    var result = this.correctAnswer === guess;
-                    console.log('Result of guess was: ' + result);
-                    alert(result ? 'You guessed right! you Win.' : 'You loose. Sorry. Correct answer was: ' + this.correctAnswer);
-                    return result;
+                guess: function($event){
+                    var _this = this;
+                    _this.guessResult = null;
+                    //$event.stopPropagation();
+//                    Vue.nextTick(function () {
+                        var guess = $event.currentTarget.value;
+                        _this.guessAttempt = guess;
+                        _this.guesses.push(guess);
+                        console.log('user guessed: ' + guess)
+                        if (!_this.correctAnswer) { _this.begin(); }
+                        // var result = this.Engine.guess(guess);
+                        var result = _this.correctAnswer === guess;
+                        console.log('Result of guess was: ' + result);
+                        _this.guessAttempts.push(result);
+                        _this.guessResult = ('You guessed: ' + guess + '. ' + (result ? 'You guessed right! you Win.' : 'You loose. Sorry. Correct answer was: ' + _this.correctAnswer));
+                        return result;
+  //                  }, 100)
                 },
                 randomPick: function(){
                     var vm = this; if (!vm.getRandom) vm = window.app;
