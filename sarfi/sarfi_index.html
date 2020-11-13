@@ -92,7 +92,7 @@
         <section><article>
             <H4>Ready to guess the answer? </H4>
 
-            <select   @change="guess($event)" :value="guessAttempt">
+            <select   @change="guess($event)" :value="guessAttempt"  class=ztext>
                 <option disabled value="">Please select one</option>
                 <option v-for="answer in choices" :disabled="guesses.indexOf(answer) !== -1" :value="answer" XXv-selected="'selected'">{{ answer }}</option>
             </select>
@@ -105,7 +105,7 @@
             <H4>Guesses:</H4>
             <table>
                 <tr v-for="(item, index, xyz) in guesses">
-                    <td>{{item}}</td>
+                    <td  class=ztext>{{item}}</td>
                     <td v-html="guessAttempts[ index ] ? '&#x2714;' : '&#x2718;'"></td>
                 </tr>
             </table>
@@ -113,14 +113,14 @@
         </section>
 
         <section>
-            <section v-if=guessResult>{{ guessResult }}</section>
+            <section v-if=guessResult  class=ztext>{{ guessResult }}</section>
         </section>
 
         
         <BR><BR>
             <input type="checkbox" id="checkbox" v-model="cheat" @click="!correctAnswer && begin()">
             <label for="checkbox">Cheat?</label>  <BR>
-            <H4 v-if="cheat">Correct answer: <b><span>{{ correctAnswer }}</span></b></H4>
+            <H4 v-if="cheat">Correct answer: <b><span class=ztext>{{ correctAnswer }}</span></b></H4>
     
         <BR>
         <input v-if="!correctAnswer" type="button" value="Start Game" @click="begin">
@@ -226,7 +226,10 @@
                 reset: function(){
                     var vm = this; if (!vm.randomPick) vm = window.app;
                     vm.guessResult = vm.guessAttempt = vm.correctAnswer = null;
-                    vm.guessAttempts = vm.attempts = vm.guesses = vm.replies = [];
+                    vm.replies = [];
+                    vm.guesses = [];
+                    vm.attempts = [];
+                    vm.guessAttempts = [];
                 },
                 ask: function(question){
                     // The view model.
