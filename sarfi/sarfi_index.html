@@ -51,22 +51,22 @@
         <BR><h3>Instructions</h3>
             <ul>
                 <li>Objective: from among the af'aal you see below, one has been chosen. </li>
-                <li>Guess it in the least possible questions/attempts.</li>
+                <li>Guess it in the least possible questions/attempts. Click to start game.</li>
                 <!-- <li>When you are ready to answer, pick answer at bottom. All the best!</li> -->
             </ul>
 
         <section>
-            <section class=ztext v-for="choice in choices">{{ choice }}</section>
+            <section class=ztext @click="guess($event, choice )" v-for="choice in choices">{{ choice }}</section>
         </section>
         <!-- Choices: <span>{{ choices }}</span><br><br> -->
 
         
         
         <section><article>
-        <br><br><H4>Questions you can ask: </H4>
-        <div v-for="question in questions">
+            <H4>Questions you can ask: </H4>
+        <span v-for="question in questions">
             <input v-if="attempts.indexOf(question) === -1" type=button :value=question.name @click="ask(question)">
-        </div>
+        </span>
         <span v-if="attempts.length === questions.length">
             <font color=orange>No questions remain. You have used up all possible questions!! </font><BR><BR>
         </span>
@@ -77,7 +77,7 @@
 
             <article>
         <div v-if=attempts.length>
-            <br><br><H4>Answers:</H4>
+            <H4>Answers:</H4>
             <table>
                 <tr v-for="(item, index, xyz) in attempts">
                     <td>{{item.name}}</td>
@@ -113,7 +113,7 @@
         </section>
 
         <section>
-            <section v-if=guessResult  class=ztext>{{ guessResult }}</section>
+            <section class=result v-if=guessResult  class=ztext>{{ guessResult }}</section>
         </section>
 
         
@@ -146,7 +146,7 @@
             var pics = ["bellatrix.jpg", "dobby.jpg", "draco.jpg", "dudley.jpg", "dumbledore.jpg", "fred.png", "ginny.jpg", "hagrid.png", "harry.jpg", "hermione.jpg", "luna.jpeg", "lupin.jpg", "madeye.png", "mcgonagall.jpg", "molly.jpg", "arthur.jpg", "myrtle.jpg", "neville.jpg", "petunia.jpg", "ron.jpg", "snape.jpg", "vernon.jpg", "voldemort.jpg", "sirius.jpg", "fatlady.png"];
 
             pics = ["أَضَلَّ", "تَوَفَّى", "بَيَّنَ", "اِخْتَلَفَ", "تَبَارَكَ", "أَنْعَمَ", "نَادَى",  "أَذَاقَ", "أَصْلَحَ", "تَوَلَّى", "هَاجَرَ", "اِتَّخَذَ", "تَفَكَّرَ", "اِسْتَجَابَ", "زَيَّنَ", "أَسَرَّ", "أَنْزَلَ", "جَاهَدَ", "اِسْوَدَّ", "اِفْتَرَى", "أَبْصَرَ", "اِبْيَضَّ", "أَنْبَتَ", "أَرْسَلَ", "تَبَيَّنَ", "أَدْخَلَ", "أَغْنَى", "أَسْلَمَ", "اِسْتَقَامَ", "أَوْفَى", "أَطَاعَ", "سَبَّحَ", "اِنْقَلَبَ", "تَذَكَّرَ", "اِسْتَطَاعَ", "عَلَّمَ", " تَى", "كَذَّبَ", "أَسْرَفَ", "اِسْتَكْبَرَ", "قَاتَلَ", "أَغْرَقَ", "أَصْبَحَ", "سَخَّرَ", "عَذَّبَ", "أَنْشَأَ", "اِسْتَعْجَلَ", "أَخْرَجَ", "أَنْجَى", "أَحَبَّ", "اِهْتَدَى", "أَنْذَرَ", "أَحَلَّ", "أَصَابَ", "قَدَّمَ", "أَرْجَعَ", "نَبَّأَ", "أَفْسَدَ", "نَزَّلَ", "اِتَّقَى", "اِسْتَغْفَرَ", "أَرَى", "اِبْتَغَى", "صَدَّقَ", "أَحْيَا", "أَعَدَّ", "أَتَمَّ", "أَلْقَى", "نَافَقَ", "أَفْلَحَ", "بَدَّلَ", "أَشْرَكَ", "أَحْسَنَ", "أَرَادَ", "تَرَبَّصَ", "تَسَاءَلَ", "مَنَ", "نَجَّى", "أَعْرَضَ", "أَخْفَى", "وَلَّى", "أَمَاتَ", "تَوَكَّلَ", "بَشَّرَ", "اِتَّبَعَ", "أَقَامَ", "أَهْلَكَ", "اِسْتَهْزَأَ", "أَنْكَرَ", "أَوْحَى", "اِنْتَهَى", "أَنْفَقَ"];
-            pics = pics.slice(0, 20)
+            pics = pics.slice(0, 10)
 
             pics = shuffleArray( pics );
             var getRandom = () => {
@@ -210,7 +210,7 @@
             el: '#app',
             data: {
                 message: 'Sarf game',
-                Engine: Engine,
+                Engine: Engine, alert: window.alert,
                 // pics: Engine.pics,
                 // getRandom: Engine.getRandom,
                 questions: [
@@ -275,7 +275,7 @@
                     _this.guessResult = null;
                     //$event.stopPropagation();
 //                    Vue.nextTick(function () {
-                        var guess = $event.currentTarget.value;
+                        var guess = $event.currentTarget.value || $event.currentTarget.innerText;
                         _this.guessAttempt = guess;
                         _this.guesses.push(guess);
                         console.log('user guessed: ' + guess)
@@ -285,6 +285,9 @@
                         console.log('Result of guess was: ' + result);
                         _this.guessAttempts.push(result);
                         _this.guessResult = ('You guessed: ' + guess + '. ' + (result ? 'You guessed right! you Win.' : 'You loose. Sorry. Correct answer was: ' + _this.correctAnswer));
+
+                        // const el = this.$el.getElementsByClassName('result')[0];
+                        // window.scrollIntoView({behavior: 'smooth'});
                         return result;
   //                  }, 100)
                 },
@@ -293,6 +296,9 @@
                     let answer = vm.Engine.getRandom();
                     return answer;
                 },
+            },
+            created(){
+                this.begin()
             },
             computed: {
                 choices: function(){
