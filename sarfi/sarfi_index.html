@@ -188,6 +188,24 @@
             }
         })();
 
+
+        
+        function runTests( test ){
+            var consts = {"SHADDAH":"ّ", "ALIF": "ا", "HAMZA": "أ", "TAA": "ت", "NOON":"ن", "SEEN": "س", }
+            var tmp, tmpLetter;
+            function check(test, tmpLetter){ var tmp; return ( (tmp = test.indexOf( tmpLetter ) ) && tmp !== -1 && tmp !== 0 && tmp < test.length-1); }
+            var o = {
+                SHADDAH: ( (tmpLetter = consts.SHADDAH) && (tmp = test.indexOf( tmpLetter ) ) && tmp !== -1 ), 
+
+                ALIF_MIDDLE: ( check(test, consts.ALIF) || check(test, consts.ALIF) ),
+
+                TAA_PREFIX: ( test.indexOf(consts.TAA) === 0 ), //Taa prefix
+                TAA_MIDDLE: check(test, consts.TAA), // found & not first or last
+                NOON: check(test, consts.NOON),
+                SEEN: check(test, consts.SEEN),
+            }; return o;
+        }
+
         var app = new Vue({
             el: '#app',
             data: {
@@ -196,11 +214,12 @@
                 // pics: Engine.pics,
                 // getRandom: Engine.getRandom,
                 questions: [
-                    { name: 'Does it have shaddah?', fn: x => { let it = 'A'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have alif in the middle?', fn: x => { let it = 'B'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have taa prefix?', fn: x => { let it = 'C'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have noon?', fn: x => { let it = 'D'; return x && x.indexOf(it) !== -1; } },
-                    { name: 'Does it have seen?', fn: x => { let it = 'E'; return x && x.indexOf(it) !== -1; } },
+                    { name: 'Does it have shaddah?', fn: x => { var tmp; let it = 'SHADDAH'; return (tmp = runTests( x )) && tmp[it] } },
+                    { name: 'Does it have alif in the middle?', fn: x => { var tmp; let it = 'ALIF_MIDDLE'; return (tmp = runTests( x )) && tmp[it] } },
+                    { name: 'Does it have taa prefix?', fn: x => { var tmp; let it = 'TAA_PREFIX'; return (tmp = runTests( x )) && tmp[it] } },
+                    { name: 'Does it have taa in middle?', fn: x => { var tmp; let it = 'TAA_MIDDLE'; return (tmp = runTests( x )) && tmp[it] } },
+                    { name: 'Does it have noon?', fn: x => { var tmp; let it = 'NOON'; return (tmp = runTests( x )) && tmp[it] } },
+                    { name: 'Does it have seen?', fn: x => { var tmp; let it = 'SEEN'; return (tmp = runTests( x )) && tmp[it] } },
                 ],
                 attempts: [],
                 replies: [],
@@ -210,6 +229,7 @@
                 guessAttempts: [],
                 guessResult: null,
                 shuffleArray: shuffleArray,
+                runTests: runTests,
                 cheat: 0,
             },
             methods: {
