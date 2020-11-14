@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+
+    <!-- <link rel=stylesheet href=https://raw.githubusercontent.com/vladocar/Basic.css/master/css/basic.min.css> -->
+    <style>
+        *{box-sizing:border-box}:root{--sans:1em/1.6 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Fira Sans,sans-serif;--mono:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,'Courier New',monospace;--c1:#0074d9;--c2:#eee;--c3:#fff;--c4:#000;--c5:#fff;--m1:8px;--rc:8px}@media (prefers-color-scheme:dark){:root{--c2:#333;--c3:#1e1f20;--c4:#fff}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;font:var(--sans);font-weight:400;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background-color:var(--c3);color:var(--c4)}iframe,img{border:none;max-width:100%}a{color:var(--c1);text-decoration:none}a:hover{color:var(--c1);text-decoration:underline}pre{font:1em/1.6 var(--mono);background:var(--c2);padding:1em;overflow:auto}code{font:1em/1.6 var(--mono)}blockquote{border-left:5px solid var(--c2);padding:1em 1.5em;margin:0}hr{border:0;border-bottom:1px solid var(--c4)}h1,h2,h3,h4,h5,h6{margin:.6em 0;font-weight:400}h1{font-size:2.625em;line-height:1.2}h2{font-size:1.625em;line-height:1.2}h3{font-size:1.3125em;line-height:1.24}h4{font-size:1.1875em;line-height:1.23}h5,h6{font-size:1em;font-weight:700}table{border-collapse:collapse;border-spacing:0;margin:1em 0}td,th{text-align:left;vertical-align:top;border:1px solid;padding:.4em}tfoot,thead{background:var(--c2)}button,code,img,input,pre,select,textarea{border-radius:var(--rc)}input,select,textarea{font-size:1em;color:var(--c4);background:var(--c2);border:0;padding:.6em}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;font-size:1em;display:inline-block;color:var(--c5);background:var(--c1);border:0;margin:4px;padding:.6em;cursor:pointer;text-align:center}button:focus,button:hover,input:hover,select:hover,textarea:hover{opacity:.8}section{display:flex;flex-flow:row wrap}[style*="--c:"],article,aside,section>section{flex:var(--c,1);margin:var(--m1)}article{background:var(--c2);border-radius:var(--rc);padding:1em;box-shadow:0 1px 0 rgba(0,0,0,.3)}[style*="--c:"]:first-child,article:first-child,section>section:first-child{margin-left:0}[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
+    </style>
+    <style>
+        .ar {
+            font-size: xxx-large;
+            max-inline-size: fit-content;
+        }
+        .ztext {
+            font-size: xx-large;
+        }
+
+        img {
+            border: 5px solid #555;
+        }
+
+        main,
+        footer {
+            margin: 0 auto;
+            width: 60%;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        section>section {
+            color: #fff;
+            background-color: var(--c1);
+            padding: 15px;
+            margin: 10px 8px 10px 8px;
+            text-align: center;
+        }
+        body {
+                background-color: lightblue;
+            }
+
+        @media (max-width: 481px) {
+            body {
+                font-size: 18px
+            }
+
+            main,
+            footer {
+                width: 98%
+            }
+
+            section,
+            article {
+                flex: none;
+                width: 100%;
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id=app>
+            <h2>{{ message }}</h2>
+            <BR><h3>Instructions</h3>
+                <ul>
+                    <li>Objective: for the shown fi'l, click the correct Baab. The faster you identify, the more points you earn. Wrong answer, -1 penalty.</li>
+                    <!-- <li>When you are ready to answer, pick answer at bottom. All the best!</li> -->
+                </ul>
+                <hr>
+                <input v-if="!answer" type="button" value="Start Game" @click="answer = shuffle()">
+                <input v-if="answer" type="button" value="Restart Game" @click="answer = shuffle()">
+                <article v-if="answer"><div class=ar>{{ answer }}</div></article>
+        
+                <br><hr><br>
+            Baabs:<BR>
+            <input v-for="baab in baabs" :value=baab type=button />
+            <hr>Alternate names:<br>
+            <input v-for="baab in baabsAlt" :value='"Baab "+baab' type=button />
+            <br><hr><br>
+            
+            
+            
+            
+            Guide / Tips etc: Follow these steps to quickly indentify baab. See video in reference for explanation.<br>
+            <PRE>
+Q: Identify whether verb is mujarrad, or if mazeed fiyh, which type?
+Does it have extra letters?
+    N       Mujarrad               STOP    I  fa3ala       ex: K-a-T-a-B-a ("to write")
+    Y Does it have a shaddah?
+        Y Does it have a taa?
+        Y tafa33ul               STOP    V  tafa33ala    ex: t-a-DH-KK-a-RR-a ("to receive admonition")
+        N taf3eel                STOP    II fa33ala      ex: 3-a-LL-a-M-a ("to teach")
+    N Does it have alif in the middle?
+    Y Does it have a taa?
+        Y  tafaa3ul               STOP    VI   tafaa3ala  ex: t-a-DH-aa-H-a-R-a ("to support one another")
+        N  Mufaa3alah             STOP    III  faa3ala    ex: q-aa-T-a-L-a ("to fight")
+    N if it has:
+            noon    infi3aal    STOP    VII  infa3ala   ex: i-n-Q-a-L-a-B-a ("to turn away")
+            taa     ifta3aal    STOP    VIII ifta3ala   ex: i-3-t-a-R-a-DH-a ("to excuse oneself")
+            seen    istaf3aal   STOP     X   istaf3ala  ex: i-s-t-a-H-Z-a-A-a ("to make oneself mock at")
+            -none-  if3aal      STOP    IV   af3ala     ex: a-H-L-a-K-a ("to destroy")
+                    </PRE>
+                
+                References:
+                <ol>
+                    <li>Concept reference: taken from Shaykh Hashim's Teacher-training <A HREF=https://www.youtube.com/watch?v=FE6nNXJv268&feature=youtu.be&t=291>youtube video</A></li>
+                    <li><A href=http://corpus.quran.com/documentation/verbforms.jsp target=_>http://corpus.quran.com/documentation/verbforms.jsp</A></li>
+                    <li><A href=http://corpus.quran.com/bibliography.jsp target=_>http://corpus.quran.com/bibliography.jsp</A></li>
+                
+
+        </div>
+    </main>
+    <script>
+        // shuffled
+var af3aal = ["أَضَلَّ", "تَوَفَّى", "بَيَّنَ", "اِخْتَلَفَ", "تَبَارَكَ", "أَنْعَمَ", "نَادَى",  "أَذَاقَ", "أَصْلَحَ", "تَوَلَّى", "هَاجَرَ", "اِتَّخَذَ", "تَفَكَّرَ", "اِسْتَجَابَ", "زَيَّنَ", "أَسَرَّ", "أَنْزَلَ", "جَاهَدَ", "اِسْوَدَّ", "اِفْتَرَى", "أَبْصَرَ", "اِبْيَضَّ", "أَنْبَتَ", "أَرْسَلَ", "تَبَيَّنَ", "أَدْخَلَ", "أَغْنَى", "أَسْلَمَ", "اِسْتَقَامَ", "أَوْفَى", "أَطَاعَ", "سَبَّحَ", "اِنْقَلَبَ", "تَذَكَّرَ", "اِسْتَطَاعَ", "عَلَّمَ", " تَى", "كَذَّبَ", "أَسْرَفَ", "اِسْتَكْبَرَ", "قَاتَلَ", "أَغْرَقَ", "أَصْبَحَ", "سَخَّرَ", "عَذَّبَ", "أَنْشَأَ", "اِسْتَعْجَلَ", "أَخْرَجَ", "أَنْجَى", "أَحَبَّ", "اِهْتَدَى", "أَنْذَرَ", "أَحَلَّ", "أَصَابَ", "قَدَّمَ", "أَرْجَعَ", "نَبَّأَ", "أَفْسَدَ", "نَزَّلَ", "اِتَّقَى", "اِسْتَغْفَرَ", "أَرَى", "اِبْتَغَى", "صَدَّقَ", "أَحْيَا", "أَعَدَّ", "أَتَمَّ", "أَلْقَى", "نَافَقَ", "أَفْلَحَ", "بَدَّلَ", "أَشْرَكَ", "أَحْسَنَ", "أَرَادَ", "تَرَبَّصَ", "تَسَاءَلَ", "مَنَ", "نَجَّى", "أَعْرَضَ", "أَخْفَى", "وَلَّى", "أَمَاتَ", "تَوَكَّلَ", "بَشَّرَ", "اِتَّبَعَ", "أَقَامَ", "أَهْلَكَ", "اِسْتَهْزَأَ", "أَنْكَرَ", "أَوْحَى", "اِنْتَهَى", "أَنْفَقَ"];
+function shuffle() {
+  af3aal.sort(function(a, b){return 0.5 - Math.random()});
+  return af3aal[0];
+}
+
+    </script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Sarf: guess the Baab',
+                answer: null,
+                af3aal: af3aal,
+                shuffle: shuffle,
+                baabsAlt: [
+                    'I: fa\'ala', 'II: fa\'\'ala', 'III: faa\'ala',
+                    'IV: af\'ala     ', 'V: tafa\'\'ala    ', 'VI: tafaa\'ala  ',
+                    'VII: infa\'ala   ', 'VIII: ifta\'ala   ', 'X: istaf\'ala  ',
+                ],
+                baabs: [
+                    'Thalathi mujarrad', 'Baab taf\'eel', 'Baab Mufaa\'alah',
+                    'Baab if\'aal', 'Baab tafa\'\'ul', 'Baab tafaa\'ul',
+                    'Baab infi\'aal', 'Baab ifta\'aal', 'Baab istaf\'aal',
+                ],
+            },
+            methods: {
+                init: function(){ this.shuffle();
+                },
+            },
+            created(){
+                this.init()
+            },
+            mounted(){
+            },
+            computed: {
+                sample: function(){
+                },
+            },
+        });
+        window.vm = app;
+    </script>
+</body>
+
+</html>
