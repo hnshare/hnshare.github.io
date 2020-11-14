@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+
+    <!-- <link rel=stylesheet href=https://raw.githubusercontent.com/vladocar/Basic.css/master/css/basic.min.css> -->
+    <style>
+        *{box-sizing:border-box}:root{--sans:1em/1.6 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Fira Sans,sans-serif;--mono:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,'Courier New',monospace;--c1:#0074d9;--c2:#eee;--c3:#fff;--c4:#000;--c5:#fff;--m1:8px;--rc:8px}@media (prefers-color-scheme:dark){:root{--c2:#333;--c3:#1e1f20;--c4:#fff}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;font:var(--sans);font-weight:400;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background-color:var(--c3);color:var(--c4)}iframe,img{border:none;max-width:100%}a{color:var(--c1);text-decoration:none}a:hover{color:var(--c1);text-decoration:underline}pre{font:1em/1.6 var(--mono);background:var(--c2);padding:1em;overflow:auto}code{font:1em/1.6 var(--mono)}blockquote{border-left:5px solid var(--c2);padding:1em 1.5em;margin:0}hr{border:0;border-bottom:1px solid var(--c4)}h1,h2,h3,h4,h5,h6{margin:.6em 0;font-weight:400}h1{font-size:2.625em;line-height:1.2}h2{font-size:1.625em;line-height:1.2}h3{font-size:1.3125em;line-height:1.24}h4{font-size:1.1875em;line-height:1.23}h5,h6{font-size:1em;font-weight:700}table{border-collapse:collapse;border-spacing:0;margin:1em 0}td,th{text-align:left;vertical-align:top;border:1px solid;padding:.4em}tfoot,thead{background:var(--c2)}button,code,img,input,pre,select,textarea{border-radius:var(--rc)}input,select,textarea{font-size:1em;color:var(--c4);background:var(--c2);border:0;padding:.6em}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;font-size:1em;display:inline-block;color:var(--c5);background:var(--c1);border:0;margin:4px;padding:.6em;cursor:pointer;text-align:center}button:focus,button:hover,input:hover,select:hover,textarea:hover{opacity:.8}section{display:flex;flex-flow:row wrap}[style*="--c:"],article,aside,section>section{flex:var(--c,1);margin:var(--m1)}article{background:var(--c2);border-radius:var(--rc);padding:1em;box-shadow:0 1px 0 rgba(0,0,0,.3)}[style*="--c:"]:first-child,article:first-child,section>section:first-child{margin-left:0}[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
+    </style>
+    <style>
+        .ar {
+            font: initial;
+            direction: rtl;
+            text-align: right!important;
+            max-inline-size: fit-content;
+            line-height: 2.0;
+            font-size: xxx-large;
+        }
+        .ar2 {
+            font-size: xx-large!important;
+        }
+        .ar3 {
+            font-size: x-large!important;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            background-color: lightsteelblue;
+        }
+    </style>
+    <style>
+        .ztext {
+            font-size: xx-large;
+        }
+
+        img {
+            border: 5px solid #555;
+        }
+
+        main,
+        footer {
+            margin: 0 auto;
+            width: 60%;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        section>section {
+            color: #fff;
+            background-color: var(--c1);
+            padding: 15px;
+            margin: 10px 8px 10px 8px;
+            text-align: center;
+        }
+
+        @media (max-width: 481px) {
+            body {
+                font-size: 18px
+            }
+
+            main,
+            footer {
+                width: 98%
+            }
+
+            section,
+            article {
+                flex: none;
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id=app>
+                <!-- <h2 class=center>{{ message }}</h2> -->
+                <h2 class=center>{{ data.heading1 }}</h2>
+                <h3 class=center>{{ data.heading2 }}</h3>
+                <!-- <input v-if="!correctAnswer" type="button" value="Start Game" @click="begin"> -->
+                Resources:&nbsp;
+                <A Href="qisas an nabiyyeen - no tashkeel.pdf" target=_>Pdf</A>&nbsp;&nbsp;
+                <A href="Qisas Part 1.1 Text.docx" target=_>word doc</A>
+                <input  class=center type=button @click="notashkil = !notashkil" :value="(notashkil? 'show ' : 'hide ') + 'tashkil'"/>
+
+            <section>
+                <article class="ar ar2" dir=rtl v-html="formatLinesTohtml( notashkil ? data.ar_notashkil : data.ar)">
+                </article>
+            </section>
+        </div>
+    </main>
+    <script XXXsrc="./js/qasas_code.js">
+    var qasas1 = {
+    heading1: 'من كسر الأصنام    ',
+    heading2: '١ – بائع الأصنام',
+    ar: `\
+قَبْل أَيِّام كَثِيْرَة كَثِيْرة جِدّا.
+كَانَ فِيْ قَرْيَة رَجُل مَشْهُوْر مَشْهُوْر جِدّا.
+وكانَ اسْم هٰذَا الرَّجُل آزَر.
+وَكَانَ آزَر يَبِيْع الأَصْنَام.
+وَكَانَ فِيْ هٰذِهِ الْقَرْيَة بَيْت كَبِيْر جِدّا.
+وَكَانَ فِيْ هَذَا الْبَيْت أَصْنَام أَصْنَام كَثِيْرَة جدا.
+وَكَانَ النَّاس يَسْجُدُوْنَ لِهَذِهِ الْأَصْنَام.
+وَكَانَ آزَر يَسْجُدُ لِهَذِهِ الْأَصْنَام.
+وَكَانَ آزَر يَعْبُدُ هَذِهِ الْأَصْنَام.\
+`,
+
+headings_notashkil: `
+من كسر الاصنام
+
+بايع الاصنام
+`,
+
+ar_notashkil: `\
+قبل ايام كثيرة كثيرة جدا.
+كان في قرية رجل مشهور مشهور جدا.
+وكان اسم هاذا الرجل زر.
+وكان زر يبيع الاصنام.
+وكان في هاذه القرية بيت كبير جدا.
+وكان في هذا البيت اصنام اصنام كثيرة جدا.
+وكان الناس يسجدون لهذه الاصنام.
+وكان زر يسجد لهذه الاصنام.
+وكان زر يعبد هذه الاصنام.\
+`,
+
+buck: `\
+mn ksr Al>SnAm
+
+bA}E Al>SnAm
+
+qabol >ay~iAm kaviyorap kaviyorp jid~A
+kaAna fiyo qaroyap rajul ma$ohuwor ma$ohuwor jid~A
+wkAna Asom h\`*aA Alr~ajul zar
+wakaAna zar yabiyoE Al>aSonaAm
+wakaAna fiyo h\`*ihi Aloqaroyap bayot kabiyor jid~A
+wakaAna fiyo ha*aA Alobayot >aSonaAm >aSonaAm kaviyorap jdA
+wakaAna Aln~aAs yasojuduwona liha*ihi Alo>aSonaAm
+wakaAna zar yasojudu liha*ihi Alo>aSonaAm
+wakaAna zar yaEobudu ha*ihi Alo>aSonaAm\
+`,
+
+bare: `\
+mn ksr AlASnAm
+
+bAyE AlASnAm
+
+qbl AyAm kvyrp kvyrp jdA
+kAn fy qryp rjl m$hwr m$hwr jdA
+wkAn Asm hA*A Alrjl zr
+wkAn zr ybyE AlASnAm
+wkAn fy hA*h Alqryp byt kbyr jdA
+wkAn fy h*A Albyt ASnAm ASnAm kvyrp jdA
+wkAn AlnAs ysjdwn lh*h AlASnAm
+wkAn zr ysjd lh*h AlASnAm
+wkAn zr yEbd h*h AlASnAm\
+`
+};
+
+    </script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Qasas 1',
+                data: window.qasas1,
+                notashkil: true,
+            },
+            methods: {
+                formatLinesTohtml: function(data){
+                    var arr = data.split('\n');
+                    var result = arr.join('<BR>');
+                    return result;
+                },
+                init: function(){
+                },
+            },
+            created(){
+                this.init()
+            },
+            mounted(){
+            },
+            computed: {
+                sample: function(){
+                },
+            },
+        });
+        window.vm = app;
+    </script>
+</body>
+
+</html>
