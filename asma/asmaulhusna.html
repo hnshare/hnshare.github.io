@@ -1,0 +1,169 @@
+<html>
+<head>
+<style>
+*{box-sizing:border-box}:root{--sans:1em/1.6 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Fira Sans,sans-serif;--mono:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,'Courier New',monospace;--c1:#0074d9;--c2:#eee;--c3:#fff;--c4:#000;--c5:#fff;--m1:8px;--rc:8px}@media (prefers-color-scheme:dark){:root{--c2:#333;--c3:#1e1f20;--c4:#fff}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;font:var(--sans);font-weight:400;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background-color:var(--c3);color:var(--c4)}iframe,img{border:none;max-width:100%}a{color:var(--c1);text-decoration:none}a:hover{color:var(--c1);text-decoration:underline}pre{font:1em/1.6 var(--mono);background:var(--c2);padding:1em;overflow:auto}code{font:1em/1.6 var(--mono)}blockquote{border-left:5px solid var(--c2);padding:1em 1.5em;margin:0}hr{border:0;border-bottom:1px solid var(--c4)}h1,h2,h3,h4,h5,h6{margin:.6em 0;font-weight:400}h1{font-size:2.625em;line-height:1.2}h2{font-size:1.625em;line-height:1.2}h3{font-size:1.3125em;line-height:1.24}h4{font-size:1.1875em;line-height:1.23}h5,h6{font-size:1em;font-weight:700}table{border-collapse:collapse;border-spacing:0;margin:1em 0}td,th{text-align:left;vertical-align:top;border:1px solid;padding:.4em}tfoot,thead{background:var(--c2)}button,code,img,input,pre,select,textarea{border-radius:var(--rc)}input,select,textarea{font-size:1em;color:var(--c4);background:var(--c2);border:0;padding:.6em}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;font-size:1em;display:inline-block;color:var(--c5);background:var(--c1);border:0;margin:4px;padding:.6em;cursor:pointer;text-align:center}button:focus,button:hover,input:hover,select:hover,textarea:hover{opacity:.8}section{display:flex;flex-flow:row wrap}[style*="--c:"],article,aside,section>section{flex:var(--c,1);margin:var(--m1)}article{background:var(--c2);border-radius:var(--rc);padding:1em;box-shadow:0 1px 0 rgba(0,0,0,.3)}[style*="--c:"]:first-child,article:first-child,section>section:first-child{margin-left:0}[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
+</style>
+<style>
+    .ar {
+        font-size: xxx-large;
+    }
+</style>
+<style>
+    .ar {
+        font-size: xxx-large;
+        Xmax-inline-size: fit-content;
+    }
+    .ar2 {
+        font-size: xx-large;
+        Xmax-inline-size: fit-content;
+    }
+    .ar3 {
+        font-size: x-large;
+        Xmax-inline-size: fit-content;
+    }
+    .ztext {
+        font-size: xx-large;
+    }
+
+    img {
+        border: 5px solid #555;
+    }
+
+    main,
+    footer {
+        margin: 0 auto;
+        width: 60%;
+        text-align: left;
+        padding: 0 20px;
+    }
+
+    section>section {
+        color: #fff;
+        background-color: var(--c1);
+        padding: 15px;
+        margin: 10px 8px 10px 8px;
+        text-align: center;
+    }
+    body {
+            background-color: lightblue;
+        }
+
+    @media (max-width: 481px) {
+        body {
+            font-size: 18px
+        }
+
+        main,
+        footer {
+            width: 98%
+        }
+
+        section,
+        article {
+            flex: none;
+            width: 100%;
+            margin-left: 0;
+        }
+
+    }
+</style>
+
+</head>
+<body>
+<main>
+<H2> Asma -ul- Husna</H2> 
+
+<article>
+<video id=vid src="asmaulhusna.mp4" ontimeupdate=timeupdate autoplay  controls loop preload=auto >
+    <p>Your browser doesn't support HTML5 video. Here is a <a href="asmaulhusna.mp4">link to the video</a> instead.</p> 
+</video>
+</article>
+
+<section>
+    <article>
+        <div>
+            Jump to:
+
+            <ul>
+                <li><A href=# onclick="play( 1 )">Segment 1</A></li>
+                <li><A href=# onclick="play( 2 )">Segment 2</A></li>
+                <li><A href=# onclick="play( 3 )">Segment 3</A></li>
+                <li><A href=# onclick="play( 4 )">Segment 4</A></li>
+                <li><A href=# onclick="play( 5 )">Segment 5</A></li>
+                <li><A href=# onclick="play( 6 )">Segment 6</A></li>
+                <li><A href=# onclick="play( 7 )">Segment 7</A></li>
+            </ul>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article>
+        Original link for reference: <A href=https://www.youtube.com/watch?v=tTao6LY05zw target=_>Youtube vid</A>
+    </article>
+</section>
+
+<script>
+    var indexesStarts = [null, 82, 138, 195, 251, 311, 368, 360+54    ]; // 1:22  2:18  3:15  4:11  5:11  6:08  6:54
+    var indexesStops = [null, 110, 168, 222, 287, 340, 387, 439 ]; // 1:50  2:48  3:42  4:47  5:40  6:27  7:19
+    
+    var segmentStart = null;
+    var segmentEnd = null;
+    var doLoop = 1;
+
+    function play(part){
+        console.log('play ' + part);
+        jumpToPart( part );
+    }
+    function jumpToPart( part ){
+        var element = getAudVidElement();
+        var time = segmentStart = indexesStarts[ part ];
+        segmentEnd = indexesStops[ part ];
+
+        //first make sure the audio player is playing
+        element.play(); 
+
+        //second seek to the specific time you're looking for
+        element.currentTime = time;
+    }
+
+    function setInitPlay(){
+        var time = 82; // 1:22
+        var audioelement = getAudVidElement();
+        audioelement.onloadedmetadata = function(){ audioelement.currentTime = time; }
+        audioelement.ontimeupdate = timeupdate;
+    }
+
+    function getAudVidElement(){
+        return document.getElementById('vid');
+    }
+
+    function timeupdate(Event){
+        // console.log( 'timeupdate ' + JSON.stringify(arguments, null, 2) );
+        var vid = getAudVidElement();
+        var currentTime = vid.currentTime;
+        console.log( ['timeupdate ', currentTime, Event && Event.timeStamp, arguments ] );
+        // console.log( arguments  );
+
+        if(segmentStart && segmentEnd){
+            if(currentTime > segmentEnd + 2 ){ vid.currentTime = segmentStart; }
+        }
+    }
+    setInitPlay();
+</script>
+
+<!-- 
+    seeking:
+    https://stackoverflow.com/questions/12325787/setting-the-granularity-of-the-html5-audio-event-timeupdate
+
+    https://www.w3schools.com/tags/av_event_timeupdate.asp
+
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
+    https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content
+
+    https://stackoverflow.com/questions/9563887/setting-html5-audio-position 
+
+-->
+</main>
+</body>
+</html>
