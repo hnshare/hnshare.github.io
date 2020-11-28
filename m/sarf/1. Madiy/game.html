@@ -1,0 +1,350 @@
+<html>
+<head>
+<style>
+*{box-sizing:border-box}:root{--sans:1em/1.6 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Fira Sans,sans-serif;--mono:SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,'Courier New',monospace;--c1:#0074d9;--c2:#eee;--c3:#fff;--c4:#000;--c5:#fff;--m1:8px;--rc:8px}@media (prefers-color-scheme:dark){:root{--c2:#333;--c3:#1e1f20;--c4:#fff}}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;font:var(--sans);font-weight:400;font-style:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;background-color:var(--c3);color:var(--c4)}iframe,img{border:none;max-width:100%}a{color:var(--c1);text-decoration:none}a:hover{color:var(--c1);text-decoration:underline}pre{font:1em/1.6 var(--mono);background:var(--c2);padding:1em;overflow:auto}code{font:1em/1.6 var(--mono)}blockquote{border-left:5px solid var(--c2);padding:1em 1.5em;margin:0}hr{border:0;border-bottom:1px solid var(--c4)}h1,h2,h3,h4,h5,h6{margin:.6em 0;font-weight:400}h1{font-size:2.625em;line-height:1.2}h2{font-size:1.625em;line-height:1.2}h3{font-size:1.3125em;line-height:1.24}h4{font-size:1.1875em;line-height:1.23}h5,h6{font-size:1em;font-weight:700}table{border-collapse:collapse;border-spacing:0;margin:1em 0}td,th{text-align:left;vertical-align:top;border:1px solid;padding:.4em}tfoot,thead{background:var(--c2)}button,code,img,input,pre,select,textarea{border-radius:var(--rc)}input,select,textarea{font-size:1em;color:var(--c4);background:var(--c2);border:0;padding:.6em}button,input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:none;font-size:1em;display:inline-block;color:var(--c5);background:var(--c1);border:0;margin:4px;padding:.6em;cursor:pointer;text-align:center}button:focus,button:hover,input:hover,select:hover,textarea:hover{opacity:.8}section{display:flex;flex-flow:row wrap}[style*="--c:"],article,aside,section>section{flex:var(--c,1);margin:var(--m1)}article{background:var(--c2);border-radius:var(--rc);padding:1em;box-shadow:0 1px 0 rgba(0,0,0,.3)}[style*="--c:"]:first-child,article:first-child,section>section:first-child{margin-left:0}[style*="--c:"]:last-child, section>section:last-child, article:last-child {margin-right:0}
+</style>
+<style> <!-- https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css -->
+
+</style>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<style>
+    .ar {
+        font-size: xxx-large;
+    }
+</style>
+<style>
+        .ar {
+            font-size: xxx-large;
+            Xmax-inline-size: fit-content;
+        }
+        .ar2 {
+            font-size: xx-large;
+            Xmax-inline-size: fit-content;
+        }
+        .ar3 {
+            font-size: x-large;
+            Xmax-inline-size: fit-content;
+        }
+        .ztext {
+            font-size: xx-large;
+        }
+
+        img {
+            border: 5px solid #555;
+        }
+
+        main,
+        footer {
+            margin: 0 auto;
+            width: 90%;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        section>section {
+            color: #fff;
+            background-color: var(--c1);
+            padding: 15px;
+            margin: 10px 8px 10px 8px;
+            text-align: center;
+        }
+        body {
+                background-color: lightblue;
+            }
+
+        @media (max-width: 481px) {
+            body {
+                font-size: 18px
+            }
+
+            main,
+            footer {
+                width: 98%
+            }
+
+            section,
+            article {
+                flex: none;
+                width: 100%;
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+<div id=app>
+<main>
+{{ header }}
+
+
+<script type="x/template" id="timer">
+    <div class=ar>
+    <div class="text-center" v-if="isMounted && currentTime">
+      <span>{{ minutes | formatTime }}:{{ seconds | formatTime }}</span><br />
+    </div>
+    <div class="text-center" v-if="isMounted && !currentTime">
+      Time's Up!
+    </div>
+    </div>
+  </script>
+  
+
+
+<input type="button" value="Restart Game" @click="reset() || pick()">
+
+<section>
+    <article>TIMER: &nbsp;
+        <div id="timer">
+            <div class="flex flex-col min-h-screen justify-center">
+                <Timer :bus=bus Xdeadline="11/27/20" />
+              </div>
+          </div>        
+    </article>
+    <article>
+      <transition
+        enter-active-class="animate__animated animate__fadeInDown"
+        leave-active-class="animate__animated animate__fadeOutUp"
+      >
+        <div class="ar animate__animated animate__bounce  animate__delay-2s">
+            {{ randomSegha }}
+        </div>
+      </transition>
+    </article>
+    <article>SCORE: &nbsp;
+        <div class=ar>{{ score ? score +' / '+ scoreOutOf : '-' }}</div>
+    </article>
+</section>
+
+<div>
+  Test mode:<BR>
+  <input type="radio" v-model=mode id="mode" name="mode" value="1">
+  <label for="mode"> Arabic -> Segha</label>
+
+  <input type="radio" v-model=mode id="mode" name="mode" value="2">
+  <label for="mode"> Arabic -> English</label>
+<BR>
+  <input type="radio" v-model=mode id="mode" name="mode" value="3">
+  <label for="mode"> English -> Arabic</label>
+
+  <input type="radio" v-model=mode id="mode" name="mode" value="4">
+  <label for="mode"> Endings -> Segha</label>
+</div>
+
+
+<!-- The 14 answer choices follow. -->
+<div class=ar2>
+    <section>
+        <section @click="guessed(13)"  v-bind:class="[animate__animated, isWrongGuess(13) , animate__infinite ]"> {{ seg13 }} </section>
+        <section @click="guessed(10)" v-bind:class="[animate__animated, isWrongGuess(10) , animate__infinite ]"> {{ seg10 }} </section>
+        <section @click="guessed(7)"  v-bind:class="[animate__animated, isWrongGuess(7) , animate__infinite ]"> {{ seg7 }} </section>
+        <section @click="guessed(4)"  v-bind:class="[animate__animated, isWrongGuess(4) , animate__infinite ]"> {{ seg4 }} </section>
+        <section @click="guessed(1)"  v-bind:class="[animate__animated, isWrongGuess(1) , animate__infinite ]"> {{ seg1 }} </section>
+    </section>
+
+    <section>
+        <section @click="guessed(14)" v-bind:class="[animate__animated, isWrongGuess(14) , animate__infinite ]"> {{ seg14 }} </section>
+        <section @click="guessed(11)" v-bind:class="[animate__animated, isWrongGuess(11) , animate__infinite ]"> {{ seg11 }} </section>
+        <section @click="guessed(8)" v-bind:class="[animate__animated, isWrongGuess(8) , animate__infinite ]"> {{ seg8 }} </section>
+        <section @click="guessed(5)" v-bind:class="[animate__animated, isWrongGuess(5) , animate__infinite ]"> {{ seg5 }} </section>
+        <section @click="guessed(2)" v-bind:class="[animate__animated, isWrongGuess(2) , animate__infinite ]"> {{ seg2 }} </section>
+    </section>
+
+    <section>
+        <section style="background-color:transparent" Xstyle=display:none>  </section>
+        <section @click="guessed(12)" v-bind:class="[animate__animated, isWrongGuess(12) , animate__infinite ]"> {{ seg12 }} </section>
+        <section @click="guessed(9)" v-bind:class="[animate__animated, isWrongGuess(9) , animate__infinite ]"> {{ seg9 }} </section>
+        <section @click="guessed(6)" v-bind:class="[animate__animated, isWrongGuess(6) , animate__infinite ]"> {{ seg6 }} </section>
+        <section @click="guessed(3)" v-bind:class="[animate__animated, isWrongGuess(3) , animate__infinite ]"> {{ seg3 }} </section>
+    </section>
+</div>
+
+  <transition
+  enter-active-class="animate__animated animate__fadeInDown Xanimate__delay-2s"
+  leave-active-class="animate__animated animate__fadeOutUp animate__delay-2s"
+  >
+  <div v-if=resultMessage>
+    <section Xclass="animate__animated animate__backInUp  animate__backOutDown  animate__delay-3s">
+      <article>
+      {{ resultMessage }}
+      </article>
+    </section>
+  </div>
+</transition>
+
+
+</main>
+</div>
+
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- production version, optimized for size and speed -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+<script>
+
+var seghas = [null, "فَتَحَ", "فَتَحَا", "فَتَحُوْا", "فَتَحَتْ", "فَتَحَتَا", "فَتَحْنَ", "فَتَحْتَ", "فَتَحْتُمَا", "فَتَحْتُمْ", "فَتَحْتِ", "فَتَحْتُمَا", "فَتَحْتُنَّ", "فَتَحْتُ", "فَتَحْنَا" ]
+
+var arabicNames = [ null, "الغَائِبُ", "الْغَائِبَانِ", "الْغَائِبُوْنَ", "الْغَائِبَةُ", "الْغَائِبَتَانِ", "الْغَائِبَاتُ", "الْمُخَاطَبُ", "الْمُخَاطَبَانِ", "الْمُخَاطَبُوْنَ", "الْمُخَاطَبَةُ", "الْمُخَاطَبَتَانِ", "الْمُخَاطَبَاتُ", "الْمُتَكَلِّمُ", "الْمُتَكَلِّمُوْنَ" ];
+
+var endings = [null, "", "ـَا", "ـوْا", "ـتْ", "ـتَا", "ـنَ", "ـتَ", "ـتُمَا", "ـتُمْ", "ـتِ", "ـتُمَا", "ـتُنَّ", "ـتُ", "ـنَا"];
+
+var englishEquivalents = [null, "He", "They (m/d)", "They (m/p)", "She", "They (f/d)", "They (f/p)", "You (m/s)", "You (m/d)", "You (m/p)", "You (f/s)", "You (f/d)", "You (f/p)", "I (m/f)", "We (m/f)"];
+
+Vue.component("Timer", {
+  template: "#timer",
+  props: {
+    //deadline: {
+      // type: String,
+      // default: new Date(new Date().getTime() + 1 * 60000),
+      // required: true
+    //},
+    'bus': null,
+    speed: {
+      type: Number,
+      default: 1000
+    }
+  },
+  data: function() {
+    return {
+      deadline: null,
+      currentTime: null,
+      isMounted: 0,
+    };
+  },
+  mounted() {
+    this.bus.$on('reset', this.reset)
+    this.reset();
+    this.isMounted = 1;
+  },
+  computed: {
+    seconds: function() {
+      return Math.floor((this.currentTime / 1000) % 60);
+    },
+    minutes: function() {
+      return Math.floor((this.currentTime / 1000 / 60) % 60);
+    },
+  },
+  filters: {
+    formatTime: function(value) {
+      if (value < 10) {
+        return "0" + value;
+      }
+      return value;
+    }
+  },
+  methods: {
+    countdown: function() {
+      this.currentTime = Date.parse(this.deadline) - Date.parse(new Date());
+      if (this.currentTime > 0) {
+        setTimeout(this.countdown, this.speed);
+      } else {
+        this.currentTime = null;
+      }
+    },
+    reset: function(){
+      this.deadline = new Date(new Date().getTime() + 1 * 60500 );
+      this.currentTime = Date.parse(this.deadline) - Date.parse(new Date());
+      setTimeout(this.countdown, 1000);
+    },
+  }
+});
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        header: 'test',
+        bus: new Vue(),
+        seghas: seghas,
+        arabicNames: arabicNames,
+        endings: endings,
+        englishEquivalents: englishEquivalents,
+        randomPickNumber: 1, // this number is not 0 based; ranges from 1 - 14
+        score: 0,
+        scoreOutOf: 0,
+        resultMessage: null,
+        mode: 1,
+        attempts: [],
+        animate__animated: 'animate__animated', animate__headShake: 'animate__headShake', animate__heartBeat: 'animate__heartBeat', animate__infinite: 'animate__infinite',
+    },
+    methods: {
+        pick: function(){
+            var items = this.questions; // later switch these btw 4 modes.
+            this.randomPickNumber = 1 + Math.floor(Math.random() * (-1+items.length));
+        },
+        reset: function(){
+          this.bus.$emit('reset');
+          this.resultMessage = null;
+          this.attempts = [];
+        },
+        guessed: function(guess){
+            var _this = this;
+            this.attempts.push( parseInt(guess) );
+            this.resultMessage = null;
+            var result = guess === this.randomPickNumber;
+
+            // check if this is special case (>1 correct ans)
+            if(!result) result = ( this.answers[ guess ] === this.answers[ this.randomPickNumber ] ) ||
+                                 ( this.questions[ guess ] === this.questions[ this.randomPickNumber ] );
+
+            this.resultMessage = result ? "Correct answer!!!" : "Wrong. Try again.";
+            if(result) ++this.score;
+            ++this.scoreOutOf;
+            Vue.nextTick(function () {
+              if(_this.resultMessage.indexOf('Correct') !== -1 ){
+                _this.reset.bind( _this )();
+                _this.pick.bind( _this )(); // restart game
+              } 
+              _this.resultMessage = null;
+            })
+        },
+        isWrongGuess: function(guess){
+          if(this.attempts.indexOf( parseInt(guess) ) === -1) return '';
+          var num = this.randomPickNumber;
+          return parseInt( guess ) !== parseInt(num) ? 'animate__headShake' : 'animate__heartBeat';
+        },
+    },
+    computed: {
+        randomSegha: function(){
+            var items = this.questions; // later switch these btw 4 modes.
+            return items[ this.randomPickNumber ];
+        },
+        questions: function(){
+          var mode = parseInt( this.mode );
+          return mode == 1 || mode == 2 ? this.seghas : (mode == 4) ? this.endings : this.englishEquivalents;
+        },
+        answers: function(){
+          var mode = parseInt( this.mode );
+          return mode == 1 || mode == 4 ? this.arabicNames : (mode == 2) ? this.englishEquivalents : this.seghas;
+        },
+        seg1: function(){ return this.answers[1]; },
+        seg2: function(){ return this.answers[2]; },
+        seg3: function(){ return this.answers[3]; },
+        seg4: function(){ return this.answers[4]; },
+        seg5: function(){ return this.answers[5]; },
+        seg6: function(){ return this.answers[6]; },
+        seg7: function(){ return this.answers[7]; },
+        seg8: function(){ return this.answers[8]; },
+        seg9: function(){ return this.answers[9]; },
+        seg10: function(){ return this.answers[10]; },
+        seg11: function(){ return this.answers[11]; },
+        seg12: function(){ return this.answers[12]; },
+        seg13: function(){ return this.answers[13]; },
+        seg14: function(){ return this.answers[14]; },
+    },
+});
+
+</script>
+
+<!--
+    TODOs:
+    - fatah-tumaa has 2 right answers
+
+-->
+</body>
+</html>
